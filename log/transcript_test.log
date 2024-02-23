@@ -1,6 +1,6 @@
 # vsim -c -classdebug -voptargs="+acc" "+UVM_TESTNAME=test" "+UVM_VERBOSITY=HIGH" -wlf wave/wave_test.wlf work.testbench -do "log -r /*; coverage save -onexit ucdb/ucdb_test.ucdb; run -all; quit -f; exit" 
-# Start time: 18:38:36 on Feb 22,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 16:21:44 on Feb 23,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -47,8 +47,6 @@
 # Loading work.reg_decoder(fast)
 # Loading work.port_top(fast)
 # Loading work.fifo(fast)
-# Loading work.fsm_top(fast)
-# Loading work.watchdog(fast)
 # Loading work.fsm(fast)
 # Loading work.reg_top(fast__1)
 # Loading work.reg_decoder(fast__1)
@@ -57,8 +55,8 @@
 # Loading work.reg_top(fast__3)
 # Loading work.reg_decoder(fast__3)
 # Loading mtiUvm.questa_uvm_pkg(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'mem_rd_data'. The port definition is at: ../../cluster-5-switch-v-design/design/source/switch_top.v(28).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/DUT File: src/testbench.sv Line: 24
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (8) for port 'mem_addr'. The port definition is at: /home/denisa/Desktop/Git/3FoundersServer/New Switch Design Verification/../../cluster-5-switch-v-design/design/source/switch_top.v(19).
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/DUT File: /home/denisa/Desktop/Git/3FoundersServer/New Switch Design Verification/src/testbench.sv Line: 23
 # Loading /opt/questa/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
 # log -r /*
 #  coverage save -onexit ucdb/ucdb_test.ucdb
@@ -94,227 +92,804 @@
 # --------------------------------------------------------------------
 # uvm_test_top                 test                        -     @496 
 #   env                        environment                 -     @507 
-#     cov                      coverage                    -     @706 
-#       an_port_control        uvm_analysis_imp_control    -     @745 
-#       an_port_memory         uvm_analysis_imp_memory     -     @761 
-#       an_port_port_0         uvm_analysis_imp_port_0     -     @713 
-#       an_port_port_1         uvm_analysis_imp_port_1     -     @721 
-#       an_port_port_2         uvm_analysis_imp_port_2     -     @729 
-#       an_port_port_3         uvm_analysis_imp_port_3     -     @737 
-#       an_port_reset          uvm_analysis_imp_reset      -     @753 
-#     ctrl_agent               control_agent               -     @583 
-#       control_agent_driver   control_driver              -     @908 
-#         rsp_port             uvm_analysis_port           -     @923 
-#         seq_item_port        uvm_seq_item_pull_port      -     @915 
-#       control_agent_monitor  control_monitor             -     @931 
-#         mon_an_port          uvm_analysis_port           -     @951 
-#       control_agent_seqr     uvm_sequencer               -     @799 
-#         rsp_export           uvm_analysis_export         -     @806 
-#         seq_item_export      uvm_seq_item_pull_imp       -     @900 
+#     cov                      coverage                    -     @726 
+#       an_port_control        uvm_analysis_imp_control    -     @765 
+#       an_port_memory         uvm_analysis_imp_memory     -     @781 
+#       an_port_port_0         uvm_analysis_imp_port_0     -     @733 
+#       an_port_port_1         uvm_analysis_imp_port_1     -     @741 
+#       an_port_port_2         uvm_analysis_imp_port_2     -     @749 
+#       an_port_port_3         uvm_analysis_imp_port_3     -     @757 
+#       an_port_reset          uvm_analysis_imp_reset      -     @773 
+#     ctrl_agent               control_agent               -     @603 
+#       control_agent_driver   control_driver              -     @928 
+#         rsp_port             uvm_analysis_port           -     @943 
+#         seq_item_port        uvm_seq_item_pull_port      -     @935 
+#       control_agent_monitor  control_monitor             -     @951 
+#         mon_an_port          uvm_analysis_port           -     @971 
+#       control_agent_seqr     uvm_sequencer               -     @819 
+#         rsp_export           uvm_analysis_export         -     @826 
+#         seq_item_export      uvm_seq_item_pull_imp       -     @920 
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     mem_agent                memory_agent                -     @590 
-#       memory_agent_driver    memory_driver               -     @1076
-#         rsp_port             uvm_analysis_port           -     @1091
-#         seq_item_port        uvm_seq_item_pull_port      -     @1083
-#       memory_agent_monitor   memory_monitor              -     @1099
-#         mon_an_port          uvm_analysis_port           -     @1123
-#       memory_agent_seqr      uvm_sequencer               -     @967 
-#         rsp_export           uvm_analysis_export         -     @974 
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1068
+#     mem_agent                memory_agent                -     @610 
+#       memory_agent_driver    memory_driver               -     @1096
+#         rsp_port             uvm_analysis_port           -     @1111
+#         seq_item_port        uvm_seq_item_pull_port      -     @1103
+#       memory_agent_monitor   memory_monitor              -     @1119
+#         mon_an_port          uvm_analysis_port           -     @1143
+#       memory_agent_seqr      uvm_sequencer               -     @987 
+#         rsp_export           uvm_analysis_export         -     @994 
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1088
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     port_0_agent             port_agent                  -     @536 
-#       port_0_driver          port_driver                 -     @1304
-#         rsp_port             uvm_analysis_port           -     @1319
-#         seq_item_port        uvm_seq_item_pull_port      -     @1311
-#       port_0_monitor         port_monitor                -     @1329
-#         mon_an_port          uvm_analysis_port           -     @1346
-#       port_0_seqr            port_sequencer              -     @1140
-#         export_port          uvm_analysis_export         -     @1249
-#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1257
-#           analysis_export    uvm_analysis_imp            -     @1296
-#           get_ap             uvm_analysis_port           -     @1288
-#           get_peek_export    uvm_get_peek_imp            -     @1272
-#           put_ap             uvm_analysis_port           -     @1280
-#           put_export         uvm_put_imp                 -     @1264
-#         rsp_export           uvm_analysis_export         -     @1147
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1241
+#     port_0_agent             port_agent                  -     @556 
+#       port_0_driver          port_driver                 -     @1324
+#         rsp_port             uvm_analysis_port           -     @1339
+#         seq_item_port        uvm_seq_item_pull_port      -     @1331
+#       port_0_monitor         port_monitor                -     @1349
+#         mon_an_port          uvm_analysis_port           -     @1366
+#       port_0_seqr            port_sequencer              -     @1160
+#         export_port          uvm_analysis_export         -     @1269
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1277
+#           analysis_export    uvm_analysis_imp            -     @1316
+#           get_ap             uvm_analysis_port           -     @1308
+#           get_peek_export    uvm_get_peek_imp            -     @1292
+#           put_ap             uvm_analysis_port           -     @1300
+#           put_export         uvm_put_imp                 -     @1284
+#         rsp_export           uvm_analysis_export         -     @1167
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1261
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     port_1_agent             port_agent                  -     @544 
-#       port_1_driver          port_driver                 -     @1527
-#         rsp_port             uvm_analysis_port           -     @1542
-#         seq_item_port        uvm_seq_item_pull_port      -     @1534
-#       port_1_monitor         port_monitor                -     @1552
-#         mon_an_port          uvm_analysis_port           -     @1569
-#       port_1_seqr            port_sequencer              -     @1363
-#         export_port          uvm_analysis_export         -     @1472
-#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1480
-#           analysis_export    uvm_analysis_imp            -     @1519
-#           get_ap             uvm_analysis_port           -     @1511
-#           get_peek_export    uvm_get_peek_imp            -     @1495
-#           put_ap             uvm_analysis_port           -     @1503
-#           put_export         uvm_put_imp                 -     @1487
-#         rsp_export           uvm_analysis_export         -     @1370
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1464
+#     port_1_agent             port_agent                  -     @564 
+#       port_1_driver          port_driver                 -     @1547
+#         rsp_port             uvm_analysis_port           -     @1562
+#         seq_item_port        uvm_seq_item_pull_port      -     @1554
+#       port_1_monitor         port_monitor                -     @1572
+#         mon_an_port          uvm_analysis_port           -     @1589
+#       port_1_seqr            port_sequencer              -     @1383
+#         export_port          uvm_analysis_export         -     @1492
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1500
+#           analysis_export    uvm_analysis_imp            -     @1539
+#           get_ap             uvm_analysis_port           -     @1531
+#           get_peek_export    uvm_get_peek_imp            -     @1515
+#           put_ap             uvm_analysis_port           -     @1523
+#           put_export         uvm_put_imp                 -     @1507
+#         rsp_export           uvm_analysis_export         -     @1390
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1484
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     port_2_agent             port_agent                  -     @552 
-#       port_2_driver          port_driver                 -     @1750
-#         rsp_port             uvm_analysis_port           -     @1765
-#         seq_item_port        uvm_seq_item_pull_port      -     @1757
-#       port_2_monitor         port_monitor                -     @1775
-#         mon_an_port          uvm_analysis_port           -     @1792
-#       port_2_seqr            port_sequencer              -     @1586
-#         export_port          uvm_analysis_export         -     @1695
-#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1703
-#           analysis_export    uvm_analysis_imp            -     @1742
-#           get_ap             uvm_analysis_port           -     @1734
-#           get_peek_export    uvm_get_peek_imp            -     @1718
-#           put_ap             uvm_analysis_port           -     @1726
-#           put_export         uvm_put_imp                 -     @1710
-#         rsp_export           uvm_analysis_export         -     @1593
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1687
+#     port_2_agent             port_agent                  -     @572 
+#       port_2_driver          port_driver                 -     @1770
+#         rsp_port             uvm_analysis_port           -     @1785
+#         seq_item_port        uvm_seq_item_pull_port      -     @1777
+#       port_2_monitor         port_monitor                -     @1795
+#         mon_an_port          uvm_analysis_port           -     @1812
+#       port_2_seqr            port_sequencer              -     @1606
+#         export_port          uvm_analysis_export         -     @1715
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1723
+#           analysis_export    uvm_analysis_imp            -     @1762
+#           get_ap             uvm_analysis_port           -     @1754
+#           get_peek_export    uvm_get_peek_imp            -     @1738
+#           put_ap             uvm_analysis_port           -     @1746
+#           put_export         uvm_put_imp                 -     @1730
+#         rsp_export           uvm_analysis_export         -     @1613
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1707
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     port_3_agent             port_agent                  -     @560 
-#       port_3_driver          port_driver                 -     @1973
-#         rsp_port             uvm_analysis_port           -     @1988
-#         seq_item_port        uvm_seq_item_pull_port      -     @1980
-#       port_3_monitor         port_monitor                -     @1998
-#         mon_an_port          uvm_analysis_port           -     @2015
-#       port_3_seqr            port_sequencer              -     @1809
-#         export_port          uvm_analysis_export         -     @1918
-#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1926
-#           analysis_export    uvm_analysis_imp            -     @1965
-#           get_ap             uvm_analysis_port           -     @1957
-#           get_peek_export    uvm_get_peek_imp            -     @1941
-#           put_ap             uvm_analysis_port           -     @1949
-#           put_export         uvm_put_imp                 -     @1933
-#         rsp_export           uvm_analysis_export         -     @1816
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1910
+#     port_3_agent             port_agent                  -     @580 
+#       port_3_driver          port_driver                 -     @1993
+#         rsp_port             uvm_analysis_port           -     @2008
+#         seq_item_port        uvm_seq_item_pull_port      -     @2000
+#       port_3_monitor         port_monitor                -     @2018
+#         mon_an_port          uvm_analysis_port           -     @2035
+#       port_3_seqr            port_sequencer              -     @1829
+#         export_port          uvm_analysis_export         -     @1938
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1946
+#           analysis_export    uvm_analysis_imp            -     @1985
+#           get_ap             uvm_analysis_port           -     @1977
+#           get_peek_export    uvm_get_peek_imp            -     @1961
+#           put_ap             uvm_analysis_port           -     @1969
+#           put_export         uvm_put_imp                 -     @1953
+#         rsp_export           uvm_analysis_export         -     @1836
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1930
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     rst_agent                reset_agent                 -     @576 
-#       reset_agent_driver     reset_driver                -     @2140
-#         rsp_port             uvm_analysis_port           -     @2155
-#         seq_item_port        uvm_seq_item_pull_port      -     @2147
-#       reset_agent_monitor    reset_monitor               -     @2163
-#         mon_an_port          uvm_analysis_port           -     @2183
-#       reset_agent_seqr       uvm_sequencer               -     @2031
-#         rsp_export           uvm_analysis_export         -     @2038
-#         seq_item_export      uvm_seq_item_pull_imp       -     @2132
+#     rst_agent                reset_agent                 -     @596 
+#       reset_agent_driver     reset_driver                -     @2160
+#         rsp_port             uvm_analysis_port           -     @2175
+#         seq_item_port        uvm_seq_item_pull_port      -     @2167
+#       reset_agent_monitor    reset_monitor               -     @2183
+#         mon_an_port          uvm_analysis_port           -     @2203
+#       reset_agent_seqr       uvm_sequencer               -     @2051
+#         rsp_export           uvm_analysis_export         -     @2058
+#         seq_item_export      uvm_seq_item_pull_imp       -     @2152
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     virtual_sequencer        virtual_sequencer           -     @597 
-#       rsp_export             uvm_analysis_export         -     @604 
-#       seq_item_export        uvm_seq_item_pull_imp       -     @698 
+#     virtual_sequencer        virtual_sequencer           -     @617 
+#       rsp_export             uvm_analysis_export         -     @624 
+#       seq_item_export        uvm_seq_item_pull_imp       -     @718 
 #       arbitration_queue      array                       0     -    
 #       lock_queue             array                       0     -    
 #       num_last_reqs          integral                    32    'd1  
 #       num_last_rsps          integral                    32    'd1  
 # --------------------------------------------------------------------
 # 
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 5: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h0  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 5: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
 # UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 5: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
 # UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 15: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
 # UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 25: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 35: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b0  mem_wr_data: 'h8d  mem_rd_data: 'h0  mem_addr: 'h0
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 45: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h5e  mem_rd_data: 'h0  mem_addr: 'h1
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 55: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h66  mem_rd_data: 'h0  mem_addr: 'h2
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 65: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h66  mem_rd_data: 'h0  mem_addr: 'h3
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 75: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b1  mem_wr_data: 'h0  mem_rd_data: 'h0  mem_addr: 'h0
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 85: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h0  mem_addr: 'h0
-# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 275: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 275: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: DA: 'h66  SA: 'h9b  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 275: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h66  SA: 'h9b  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# Debug1
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 355: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h66  SA: 'h9b  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 355: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd2: DA: 'h8d  SA: 'h6e  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 355: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h8d  SA: 'h6e  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# Debug1
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 445: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h8d  SA: 'h6e  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 445: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd3: DA: 'h8d  SA: 'h5a  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 445: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h8d  SA: 'h5a  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# Debug1
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 535: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h8d  SA: 'h5a  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 535: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd4: DA: 'h8d  SA: 'h9d  LENGTH: 'h1 PAYLOAD['h1]: '{122}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 535: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h8d  SA: 'h9d  LENGTH: 'h1 PAYLOAD['h1]: '{122}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 635: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h8d  SA: 'h9d  LENGTH: 'h1 PAYLOAD['h1]: '{122}
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 635: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd5: DA: 'h8d  SA: 'he6  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 635: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h8d  SA: 'he6  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# Debug1
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 725: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h8d  SA: 'he6  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 725: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd6: DA: 'h8d  SA: 'h3b  LENGTH: 'h7 PAYLOAD['h7]: '{148, 44, 204, 13, 154, 185, 40}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 725: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h8d  SA: 'h3b  LENGTH: 'h7 PAYLOAD['h7]: '{148, 44, 204, 13, 154, 185, 40}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 885: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h8d  SA: 'h3b  LENGTH: 'h7 PAYLOAD['h7]: '{148, 44, 204, 13, 154, 185, 40}
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 885: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd7: DA: 'h66  SA: 'h25  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 885: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h66  SA: 'h25  LENGTH: 'h0 PAYLOAD['h0]: '{}
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 35: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 45: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h8d  mem_rd_data: 'h00000000  mem_addr: 'h1
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 55: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h5e  mem_rd_data: 'h00000000  mem_addr: 'h2
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 65: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h66  mem_rd_data: 'h00000000  mem_addr: 'h3
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 75: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b1  mem_wr_data: 'h66  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 85: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 105: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b1  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 115: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h0  mem_rd_data: 'h0000008d  mem_addr: 'h1
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 125: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h0  mem_rd_data: 'h00005e00  mem_addr: 'h2
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 135: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h0  mem_rd_data: 'h00660000  mem_addr: 'h3
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 145: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h0  mem_rd_data: 'h66000000  mem_addr: 'h3
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 185: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 185: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: DA: 'h5e  SA: 'h5e  LENGTH: 'h5e PAYLOAD['h5e]: '{94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94}
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 185: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h5e  SA: 'h5e  LENGTH: 'h5e PAYLOAD['h5e]: '{94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94}
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 225: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 235: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 245: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 255: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 255: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h5e  READ: 'b0  READY: 'b0
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 265: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 275: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 285: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 295: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 305: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 315: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 325: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 335: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 345: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 355: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 365: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 375: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 385: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 395: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 405: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 415: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 425: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 435: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 445: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 455: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 465: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 475: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 485: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 495: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 505: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 515: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 525: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 535: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 545: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 555: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 565: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 575: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 585: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 595: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 605: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 615: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 625: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 635: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 645: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 655: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 665: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 675: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 685: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 695: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 705: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 715: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 725: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 735: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 745: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 755: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 765: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 775: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 785: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 795: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 805: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 815: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 825: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 835: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug2
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 845: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 855: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 865: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 875: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 885: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 895: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 905: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 915: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 925: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 935: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 945: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 955: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 965: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 975: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 985: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 995: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1005: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1015: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1025: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1035: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1045: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1055: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1065: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1075: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1085: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1095: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1105: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1115: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1125: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1135: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1145: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1155: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1165: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1175: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1185: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1195: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1205: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1205: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h5e  SA: 'h5e  LENGTH: 'h5e PAYLOAD['h5e]: '{94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94, 94}
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 1205: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd2: DA: 'h66  SA: 'h66  LENGTH: 'h66 PAYLOAD['h66]: '{102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102}
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1205: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h66  SA: 'h66  LENGTH: 'h66 PAYLOAD['h66]: '{102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102}
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1215: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b0
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1225: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b0
 # Debug1
 # Debug1
 # Debug1
 # Debug1
-# Debug1
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 975: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h66  SA: 'h25  LENGTH: 'h0 PAYLOAD['h0]: '{}
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 975: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd8: DA: 'h66  SA: 'hcf  LENGTH: 'h5 PAYLOAD['h5]: '{78, 108, 123, 153, 28}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 975: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h66  SA: 'hcf  LENGTH: 'h5 PAYLOAD['h5]: '{78, 108, 123, 153, 28}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1115: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h66  SA: 'hcf  LENGTH: 'h5 PAYLOAD['h5]: '{78, 108, 123, 153, 28}
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 1115: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd9: DA: 'h66  SA: 'had  LENGTH: 'h8 PAYLOAD['h8]: '{138, 21, 231, 11, 170, 120, 43, 118}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1115: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h66  SA: 'had  LENGTH: 'h8 PAYLOAD['h8]: '{138, 21, 231, 11, 170, 120, 43, 118}
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1245: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1245: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1255: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1255: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1265: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1265: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1275: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h66  READ: 'b0  READY: 'b0
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1275: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h66  READ: 'b0  READY: 'b0
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1275: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1275: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1285: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1285: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1295: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1295: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1305: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1305: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1315: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1315: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1325: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1325: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1335: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1335: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
 # Debug1
 # Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1345: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1345: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
 # Debug1
 # Debug1
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1285: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h66  SA: 'had  LENGTH: 'h8 PAYLOAD['h8]: '{138, 21, 231, 11, 170, 120, 43, 118}
-# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 1285: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd10: DA: 'h8d  SA: 'h5a  LENGTH: 'h5 PAYLOAD['h5]: '{116, 35, 237, 53, 10}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1285: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: DA: 'h8d  SA: 'h5a  LENGTH: 'h5 PAYLOAD['h5]: '{116, 35, 237, 53, 10}
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1425: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h8d  SA: 'h5a  LENGTH: 'h5 PAYLOAD['h5]: '{116, 35, 237, 53, 10}
-# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 1425: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
-# UVM_INFO src/test/environment/coverage/coverage.svh(130) @ 1425: uvm_test_top.env.cov [cov] Ports coverage   = 0.00%
-# UVM_INFO src/test/environment/coverage/coverage.svh(131) @ 1425: uvm_test_top.env.cov [cov] Memory coverage  = 63.28%
-# UVM_INFO src/test/environment/coverage/coverage.svh(132) @ 1425: uvm_test_top.env.cov [cov] Control coverage = 83.33%
-# UVM_INFO src/test/environment/coverage/coverage.svh(133) @ 1425: uvm_test_top.env.cov [cov] Data coverage    = 38.75%
-# UVM_INFO src/test/environment/coverage/coverage.svh(134) @ 1425: uvm_test_top.env.cov [cov] Event coverage   = 18.79%
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1355: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1355: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1365: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1365: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1375: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1375: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1385: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1385: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1395: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1395: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1405: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1405: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1415: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1415: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1425: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1425: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1435: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1435: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1445: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1445: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1455: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1455: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1465: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1465: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1475: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1475: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1485: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1485: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1495: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1495: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1505: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1505: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1515: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1515: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1525: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1525: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1535: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1535: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1545: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1545: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1555: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1555: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1565: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1565: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1575: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1575: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1585: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1585: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1595: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1595: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1605: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1605: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1615: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1615: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1625: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1625: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1635: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1635: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1645: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1645: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1655: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1655: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1665: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1665: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1675: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1675: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1685: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1685: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1695: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1695: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1705: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1705: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1715: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1715: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1725: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1725: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1735: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1735: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1745: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1745: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1755: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1755: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1765: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1765: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1775: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1775: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1785: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1785: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1795: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1795: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1805: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1805: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1815: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1815: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1825: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1825: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1835: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1835: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1845: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1845: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1855: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1855: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug2
+# Debug1
+# Debug2
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1865: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1865: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1875: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1875: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1885: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1885: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1895: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1895: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1905: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1905: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1915: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1915: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1925: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1925: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1935: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1935: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1945: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1945: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1955: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1955: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1965: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1965: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1975: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1975: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1985: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1985: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1995: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1995: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2005: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2005: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2015: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2015: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2025: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2025: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2035: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2035: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2045: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2045: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2055: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2055: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2065: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2065: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2075: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2075: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2085: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2085: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2095: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2095: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2105: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2105: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2115: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2115: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2125: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2125: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2135: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2135: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2145: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2145: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2155: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2155: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2165: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2165: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2175: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2175: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2185: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2185: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2195: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2195: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2205: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2205: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2215: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2215: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2225: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2225: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2235: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2235: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2245: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2245: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2255: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2255: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2265: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2265: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# Debug1
+# Debug1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2275: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2275: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2285: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2285: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2295: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2295: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2305: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2305: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2315: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2315: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 2315: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: DA: 'h66  SA: 'h66  LENGTH: 'h66 PAYLOAD['h66]: '{102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102}
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 2315: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/environment/coverage/coverage.svh(130) @ 2315: uvm_test_top.env.cov [cov] Ports coverage   = 67.86%
+# UVM_INFO src/test/environment/coverage/coverage.svh(131) @ 2315: uvm_test_top.env.cov [cov] Memory coverage  = 68.75%
+# UVM_INFO src/test/environment/coverage/coverage.svh(132) @ 2315: uvm_test_top.env.cov [cov] Control coverage = 59.52%
+# UVM_INFO src/test/environment/coverage/coverage.svh(133) @ 2315: uvm_test_top.env.cov [cov] Data coverage    = 9.78%
+# UVM_INFO src/test/environment/coverage/coverage.svh(134) @ 2315: uvm_test_top.env.cov [cov] Event coverage   = 37.70%
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   52
+# UVM_INFO :  353
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -322,13 +897,17 @@
 # [Questa UVM]     3
 # [RNTST]     1
 # [UVMTOP]     1
-# [control_agent_driver]    20
+# [control_agent_driver]     4
 # [cov]     5
-# [ctrl_seq]    12
-# [memory_agent_monitor]     7
+# [ctrl_seq]     4
+# [memory_agent_monitor]    12
+# [port_0_monitor]   108
+# [port_1_monitor]   110
+# [port_2_monitor]   101
+# [port_3_monitor]     1
 # [reset_agent_monitor]     3
 # ** Note: $finish    : /opt/questa/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 1425 ns  Iteration: 106  Instance: /testbench
+#    Time: 2315 ns  Iteration: 110  Instance: /testbench
 # Saving coverage database on exit...
-# End time: 18:38:41 on Feb 22,2024, Elapsed time: 0:00:05
+# End time: 16:21:48 on Feb 23,2024, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 2

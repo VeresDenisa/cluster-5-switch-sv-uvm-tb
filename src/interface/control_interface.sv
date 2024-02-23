@@ -18,6 +18,9 @@ interface control_interface(input bit clock);
   
   task send(data_packet packet);
     @(driver);
+    driver.sw_enable_in <= 1'b1;
+
+    @(driver);
     driver.data_in      <= packet.da;
     driver.sw_enable_in <= packet.sw_enable_in[0];
     
