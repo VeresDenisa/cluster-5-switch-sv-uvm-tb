@@ -1,0 +1,9 @@
+*.vstf
+*.mpf
+*.mti
+*.vcd
+*.wlf
+
+work/
+transcript
+ucdb/
