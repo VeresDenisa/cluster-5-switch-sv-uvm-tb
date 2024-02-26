@@ -69,7 +69,7 @@ endclass : test
     
     for(int i = 0; i < 5; i++) begin
       mem_seq[i] = memory_sequence::type_id::create("mem_seq");
-      if(i == 4) mem_seq[i].set_parameters(.nr_items(1), .addr(2'b00), .sel(1'b0), .wr_rd(1'b0));
+      if(i == 4) mem_seq[i].set_parameters(.nr_items(5), .addr(2'b00), .sel(1'b0), .wr_rd(1'b0));
       else mem_seq[i].set_parameters(.nr_items(1), .addr(i), .sel(1'b1), .wr_rd(1'b0));
     end    
 
