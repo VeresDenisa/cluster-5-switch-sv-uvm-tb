@@ -8,8 +8,9 @@ class data_packet extends uvm_sequence_item;
   rand bit [7:0]   length;
        bit [7:0]   payload[$];
        bit         sw_enable_in[$];
+       bit [7:0]   parity;
   
-  int delay = 5;
+  int delay = 9;
   int max_length = 255, min_length = 0;
   random_predefined_enum random_DA;
   bit [7:0] memory_data[4];
@@ -36,13 +37,16 @@ endclass : data_packet
 
     
 function void data_packet::set_all(bit[7:0] da, bit[7:0] sa, bit[7:0] length, bit[7:0] pay);
+  bit [7:0] parity_temp = 8'h00;
   this.da = da;
   this.sa = sa;
   this.length = length;
   for(int i=0; i<length; i++) begin
     payload.push_front(pay);
+    parity_temp = parity_temp | pay;
   end
-  for(int i=0; i<length+3; i++) begin
+  this.parity = parity_temp;
+  for(int i=0; i<length+5; i++) begin
     sw_enable_in.push_front(1'b1);
   end
   sw_enable_in.push_back(1'b0);
@@ -55,12 +59,17 @@ function bit data_packet::compare(data_packet item);
   for(int i = 0; i < this.length; i++) begin
     if(this.payload[i] !== item.payload[i]) return 1'b0;
   end
+  if(this.parity !== item.parity) return 1'b0;
   return 1'b1;
 endfunction
     
 function bit data_packet::check();
-  if(this.payload.size() != this.length)
-    return 1'b0;
+  bit [7:0] parity_temp = 8'h00;
+  if(this.payload.size() != this.length) return 1'b0;
+  foreach(payload[i]) begin
+    parity_temp = parity_temp | payload[i];
+  end
+  if(parity_temp !== this.parity) return 1'b0;
   return 1'b1;
 endfunction
 
@@ -76,15 +85,19 @@ function void data_packet::set_parameters(int min_length = 0, int max_length = 2
 endfunction : set_parameters
 
 function void data_packet::post_randomize();
+  bit [7:0] temp, parity_temp = 8'h00;
   for(int i=0; i<length; i++) begin
-    payload.push_front($urandom_range(0,255));
+    temp = $urandom_range(0,255);
+    payload.push_front(temp);
+    parity_temp = parity_temp | temp;
   end
-  for(int i=0; i<length+3; i++) begin
+  parity = parity_temp;
+  for(int i=0; i<length+5; i++) begin
     sw_enable_in.push_front(1'b1);
   end
   sw_enable_in.push_back(1'b0);
 endfunction : post_randomize
 
 function string data_packet::convert2string();
-  return $sformatf("DA: 'h%0h  SA: 'h%0h  LENGTH: 'h%0h PAYLOAD['h%0h]: %p", da, sa, length, payload.size(), payload);
+  return $sformatf("DA: 'h%0h  SA: 'h%0h  LENGTH: 'h%0h PAYLOAD['h%0h]: %p PARITY: 'h%0h", da, sa, length, payload.size(), payload, parity);
 endfunction : convert2string

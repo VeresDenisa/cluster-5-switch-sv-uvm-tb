@@ -37,8 +37,12 @@ interface control_interface(input bit clock);
       driver.data_in      <= packet.payload[i];
       driver.sw_enable_in <= packet.sw_enable_in[i+3];
     end
-    
-    @(driver) driver.sw_enable_in <= packet.sw_enable_in[packet.length+4];
+
+    @(driver);
+    driver.data_in      <= packet.parity;
+    driver.sw_enable_in <= packet.sw_enable_in[packet.length+4];
+
+    @(driver) driver.sw_enable_in <= packet.sw_enable_in[packet.length+5];
     
     repeat(packet.delay) @(driver);
   endtask : send

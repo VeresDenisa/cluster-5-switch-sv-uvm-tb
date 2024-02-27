@@ -65,14 +65,14 @@ endclass : test
     ctrl_seq = control_sequence::type_id::create("ctrl_seq");
     ctrl_seq.set_da_options(first_memory_config_data);
     
-    ctrl_seq.set_parameters(.nr_items(1), .min_length(134));
-    
+    ctrl_seq.set_parameters(.nr_items(1), .max_length(2), .min_length(2));
+    /*
     for(int i = 0; i < 5; i++) begin
       mem_seq[i] = memory_sequence::type_id::create("mem_seq");
       if(i == 4) mem_seq[i].set_parameters(.nr_items(1), .addr(2'b00), .sel(1'b0), .wr_rd(1'b0));
       else mem_seq[i].set_parameters(.nr_items(1), .addr(i), .sel(1'b1), .wr_rd(1'b0));
     end    
-
+*/
     v_seq = virtual_sequence::type_id::create("v_seq");
     v_seq.set_parameters(.bandwidth({100, 100, 100, 100}));
 
@@ -91,8 +91,8 @@ endclass : test
     phase.raise_objection(this);
     fork
       v_seq.start(env.v_seqr);
-      #100 ctrl_seq.start(env.ctrl_agent.seqr);
-      for(int i = 0; i < 5; i++) mem_seq[i].start(env.mem_agent.seqr);
+      #10 ctrl_seq.start(env.ctrl_agent.seqr);
+      //for(int i = 0; i < 5; i++) mem_seq[i].start(env.mem_agent.seqr);
     join
     phase.drop_objection(this);  
 

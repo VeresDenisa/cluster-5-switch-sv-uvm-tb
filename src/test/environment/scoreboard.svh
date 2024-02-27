@@ -187,7 +187,7 @@ function void scoreboard::build_phase(uvm_phase phase);
   function void scoreboard::report_phase(uvm_phase phase);
     `uvm_info(get_name(), $sformatf("---> EXIT PHASE: --> REPORT <--"), UVM_MEDIUM);
     for(int i = 0; i < 4; i++) begin
-      `uvm_info(get_name(), $sformatf("PORT %0d: Number of matched 8 bits: %0d", i, match[i]), UVM_LOW);
+      `uvm_info(get_name(), $sformatf("PORT %0d: Number of matched 8 bits: %0d", i, match[i]), UVM_FULL);
       `uvm_info(get_name(), $sformatf("PORT %0d: Number of missed 8 bits: %0d", i, miss[i]), UVM_LOW);
     end
     `uvm_info(get_name(), $sformatf("<--- EXIT PHASE: --> REPORT <--"), UVM_MEDIUM);
