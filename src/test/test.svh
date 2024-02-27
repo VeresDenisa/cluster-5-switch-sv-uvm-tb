@@ -91,7 +91,8 @@ endclass : test
     phase.raise_objection(this);
     fork
       v_seq.start(env.v_seqr);
-      #10 ctrl_seq.start(env.ctrl_agent.seqr);
+      #100 ctrl_seq.start(env.ctrl_agent.seqr);
+      #20 uvm_hdl_force("testbench.DUT.port_read", 4'hF);
       //for(int i = 0; i < 5; i++) mem_seq[i].start(env.mem_agent.seqr);
     join
     phase.drop_objection(this);  
