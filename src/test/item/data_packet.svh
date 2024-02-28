@@ -101,3 +101,4 @@ endfunction : post_randomize
 function string data_packet::convert2string();
   return $sformatf("DA: 'h%0h  SA: 'h%0h  LENGTH: 'h%0h PAYLOAD['h%0h]: %p PARITY: 'h%0h", da, sa, length, payload.size(), payload, parity);
 endfunction : convert2string
+

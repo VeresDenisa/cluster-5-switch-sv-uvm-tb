@@ -23,10 +23,10 @@ class scoreboard extends uvm_scoreboard;
   bit [7:0] mem_data[4];
   int port_indexes[$];
 
-  port_item port_prev[4];
+  port_item port_prev[4], port_prev_prev[4];
   port_item port_temp[4];
 
-  bit status_prev;
+  bit status_prev, status_prev_prev;
   memory_item mem_prev;
 
   bit port_unknown;
@@ -74,6 +74,9 @@ function void scoreboard::build_phase(uvm_phase phase);
       port_prev[i] = new("port_prev");
       port_prev[i].read = 1'b0;
       port_prev[i].ready = 1'b0;  
+      port_prev_prev[i] = new("port_prev_prev");
+      port_prev_prev[i].read = 1'b0;
+      port_prev_prev[i].ready = 1'b0;  
       port_temp[i] = new("port_temp");
       miss[i] = 0;
       match[i] = 0;
@@ -83,6 +86,7 @@ function void scoreboard::build_phase(uvm_phase phase);
     port_unknown = 1'b0;
     port_current = 0;
     status_prev = 1'b0; 
+    status_prev_prev = 1'b0; 
   
     `uvm_info(get_name(), $sformatf("---> EXIT PHASE: --> BUILD <--"), UVM_DEBUG);
   endfunction : build_phase
@@ -92,7 +96,7 @@ function void scoreboard::build_phase(uvm_phase phase);
   function void scoreboard::write_control(control_item t);
     `uvm_info(get_name(), $sformatf("Received item : %s ", t.convert2string()), UVM_FULL);
     
-    if(status_prev === 1'b1) begin : data_status_activated
+    if(status_prev === 1'b1 && status_prev_prev === 1'b1) begin : data_status_activated
       `uvm_info(get_name(), $sformatf("Data status active."), UVM_DEBUG);
       if(port_unknown !== 1'b0) begin : middle_of_transaction
         `uvm_info(get_name(), $sformatf("Add item to input packet in middle of transaction."), UVM_DEBUG);
@@ -104,6 +108,7 @@ function void scoreboard::build_phase(uvm_phase phase);
         if(port_indexes.size() > 0) begin : DA_is_mem
           port_unknown = 1'b1; 
           port_current = port_indexes.pop_front(); 
+          port_queue[port_current].push_back(8'hFF);
           port_queue[port_current].push_back(t.data_in);
           `uvm_info(get_name(), $sformatf("Memory data and received item match at beginning of transaction."), UVM_DEBUG);
         end : DA_is_mem
@@ -117,6 +122,7 @@ function void scoreboard::build_phase(uvm_phase phase);
       `uvm_info(get_name(), $sformatf("End of input transaction. Finish packet."), UVM_DEBUG);
       port_unknown = 1'b0;
     end : data_status_deactivated
+    status_prev_prev = status_prev;
     status_prev = t.sw_enable_in;
   endfunction : write_control
   
@@ -136,18 +142,21 @@ function void scoreboard::build_phase(uvm_phase phase);
       for(int i = 0; i < 4; i++) begin
         port_prev[i].read = 1'b0;
         port_prev[i].ready = 1'b0;
+        port_prev_prev[i].read = 1'b0;
+        port_prev_prev[i].ready = 1'b0;
         port_queue[i].delete();
       end 
       port_current = 0;
       port_unknown = 1'b0;
       status_prev = 1'b0;
+      status_prev_prev = 1'b0;
       mem_prev.set_item(2'h00, 2'h00, 1'b0, 1'b0);
     end: reset_all    
   endfunction : write_reset
   
      
   function void scoreboard::check_packet(port_item t, int port_ind);
-    if(port_prev[port_ind].read == 1'b1 && port_prev[port_ind].ready == 1'b1 && t.ready == 1'b1) begin : read_port
+    if(port_prev[port_ind].read == 1'b1 && port_prev[port_ind].ready == 1'b1 && port_prev_prev[port_ind].read == 1'b1 && port_prev_prev[port_ind].ready == 1'b1 && t.ready == 1'b1) begin : read_port
       `uvm_info(get_name(), $sformatf("A valid read was made from port %0d.", port_ind), UVM_DEBUG);
       port_temp[port_ind].port = port_queue[port_ind].pop_front();
       
@@ -156,9 +165,10 @@ function void scoreboard::build_phase(uvm_phase phase);
         `uvm_info(get_name(), $sformatf("MATCH"), UVM_DEBUG);
       end else begin
         miss[port_ind]++;
-        `uvm_info(get_name(), $sformatf("MISS"), UVM_DEBUG);
+        `uvm_info(get_name(), $sformatf("MISS"), UVM_LOW);
       end
     end : read_port
+    port_prev_prev[port_ind].copy(port_prev[port_ind]);
     port_prev[port_ind].copy(t);
   endfunction : check_packet
 
@@ -187,7 +197,7 @@ function void scoreboard::build_phase(uvm_phase phase);
   function void scoreboard::report_phase(uvm_phase phase);
     `uvm_info(get_name(), $sformatf("---> EXIT PHASE: --> REPORT <--"), UVM_MEDIUM);
     for(int i = 0; i < 4; i++) begin
-      `uvm_info(get_name(), $sformatf("PORT %0d: Number of matched 8 bits: %0d", i, match[i]), UVM_FULL);
+      `uvm_info(get_name(), $sformatf("PORT %0d: Number of matched 8 bits: %0d", i, match[i]), UVM_LOW);
       `uvm_info(get_name(), $sformatf("PORT %0d: Number of missed 8 bits: %0d", i, miss[i]), UVM_LOW);
     end
     `uvm_info(get_name(), $sformatf("<--- EXIT PHASE: --> REPORT <--"), UVM_MEDIUM);

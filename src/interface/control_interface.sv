@@ -21,6 +21,10 @@ interface control_interface(input bit clock);
     driver.sw_enable_in <= 1'b1;
 
     @(driver);
+    driver.sw_enable_in <= 1'b1;
+    driver.data_in      <= 8'hFF;
+
+    @(driver);
     driver.data_in      <= packet.da;
     driver.sw_enable_in <= packet.sw_enable_in[0];
     
@@ -44,7 +48,7 @@ interface control_interface(input bit clock);
 
     @(driver) driver.sw_enable_in <= packet.sw_enable_in[packet.length+5];
     
-    repeat(packet.delay) @(driver);
+    repeat(20) @(driver);
   endtask : send
   
   function automatic void receive(ref control_item item);
