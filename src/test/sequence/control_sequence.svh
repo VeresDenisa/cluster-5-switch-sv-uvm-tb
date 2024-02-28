@@ -51,7 +51,7 @@ task control_sequence::body();
     	if(!packet.randomize())
       		`uvm_error(this.get_name(), "Failed randomization");
     end
-    else packet.set_all(memory_data[i%4], 8'h00, 8'h05, 8'h35);
+    else packet.set_all(memory_data[i%4], 8'h01, 8'h05, 8'h35);
     if(enable_status_low != 0)
       packet.set_status_low(.position(position));
     if(no_delay == 1'b1) packet.delay = 0;

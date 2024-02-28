@@ -96,7 +96,7 @@ function void scoreboard::build_phase(uvm_phase phase);
   function void scoreboard::write_control(control_item t);
     `uvm_info(get_name(), $sformatf("Received item : %s ", t.convert2string()), UVM_FULL);
     
-    if(status_prev === 1'b1 && status_prev_prev === 1'b1) begin : data_status_activated
+    if(status_prev === 1'b1 && status_prev_prev === 1'b1 && t.data_in !== 8'h00) begin : data_status_activated
       `uvm_info(get_name(), $sformatf("Data status active."), UVM_DEBUG);
       if(port_unknown !== 1'b0) begin : middle_of_transaction
         `uvm_info(get_name(), $sformatf("Add item to input packet in middle of transaction."), UVM_DEBUG);
@@ -156,7 +156,7 @@ function void scoreboard::build_phase(uvm_phase phase);
   
      
   function void scoreboard::check_packet(port_item t, int port_ind);
-    if(port_prev[port_ind].read == 1'b1 && port_prev[port_ind].ready == 1'b1 && port_prev_prev[port_ind].read == 1'b1 && port_prev_prev[port_ind].ready == 1'b1 && t.ready == 1'b1) begin : read_port
+    if(t.port !== 8'h00 && port_prev[port_ind].read == 1'b1 && port_prev[port_ind].ready == 1'b1 && port_prev_prev[port_ind].read == 1'b1 && port_prev_prev[port_ind].ready == 1'b1 && t.ready == 1'b1) begin : read_port
       `uvm_info(get_name(), $sformatf("A valid read was made from port %0d.", port_ind), UVM_DEBUG);
       port_temp[port_ind].port = port_queue[port_ind].pop_front();
       

@@ -17,14 +17,14 @@ class data_packet extends uvm_sequence_item;
   
   
   constraint DA_memory_data_value  { (random_DA == PREDEFINED) -> da dist { memory_data[0]:/20, memory_data[1]:/20, memory_data[2]:/20, memory_data[3]:/20}; }
-  constraint length_pseudo_random  { length dist {'h00:/10,'h05:/10,'h10:/10,'h15:/10,['h01:'h54]:/10,['h56:'hA9]:/10,['hA9:'hFE]:/10}; }
+  constraint length_pseudo_random  { length dist {'h05:/10,'h10:/10,'h15:/10,['h01:'h54]:/10,['h56:'hA9]:/10,['hA9:'hFE]:/10}; }
   constraint length_min_max_value  { length inside {[min_length:max_length]}; }
 
   function new(string name = "data_packet");
     super.new(name);
   endfunction : new
 
-  extern function void set_parameters(int min_length = 0, int max_length = 255, bit [7:0] memory_data[4] = {0, 85, 170, 255}, random_predefined_enum random_DA = PREDEFINED);
+  extern function void set_parameters(int min_length = 1, int max_length = 254, bit [7:0] memory_data[4] = {1, 85, 170, 255}, random_predefined_enum random_DA = PREDEFINED);
   extern function void set_status_low(int position);
   extern function void set_all(bit[7:0] da, bit[7:0] sa, bit[7:0] length, bit[7:0] pay);
   
@@ -77,7 +77,7 @@ function void data_packet::set_status_low(int position);
   sw_enable_in[position] = 1'b0;
 endfunction : set_status_low
     
-function void data_packet::set_parameters(int min_length = 0, int max_length = 255, bit [7:0] memory_data[4] = {0, 85, 170, 255}, random_predefined_enum random_DA = PREDEFINED);
+function void data_packet::set_parameters(int min_length = 1, int max_length = 254, bit [7:0] memory_data[4] = {1, 85, 170, 255}, random_predefined_enum random_DA = PREDEFINED);
   this.max_length  = max_length;
   this.min_length = min_length;
   this.memory_data = memory_data;
@@ -87,7 +87,7 @@ endfunction : set_parameters
 function void data_packet::post_randomize();
   bit [7:0] temp, parity_temp = 8'h00;
   for(int i=0; i<length; i++) begin
-    temp = $urandom_range(0,255);
+    temp = $urandom_range(1,255);
     payload.push_front(temp);
     parity_temp = parity_temp | temp;
   end

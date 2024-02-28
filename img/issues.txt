@@ -1,0 +1,15 @@
+test_no_2:
+First control packet -> disable switch_en_in for 1 clock at the same time as DA doesn't cause a dropped packet.
+
+test_no_8:
+Reset affects the memory!!!!!!!
+If the DA doesn't match any memory port addresses, then the data is driven out on all the ports.
+
+test_no_12:
+If you put port_read on 0 for one clock the output data is still dven out. Shouldn't it stop for one clock and wait for it to be 0 again?
+
+
+
+
+
+1. How should you treat the case when 2 or more memory port addresses are identical?
