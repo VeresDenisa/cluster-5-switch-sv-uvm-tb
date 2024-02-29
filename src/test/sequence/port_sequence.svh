@@ -29,11 +29,11 @@ task port_sequence::body();
   item = port_item::type_id::create("item");
   start_item(item);
   item.bandwidth = this.bandwidth;
-  if(this.is_ready !== 1'b1) begin
+  //if(this.is_ready !== 1'b1) begin
     item.read = 1'b0;
-  end else begin
-  	if(!item.randomize())
-      		`uvm_error(this.get_name(), "Failed randomization");
-  end
+  //end else begin
+  //	if(!item.randomize())
+   //   		`uvm_error(this.get_name(), "Failed randomization");
+  //end
   finish_item(item);
 endtask : body

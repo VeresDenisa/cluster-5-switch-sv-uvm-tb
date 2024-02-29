@@ -13,3 +13,5 @@ If you put port_read on 0 for one clock the output data is still dven out. Shoul
 
 
 1. How should you treat the case when 2 or more memory port addresses are identical?
+
+

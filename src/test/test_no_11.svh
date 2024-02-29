@@ -62,6 +62,8 @@ endclass : test_no_11
     fork
       ctrl_seq.start(env.ctrl_agent.seqr);
       v_seq.start(env.v_seqr);
+      #5000 uvm_hdl_force("testbench.DUT.port_read", 4'hF);
+      //#5010 uvm_hdl_force("testbench.DUT.port_read", 4'h0);
     join
     phase.drop_objection(this);  
 

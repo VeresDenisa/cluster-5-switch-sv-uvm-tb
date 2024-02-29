@@ -58,7 +58,7 @@ endclass : test
     env = environment::type_id::create("env", this);
    
     foreach(first_memory_config_data[i]) begin
-      $cast(first_memory_config_data[i], 84 * i + 1);
+      $cast(first_memory_config_data[i], 83 * i + 1);
       uvm_config_db #(logic[7:0])::set(this, "*", $sformatf("mem_data[%0d]", i), first_memory_config_data[i]);
     end
     

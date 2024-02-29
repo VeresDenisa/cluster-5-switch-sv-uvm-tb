@@ -16,6 +16,8 @@ class data_packet extends uvm_sequence_item;
   bit [7:0] memory_data[4];
   
   
+  constraint SA_diff_EOF           { sa != 8'h55; }
+  constraint length_diff_EOF       { length != 8'h55; }
   constraint DA_memory_data_value  { (random_DA == PREDEFINED) -> da dist { memory_data[0]:/20, memory_data[1]:/20, memory_data[2]:/20, memory_data[3]:/20}; }
   constraint length_pseudo_random  { length dist {'h05:/10,'h10:/10,'h15:/10,['h01:'h54]:/10,['h56:'hA9]:/10,['hA9:'hFE]:/10}; }
   constraint length_min_max_value  { length inside {[min_length:max_length]}; }
@@ -43,7 +45,7 @@ function void data_packet::set_all(bit[7:0] da, bit[7:0] sa, bit[7:0] length, bi
   this.length = length;
   for(int i=0; i<length; i++) begin
     payload.push_front(pay);
-    parity_temp = parity_temp | pay;
+    parity_temp = parity_temp ^ pay;
   end
   this.parity = parity_temp;
   for(int i=0; i<length+5; i++) begin
@@ -67,7 +69,7 @@ function bit data_packet::check();
   bit [7:0] parity_temp = 8'h00;
   if(this.payload.size() != this.length) return 1'b0;
   foreach(payload[i]) begin
-    parity_temp = parity_temp | payload[i];
+    parity_temp = parity_temp ^ payload[i];
   end
   if(parity_temp !== this.parity) return 1'b0;
   return 1'b1;
@@ -87,9 +89,10 @@ endfunction : set_parameters
 function void data_packet::post_randomize();
   bit [7:0] temp, parity_temp = 8'h00;
   for(int i=0; i<length; i++) begin
-    temp = $urandom_range(1,255);
+    temp = $urandom_range(0,255);
+    if(temp == 8'h55) temp = 8'h56;
     payload.push_front(temp);
-    parity_temp = parity_temp | temp;
+    parity_temp = parity_temp ^ temp;
   end
   parity = parity_temp;
   for(int i=0; i<length+5; i++) begin
