@@ -3,12 +3,14 @@ typedef enum bit { PREDEFINED  = 1'b1, RANDOM  = 1'b0 } random_predefined_enum;
 class data_packet extends uvm_sequence_item;
   `uvm_object_utils(data_packet);
   
+       bit [7:0]   SOF = 8'hFF;
   rand bit [7:0]   da;
   rand bit [7:0]   sa;
   rand bit [7:0]   length;
        bit [7:0]   payload[$];
-       bit         sw_enable_in[$];
        bit [7:0]   parity;
+       bit [7:0]   EOF = 8'h55;
+       bit         sw_enable_in[$];
   
   int delay = 9;
   int max_length = 255, min_length = 0;
@@ -43,12 +45,12 @@ function void data_packet::set_all(bit[7:0] da, bit[7:0] sa, bit[7:0] length, bi
   this.da = da;
   this.sa = sa;
   this.length = length;
-  for(int i=0; i<length; i++) begin
+  for(int i=0; i<length-1; i++) begin
     payload.push_front(pay);
     parity_temp = parity_temp ^ pay;
   end
   this.parity = parity_temp;
-  for(int i=0; i<length+5; i++) begin
+  for(int i=0; i<length+6; i++) begin
     sw_enable_in.push_front(1'b1);
   end
   sw_enable_in.push_back(1'b0);
@@ -58,7 +60,7 @@ function bit data_packet::compare(data_packet item);
   if(this.da !== item.da) return 1'b0;
   if(this.sa !== item.sa) return 1'b0;
   if(this.length !== item.length) return 1'b0;
-  for(int i = 0; i < this.length; i++) begin
+  for(int i = 0; i < this.length-1; i++) begin
     if(this.payload[i] !== item.payload[i]) return 1'b0;
   end
   if(this.parity !== item.parity) return 1'b0;
@@ -67,9 +69,9 @@ endfunction
     
 function bit data_packet::check();
   bit [7:0] parity_temp = 8'h00;
-  if(this.payload.size() != this.length) return 1'b0;
-  foreach(payload[i]) begin
-    parity_temp = parity_temp ^ payload[i];
+  if(this.payload.size() != this.length-1) return 1'b0;
+  for(int i = 0; i < this.length-1; i++) begin
+    parity_temp = parity_temp ^ this.payload[i];
   end
   if(parity_temp !== this.parity) return 1'b0;
   return 1'b1;
@@ -88,14 +90,14 @@ endfunction : set_parameters
 
 function void data_packet::post_randomize();
   bit [7:0] temp, parity_temp = 8'h00;
-  for(int i=0; i<length; i++) begin
+  for(int i=0; i<length-1; i++) begin
     temp = $urandom_range(0,255);
     if(temp == 8'h55) temp = 8'h56;
     payload.push_front(temp);
     parity_temp = parity_temp ^ temp;
   end
   parity = parity_temp;
-  for(int i=0; i<length+5; i++) begin
+  for(int i=0; i<length+6; i++) begin
     sw_enable_in.push_front(1'b1);
   end
   sw_enable_in.push_back(1'b0);

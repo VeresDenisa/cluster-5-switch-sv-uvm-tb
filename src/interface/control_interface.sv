@@ -18,37 +18,37 @@ interface control_interface(input bit clock);
   
   task send(data_packet packet);
     @(driver);
-    driver.sw_enable_in <= 1'b1;
+    driver.sw_enable_in <= packet.sw_enable_in[0];
 
     @(driver);
-    driver.sw_enable_in <= 1'b1;
-    driver.data_in      <= 8'hFF;
+    driver.sw_enable_in <= packet.sw_enable_in[1];
+    driver.data_in      <= packet.SOF;
 
     @(driver);
     driver.data_in      <= packet.da;
-    driver.sw_enable_in <= packet.sw_enable_in[0];
+    driver.sw_enable_in <= packet.sw_enable_in[2];
     
     @(driver);
     driver.data_in      <= packet.sa;
-    driver.sw_enable_in <= packet.sw_enable_in[1];
+    driver.sw_enable_in <= packet.sw_enable_in[3];
     
     @(driver);
     driver.data_in      <= packet.length;
-    driver.sw_enable_in <= packet.sw_enable_in[2];
+    driver.sw_enable_in <= packet.sw_enable_in[4];
     
     foreach(packet.payload[i]) begin
       @(driver);
       driver.data_in      <= packet.payload[i];
-      driver.sw_enable_in <= packet.sw_enable_in[i+3];
+      driver.sw_enable_in <= packet.sw_enable_in[i+5];
     end
 
     @(driver);
     driver.data_in      <= packet.parity;
-    driver.sw_enable_in <= 1'b1;
+    driver.sw_enable_in <= packet.sw_enable_in[packet.length + 5];
 
     @(driver);
-    driver.data_in      <= 8'h55;
-    driver.sw_enable_in <= 1'b0;
+    driver.data_in      <= packet.SOF;
+    driver.sw_enable_in <= packet.sw_enable_in[packet.length + 6];
     
     //repeat(7) @(driver);
   endtask : send
