@@ -65,7 +65,7 @@ endclass : test
     ctrl_seq = control_sequence::type_id::create("ctrl_seq");
     ctrl_seq.set_da_options(first_memory_config_data);
     
-    ctrl_seq.set_parameters(.nr_items(2), .max_length(5));
+    ctrl_seq.set_parameters(.nr_items(2), .max_length(5), .no_delay(1'b1));
     
     for(int i = 0; i < 5; i++) begin
       mem_seq[i] = memory_sequence::type_id::create("mem_seq");
