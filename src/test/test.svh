@@ -65,7 +65,7 @@ endclass : test
     ctrl_seq = control_sequence::type_id::create("ctrl_seq");
     ctrl_seq.set_da_options(first_memory_config_data);
     
-    ctrl_seq.set_parameters(.nr_items(20));
+    ctrl_seq.set_parameters(.nr_items(2), .max_length(5));
     
     for(int i = 0; i < 5; i++) begin
       mem_seq[i] = memory_sequence::type_id::create("mem_seq");
@@ -74,8 +74,7 @@ endclass : test
     end    
 
     v_seq = virtual_sequence::type_id::create("v_seq");
-    v_seq.set_parameters(.bandwidth({100, 100, 100, 100}));
-
+    
     `uvm_info(get_name(), $sformatf("<--- EXIT PHASE: --> BUILD <--"), UVM_DEBUG);
   endfunction : build_phase
     
@@ -92,7 +91,6 @@ endclass : test
     fork
       v_seq.start(env.v_seqr);
       #100 ctrl_seq.start(env.ctrl_agent.seqr);
-      //#20 uvm_hdl_force("testbench.DUT.port_read", 4'hF);
       for(int i = 0; i < 5; i++) mem_seq[i].start(env.mem_agent.seqr);
     join
     phase.drop_objection(this);  

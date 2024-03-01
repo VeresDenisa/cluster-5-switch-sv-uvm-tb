@@ -50,8 +50,7 @@ endclass : test_no_4
     end
     
     v_seq = virtual_sequence::type_id::create("v_seq");
-    v_seq.set_parameters(.bandwidth({100, 100, 100, 100}));
-
+   
     `uvm_info(get_name(), $sformatf("<--- EXIT PHASE: --> BUILD <--"), UVM_DEBUG);
   endfunction : build_phase
     

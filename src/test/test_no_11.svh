@@ -44,8 +44,7 @@ endclass : test_no_11
     ctrl_seq.set_parameters(.nr_items(`NO_OF_TESTS));
     
     v_seq = virtual_sequence::type_id::create("v_seq");
-    v_seq.set_parameters(.bandwidth({50, 50, 50, 50}));
-
+    
     `uvm_info(get_name(), $sformatf("<--- EXIT PHASE: --> BUILD <--"), UVM_DEBUG);
   endfunction : build_phase
     
@@ -62,8 +61,6 @@ endclass : test_no_11
     fork
       ctrl_seq.start(env.ctrl_agent.seqr);
       v_seq.start(env.v_seqr);
-      #5000 uvm_hdl_force("testbench.DUT.port_read", 4'hF);
-      //#5010 uvm_hdl_force("testbench.DUT.port_read", 4'h0);
     join
     phase.drop_objection(this);  
 

@@ -44,7 +44,6 @@ endclass : test_no_12
     ctrl_seq.set_parameters(.nr_items(`NO_OF_TESTS), .min_length(254));
     
     v_seq = virtual_sequence::type_id::create("v_seq");
-    v_seq.set_parameters(.bandwidth({80, 80, 80, 80}));
     
     `uvm_info(get_name(), $sformatf("<--- EXIT PHASE: --> BUILD <--"), UVM_DEBUG);
   endfunction : build_phase

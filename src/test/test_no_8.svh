@@ -49,8 +49,7 @@ endclass : test_no_8
     end
     
     v_seq = virtual_sequence::type_id::create("v_seq");
-    v_seq.set_parameters();
-    
+   
     `uvm_info(get_name(), $sformatf("<--- EXIT PHASE: --> BUILD <--"), UVM_DEBUG);
   endfunction : build_phase
     
