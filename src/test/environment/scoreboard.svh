@@ -34,6 +34,8 @@ class scoreboard extends uvm_scoreboard;
   extern function void write_port_2(port_item t);
   extern function void write_port_3(port_item t);  
 
+  extern function void write_port(port_item t, int port_index);
+
   bit [7:0]port_queue[4][$];
   bit transaction_started;
   
@@ -45,6 +47,10 @@ class scoreboard extends uvm_scoreboard;
 
   control_item control_item_prev;
   memory_item memory_item_prev;
+
+  port_item port_item_prev_prev[4];
+  port_item port_item_prev[4];
+  port_item port_item_temp[4];
 endclass : scoreboard
 
 
@@ -54,6 +60,9 @@ function void scoreboard::build_phase(uvm_phase phase);
 
     for(int i = 0; i < 4; i++) begin
       mem_data[i] = 8'h00;
+      port_item_prev_prev[i] = new("port_item_prev_prev");
+      port_item_prev[i] = new("port_item_prev");
+      port_item_temp[i] = new("port_item_temp");
     end
 
     control_item_prev = new("control_item_prev");
@@ -113,42 +122,66 @@ function void scoreboard::build_phase(uvm_phase phase);
     end : receiving_transaction
     control_item_prev.copy(t);
   endfunction : write_control    
+
+  function void scoreboard::write_port(port_item t, int port_index);
+    if(port_item_prev_prev[port_index].read === 1'b1 && port_item_prev_prev[port_index].ready === 1'b1) begin : port_read_activated
+      port_item_temp[port_index].port = port_queue[port_index].pop_front();
+      if(t.port === port_item_temp[port_index].port) begin : correct_port_read
+        `uvm_info(get_name(), $sformatf("MATCH port read from port %0h : %0h.", port_index, t.port), UVM_DEBUG);
+      end : correct_port_read
+      else begin : incorrect_port_read
+        `uvm_info(get_name(), $sformatf("MISS port read from port %0h : expected %0h; received %0h.", port_index, port_item_temp[port_index].port, t.port), UVM_LOW);
+        port_queue[port_index].push_front(port_item_temp[port_index].port);
+      end : incorrect_port_read
+    end : port_read_activated
+    port_item_prev_prev[port_index].copy(port_item_prev[port_index]);
+    port_item_prev[port_index].copy(t);
+  endfunction : write_port
            
   function void scoreboard::write_port_0(port_item t);
     `uvm_info(this.get_name(), $sformatf("Received item from PORT 0 : %s ", t.convert2string()), UVM_FULL);
+    write_port(t, 0);
   endfunction : write_port_0
   
   function void scoreboard::write_port_1(port_item t);
     `uvm_info(this.get_name(), $sformatf("Received item from PORT 1 : %s ", t.convert2string()), UVM_FULL);
+    write_port(t, 1);
   endfunction : write_port_1
   
   function void scoreboard::write_port_2(port_item t);
     `uvm_info(this.get_name(), $sformatf("Received item from PORT 2 : %s ", t.convert2string()), UVM_FULL);
+    write_port(t, 2);
   endfunction : write_port_2
   
   function void scoreboard::write_port_3(port_item t);
     `uvm_info(this.get_name(), $sformatf("Received item from PORT 3 : %s ", t.convert2string()), UVM_FULL);
+    write_port(t, 3);
   endfunction : write_port_3  
   
   function void scoreboard::write_memory(memory_item t);
     `uvm_info(get_name(), $sformatf("Received item : %s ", t.convert2string()), UVM_FULL);
     if(memory_item_prev.mem_sel_en === 1'b1) begin : memory_activated
+      `uvm_info(get_name(), $sformatf("Memory access activated."), UVM_DEBUG);
       if(memory_item_prev.mem_addr >= 4) begin : incorrect_memory_address
         `uvm_info(get_name(), $sformatf("Incorrect memory port number %0h.", memory_item_prev.mem_addr), UVM_DEBUG);
       end : incorrect_memory_address
-      else if(memory_item_prev.mem_wr_rd_s === 1'b1) begin : memory_write
-        `uvm_info(get_name(), $sformatf("Correct port %0h address changed from %0h to %0h.", memory_item_prev.mem_addr, mem_data[memory_item_prev.mem_addr], t.mem_wr_data), UVM_DEBUG);
-        mem_data[memory_item_prev.mem_addr] = t.mem_wr_data;
-      end : memory_write
-      else begin : memory_read
-        if(mem_data[memory_item_prev.mem_addr] === t.mem_rd_data>>(8*memory_item_prev.mem_addr)) begin : correct_memory_read
-          `uvm_info(get_name(), $sformatf("Correct memory read from port %0h : %0h.", memory_item_prev.mem_addr, t.mem_rd_data>>(8*memory_item_prev.mem_addr)), UVM_DEBUG);
-        end : correct_memory_read
-        else begin : incorrect_memory_read
-          `uvm_info(get_name(), $sformatf("Incorrect memory read from port %0h : %0h.", memory_item_prev.mem_addr, t.mem_rd_data>>(8*memory_item_prev.mem_addr)), UVM_LOW);
-        end : incorrect_memory_read
-      end : memory_read
+      else 
+        if(memory_item_prev.mem_wr_rd_s === 1'b1) begin : memory_write
+          `uvm_info(get_name(), $sformatf("Correct port %0h address changed from %0h to %0h.", memory_item_prev.mem_addr, mem_data[memory_item_prev.mem_addr], t.mem_wr_data), UVM_DEBUG);
+          mem_data[memory_item_prev.mem_addr] = t.mem_wr_data;
+        end : memory_write
+        else begin : memory_read
+          if(mem_data[memory_item_prev.mem_addr] === t.mem_rd_data>>(8*memory_item_prev.mem_addr)) begin : correct_memory_read
+            `uvm_info(get_name(), $sformatf("Correct memory read from port %0h : %0h.", memory_item_prev.mem_addr, t.mem_rd_data>>(8*memory_item_prev.mem_addr)), UVM_DEBUG);
+          end : correct_memory_read
+          else begin : incorrect_memory_read
+            `uvm_info(get_name(), $sformatf("Incorrect memory read from port %0h : %0h.", memory_item_prev.mem_addr, t.mem_rd_data>>(8*memory_item_prev.mem_addr)), UVM_LOW);
+          end : incorrect_memory_read
+        end : memory_read
     end : memory_activated
+    else begin : memory_deactivated
+      `uvm_info(get_name(), $sformatf("Memory access deactivated."), UVM_DEBUG);
+    end : memory_deactivated
     memory_item_prev.copy(t);
   endfunction : write_memory
   
@@ -160,6 +193,12 @@ function void scoreboard::build_phase(uvm_phase phase);
       transaction_started = 1'b0;
       for(int i = 0; i < 4; i++) begin
         mem_data[i] = 8'h00;
+        port_item_prev_prev[i].read = 1'b0;
+        port_item_prev[i].read = 1'b0;
+        port_item_temp[i].read = 1'b0;
+        port_item_prev_prev[i].ready = 1'b0;
+        port_item_prev[i].ready = 1'b0;
+        port_item_temp[i].ready = 1'b0;
       end
     end: reset_all    
   endfunction : write_reset
