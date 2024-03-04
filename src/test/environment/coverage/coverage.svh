@@ -98,13 +98,16 @@ function void coverage::write_control(control_item t);
   
   if(t.sw_enable_in == 1'b1) begin : build_data_packet
     case(position)
-      0: data_pck.da = t.data_in;
-      1: data_pck.sa = t.data_in;
-      2: data_pck.length = t.data_in;
+      0: data_pck.SOF = t.data_in;
+      1: data_pck.da = t.data_in;
+      2: data_pck.sa = t.data_in;
+      3: data_pck.length = t.data_in;
+      (4 + data_pck.length): data_pck.parity = t.data_in;
+      (5 + data_pck.length): data_pck.EOF = t.data_in;
       default: data_pck.payload.push_back(t.data_in);
     endcase
     position++;
-    if(position >= 3 && data_pck.length == data_pck.payload.size()) begin : build_data_packet_done
+    if(position >= 6 + data_pck.length) begin : build_data_packet_done
       data_cvg.sample();
       data_pck.payload.delete();
     end : build_data_packet_done
