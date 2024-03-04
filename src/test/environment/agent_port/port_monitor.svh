@@ -45,6 +45,6 @@ task port_monitor::run_phase(uvm_phase phase);
       an_port.write(item_current);
     end
   end : forever_monitor
-  
+
   `uvm_info(get_name(), $sformatf("<--- EXIT PHASE: --> RUN <--"), UVM_DEBUG);
 endtask : run_phase

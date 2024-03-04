@@ -65,7 +65,7 @@ endclass : test
     ctrl_seq = control_sequence::type_id::create("ctrl_seq");
     ctrl_seq.set_da_options(first_memory_config_data);
     
-    ctrl_seq.set_parameters(.nr_items(2), .max_length(5), .no_delay(1'b1));
+    ctrl_seq.set_parameters(.nr_items(3), .max_length(5), .no_delay(1'b1));
     
     for(int i = 0; i < 5; i++) begin
       mem_seq[i] = memory_sequence::type_id::create("mem_seq");
@@ -87,6 +87,8 @@ endclass : test
   task test::main_phase(uvm_phase phase);
     `uvm_info(get_name(), $sformatf("---> ENTER PHASE: --> MAIN <--"), UVM_DEBUG);
     
+    //phase.phase_done.set_drain_time(this, 10);
+
     phase.raise_objection(this);
     fork
       v_seq.start(env.v_seqr);

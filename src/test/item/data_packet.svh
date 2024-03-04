@@ -35,11 +35,23 @@ class data_packet extends uvm_sequence_item;
   extern function bit compare(data_packet item);
   extern function bit check();
   extern function void post_randomize();
+  extern function void copy(data_packet item);
+  extern function void reset_all();
   extern function string convert2string();  
 endclass : data_packet
 
 
     
+function void data_packet::copy(data_packet item);
+  this.SOF     = item.SOF;
+  this.EOF     = item.EOF;
+  this.da      = item.da;
+  this.sa      = item.sa;
+  this.length  = item.length;
+  this.parity  = item.parity;
+  this.payload = item.payload;
+endfunction
+
 function void data_packet::set_all(bit[7:0] da, bit[7:0] sa, bit[7:0] length, bit[7:0] pay);
   bit [7:0] parity_temp = 8'h00;
   this.da = da;
@@ -57,6 +69,10 @@ function void data_packet::set_all(bit[7:0] da, bit[7:0] sa, bit[7:0] length, bi
 endfunction : set_all
     
 function bit data_packet::compare(data_packet item);
+  `uvm_info(get_name(), $sformatf("Packet 1 to compare : %s ", this.convert2string()), UVM_DEBUG);
+  `uvm_info(get_name(), $sformatf("Packet 2 to compare : %s ", item.convert2string()), UVM_DEBUG);
+  if(this.SOF !== item.SOF) return 1'b0;
+  if(this.EOF !== item.EOF) return 1'b0;
   if(this.da !== item.da) return 1'b0;
   if(this.sa !== item.sa) return 1'b0;
   if(this.length !== item.length) return 1'b0;
@@ -69,6 +85,9 @@ endfunction
     
 function bit data_packet::check();
   bit [7:0] parity_temp = 8'h00;
+  `uvm_info(get_name(), $sformatf("Packet to check : %s ", this.convert2string()), UVM_DEBUG);
+  if(this.SOF !== 8'hFF) return 1'b0;
+  if(this.EOF !== 8'h55) return 1'b0;
   if(this.payload.size() != this.length-1) return 1'b0;
   for(int i = 0; i < this.length-1; i++) begin
     parity_temp = parity_temp ^ this.payload[i];
@@ -104,6 +123,15 @@ function void data_packet::post_randomize();
 endfunction : post_randomize
 
 function string data_packet::convert2string();
-  return $sformatf("DA: 'h%0h  SA: 'h%0h  LENGTH: 'h%0h PAYLOAD['h%0h]: %p PARITY: 'h%0h", da, sa, length, payload.size(), payload, parity);
+  return $sformatf("SOF: 'h%0h DA: 'h%0h  SA: 'h%0h  LENGTH: 'h%0h PAYLOAD['h%0h]: %p PARITY: 'h%0h EOF: 'h%0h", SOF, da, sa, length, payload.size(), payload, parity, EOF);
 endfunction : convert2string
 
+function void data_packet::reset_all();
+  this.SOF = 8'h00;
+  this.da = 8'h00;
+  this.sa = 8'h00;
+  this.length = 8'h00;
+  this.parity = 8'h00;
+  this.EOF = 8'h00;
+  this.payload.delete();
+endfunction : reset_all
