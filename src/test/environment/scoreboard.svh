@@ -102,6 +102,7 @@ function void scoreboard::build_phase(uvm_phase phase);
 
   
   function void scoreboard::make_control_packet(control_item t);
+    data_packet control_packet_temp_child = new("control_packet_temp_child");
     case(control_packet_position)
       0 : control_packet_temp.SOF = t.data_in;
       1 : control_packet_temp.da = t.data_in;
@@ -114,13 +115,15 @@ function void scoreboard::build_phase(uvm_phase phase);
     control_packet_position++;
     if(t.data_in === 8'h55) begin : end_of_packet
       `uvm_info(get_name(), $sformatf("Control packet constructed : %s ", control_packet_temp.convert2string()), UVM_DEBUG);
-      control_packet_queue.push_back(control_packet_temp);
+      control_packet_temp_child.copy(control_packet_temp);
+      control_packet_queue.push_back(control_packet_temp_child);
       control_packet_temp.reset_all();
       control_packet_position = 0;
     end : end_of_packet
   endfunction : make_control_packet
       
   function void scoreboard::write_control(control_item t);
+    data_packet control_packet_temp_child = new("control_packet_temp_child");
     `uvm_info(get_name(), $sformatf("Received item : %s ", t.convert2string()), UVM_FULL);
     if(control_item_prev.sw_enable_in === 1'b1) begin : receiving_transaction
       case(t.data_in)
@@ -163,7 +166,8 @@ function void scoreboard::build_phase(uvm_phase phase);
     end : receiving_transaction
     else if(control_item_prev_prev.sw_enable_in === 1'b1) begin : status_deactivated
       `uvm_info(get_name(), $sformatf("Control packet constructed : %s ", control_packet_temp.convert2string()), UVM_DEBUG);
-      control_packet_queue.push_back(control_packet_temp);
+      control_packet_temp_child.copy(control_packet_temp);
+      control_packet_queue.push_back(control_packet_temp_child);
       control_packet_temp.reset_all();
       control_packet_position = 0;
     end : status_deactivated
@@ -187,6 +191,7 @@ function void scoreboard::build_phase(uvm_phase phase);
   endfunction : write_port
 
   function void scoreboard::make_port_packet(port_item t, int port_index);
+    data_packet port_packet_temp_child = new("port_packet_temp_child");
     case(port_packet_position[port_index])
       0 : port_packet_temp[port_index].SOF = t.port;
       1 : port_packet_temp[port_index].da = t.port;
@@ -199,7 +204,8 @@ function void scoreboard::build_phase(uvm_phase phase);
     port_packet_position[port_index]++;
     if(t.port === 8'h55) begin : end_of_packet
       `uvm_info(get_name(), $sformatf("Port %0h packet constructed : %s ", port_index, port_packet_temp[port_index].convert2string()), UVM_DEBUG);
-      port_packet_queue[port_index].push_back(port_packet_temp[port_index]);
+      port_packet_temp_child.copy(port_packet_temp[port_index]);
+      port_packet_queue[port_index].push_back(port_packet_temp_child);
       port_packet_temp[port_index].reset_all();
       port_packet_position[port_index] = 0;
     end : end_of_packet
@@ -254,7 +260,7 @@ function void scoreboard::build_phase(uvm_phase phase);
   
   function void scoreboard::write_reset(reset_item t);
     `uvm_info(get_name(), $sformatf("Received reset : %s ", t.convert2string()), UVM_FULL);
-    if(t.reset == 1'b0) begin : reset_all
+    if(t.reset == 1'b0) begin : reset_all_signals
       `uvm_info(get_name(), $sformatf("Reset acivated : %s ", t.convert2string()), UVM_FULL);
       port_known = 1'b0;
       transaction_started = 1'b0;
@@ -269,21 +275,24 @@ function void scoreboard::build_phase(uvm_phase phase);
         port_item_temp[i].ready = 1'b0;
         port_packet_temp[i].reset_all();
       end
-    end: reset_all    
+    end: reset_all_signals    
   endfunction : write_reset
   
     
   function void scoreboard::check_phase(uvm_phase phase);
+    int packet_on_control = 0;
     `uvm_info(get_name(), $sformatf("---> ENTER PHASE: --> CHECK <--"), UVM_MEDIUM);
-    `uvm_info(get_name(), $sformatf("There are %0h packets on control.", control_packet_queue.size()), UVM_DEBUG);
-    for(int i = 0; i < control_packet_queue.size(); i++) begin : compare_check_control
+    packet_on_control = control_packet_queue.size();
+    `uvm_info(get_name(), $sformatf("There are %0h packets on control.", packet_on_control), UVM_DEBUG);
+    for(int i = 0; i < packet_on_control; i++) begin : compare_check_control
+      `uvm_info(get_name(), $sformatf("Packet no. %0h - start checking.", i), UVM_DEBUG);
+
       control_packet_temp = control_packet_queue.pop_front();
       control_port_pecket_sent_temp = control_port_pecket_sent.pop_front();
       port_packet_check_temp = port_packet_queue[control_port_pecket_sent_temp].pop_front();
       
-      `uvm_info(get_name(), $sformatf("%s ", control_packet_temp.convert2string()), UVM_DEBUG);
-      `uvm_info(get_name(), $sformatf("%0d ", control_port_pecket_sent_temp), UVM_DEBUG);
-      `uvm_info(get_name(), $sformatf("%s ", port_packet_check_temp.convert2string()), UVM_DEBUG);
+      `uvm_info(get_name(), $sformatf("control: %s", control_packet_temp.convert2string()), UVM_DEBUG);
+      `uvm_info(get_name(), $sformatf("port %0d: %s", control_port_pecket_sent_temp, port_packet_check_temp.convert2string()), UVM_DEBUG);
 
       if(control_packet_temp.compare(port_packet_check_temp) === 1'b1) begin : correct_packet_read
         `uvm_info(get_name(), $sformatf("MATCH packet nr %0h read from port %0h.", i, control_port_pecket_sent_temp), UVM_DEBUG);
@@ -299,6 +308,7 @@ function void scoreboard::build_phase(uvm_phase phase);
         `uvm_info(get_name(), $sformatf("Incorrect structure for packet nr %0h.", i), UVM_LOW);
       end : incorrect_packet_structure
 
+      `uvm_info(get_name(), $sformatf("Packet no. %0h - finished checking.", i), UVM_DEBUG);
     end : compare_check_control
 
     for(int i = 0; i < 4; i++) begin : check_empty_port_queue
