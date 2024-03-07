@@ -46,7 +46,7 @@ endclass : test_no_4
     
     foreach(mem_seq[i]) begin
       mem_seq[i] =  memory_sequence::type_id::create($sformatf("mem_seq[%0d]", i),  this);
-      mem_seq[i].set_parameters(.addr(i), .nr_items(1), .no_random(1));
+      mem_seq[i].set_parameters(.addr(i), .nr_items(1), .no_random(1), .delayed(1'b1), .sel(1'b1), .wr_rd(1'b1));
     end
     
     v_seq = virtual_sequence::type_id::create("v_seq");

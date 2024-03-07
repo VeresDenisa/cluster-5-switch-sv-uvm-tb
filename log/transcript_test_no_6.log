@@ -1,0 +1,1270 @@
+# vsim -c -classdebug -voptargs="+acc" "+UVM_TESTNAME=test_no_6" "+UVM_VERBOSITY=HIGH" -wlf wave/wave_test_no_6.wlf work.testbench -do "log -r /*; coverage save -onexit ucdb/ucdb_test_no_6.ucdb; run -all; quit -f; exit" 
+# Start time: 01:01:18 on Mar 08,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.port_interface(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.base_pack(fast)
+# Loading work.config_pack(fast)
+# Loading work.item_pack(fast)
+# Loading work.port_agent_pack(fast)
+# Loading work.memory_interface(fast)
+# Loading work.memory_agent_pack(fast)
+# Loading work.control_interface(fast)
+# Loading work.control_agent_pack(fast)
+# Loading work.reset_interface(fast)
+# Loading work.reset_agent_pack(fast)
+# Loading work.seq_pack(fast)
+# Loading work.env_pack(fast)
+# Loading work.test_pack(fast)
+# Loading work.testbench_sv_unit(fast)
+# Loading work.testbench(fast)
+# Loading work.reset_interface_sv_unit(fast)
+# Loading work.reset_interface(fast)
+# Loading work.memory_interface_sv_unit(fast)
+# Loading work.memory_interface(fast)
+# Loading work.control_interface_sv_unit(fast)
+# Loading work.control_interface(fast)
+# Loading work.port_interface_sv_unit(fast)
+# Loading work.port_interface(fast)
+# Loading work.switch_top(fast)
+# Loading work.reg_top(fast)
+# Loading work.reg_rtl(fast)
+# Loading work.reg_decoder(fast)
+# Loading work.port_top(fast)
+# Loading work.fifo(fast)
+# Loading work.fsm_in_top(fast)
+# Loading work.watchdog(fast)
+# Loading work.fsm_in(fast)
+# Loading work.fsm_out_top(fast)
+# Loading work.fsm_out(fast)
+# Loading work.reg_top(fast__1)
+# Loading work.reg_decoder(fast__1)
+# Loading work.reg_top(fast__2)
+# Loading work.reg_decoder(fast__2)
+# Loading work.reg_top(fast__3)
+# Loading work.reg_decoder(fast__3)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /opt/questa/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# log -r /*
+#  coverage save -onexit ucdb/ucdb_test_no_6.ucdb
+#  run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test test_no_6...
+# Warning: In instance '\/env_pack::coverage::event_cvg ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] End Of Elaboration
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------------
+# Name                         Type                        Size  Value
+# --------------------------------------------------------------------
+# uvm_test_top                 test_no_6                   -     @496 
+#   env                        environment                 -     @507 
+#     cov                      coverage                    -     @721 
+#       an_port_control        uvm_analysis_imp_control    -     @760 
+#       an_port_memory         uvm_analysis_imp_memory     -     @776 
+#       an_port_port_0         uvm_analysis_imp_port_0     -     @728 
+#       an_port_port_1         uvm_analysis_imp_port_1     -     @736 
+#       an_port_port_2         uvm_analysis_imp_port_2     -     @744 
+#       an_port_port_3         uvm_analysis_imp_port_3     -     @752 
+#       an_port_reset          uvm_analysis_imp_reset      -     @768 
+#     ctrl_agent               control_agent               -     @591 
+#       control_agent_driver   control_driver              -     @927 
+#         rsp_port             uvm_analysis_port           -     @942 
+#         seq_item_port        uvm_seq_item_pull_port      -     @934 
+#       control_agent_monitor  control_monitor             -     @950 
+#         mon_an_port          uvm_analysis_port           -     @970 
+#       control_agent_seqr     uvm_sequencer               -     @818 
+#         rsp_export           uvm_analysis_export         -     @825 
+#         seq_item_export      uvm_seq_item_pull_imp       -     @919 
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     mem_agent                memory_agent                -     @598 
+#       memory_agent_driver    memory_driver               -     @1095
+#         rsp_port             uvm_analysis_port           -     @1110
+#         seq_item_port        uvm_seq_item_pull_port      -     @1102
+#       memory_agent_monitor   memory_monitor              -     @1118
+#         mon_an_port          uvm_analysis_port           -     @1142
+#       memory_agent_seqr      uvm_sequencer               -     @986 
+#         rsp_export           uvm_analysis_export         -     @993 
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1087
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     port_0_agent             port_agent                  -     @544 
+#       port_0_driver          port_driver                 -     @1323
+#         rsp_port             uvm_analysis_port           -     @1338
+#         seq_item_port        uvm_seq_item_pull_port      -     @1330
+#       port_0_monitor         port_monitor                -     @1348
+#         mon_an_port          uvm_analysis_port           -     @1365
+#       port_0_seqr            port_sequencer              -     @1159
+#         export_port          uvm_analysis_export         -     @1268
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1276
+#           analysis_export    uvm_analysis_imp            -     @1315
+#           get_ap             uvm_analysis_port           -     @1307
+#           get_peek_export    uvm_get_peek_imp            -     @1291
+#           put_ap             uvm_analysis_port           -     @1299
+#           put_export         uvm_put_imp                 -     @1283
+#         rsp_export           uvm_analysis_export         -     @1166
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1260
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     port_1_agent             port_agent                  -     @552 
+#       port_1_driver          port_driver                 -     @1546
+#         rsp_port             uvm_analysis_port           -     @1561
+#         seq_item_port        uvm_seq_item_pull_port      -     @1553
+#       port_1_monitor         port_monitor                -     @1571
+#         mon_an_port          uvm_analysis_port           -     @1588
+#       port_1_seqr            port_sequencer              -     @1382
+#         export_port          uvm_analysis_export         -     @1491
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1499
+#           analysis_export    uvm_analysis_imp            -     @1538
+#           get_ap             uvm_analysis_port           -     @1530
+#           get_peek_export    uvm_get_peek_imp            -     @1514
+#           put_ap             uvm_analysis_port           -     @1522
+#           put_export         uvm_put_imp                 -     @1506
+#         rsp_export           uvm_analysis_export         -     @1389
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1483
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     port_2_agent             port_agent                  -     @560 
+#       port_2_driver          port_driver                 -     @1769
+#         rsp_port             uvm_analysis_port           -     @1784
+#         seq_item_port        uvm_seq_item_pull_port      -     @1776
+#       port_2_monitor         port_monitor                -     @1794
+#         mon_an_port          uvm_analysis_port           -     @1811
+#       port_2_seqr            port_sequencer              -     @1605
+#         export_port          uvm_analysis_export         -     @1714
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1722
+#           analysis_export    uvm_analysis_imp            -     @1761
+#           get_ap             uvm_analysis_port           -     @1753
+#           get_peek_export    uvm_get_peek_imp            -     @1737
+#           put_ap             uvm_analysis_port           -     @1745
+#           put_export         uvm_put_imp                 -     @1729
+#         rsp_export           uvm_analysis_export         -     @1612
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1706
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     port_3_agent             port_agent                  -     @568 
+#       port_3_driver          port_driver                 -     @1992
+#         rsp_port             uvm_analysis_port           -     @2007
+#         seq_item_port        uvm_seq_item_pull_port      -     @1999
+#       port_3_monitor         port_monitor                -     @2017
+#         mon_an_port          uvm_analysis_port           -     @2034
+#       port_3_seqr            port_sequencer              -     @1828
+#         export_port          uvm_analysis_export         -     @1937
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1945
+#           analysis_export    uvm_analysis_imp            -     @1984
+#           get_ap             uvm_analysis_port           -     @1976
+#           get_peek_export    uvm_get_peek_imp            -     @1960
+#           put_ap             uvm_analysis_port           -     @1968
+#           put_export         uvm_put_imp                 -     @1952
+#         rsp_export           uvm_analysis_export         -     @1835
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1929
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     rst_agent                reset_agent                 -     @584 
+#       reset_agent_driver     reset_driver                -     @2159
+#         rsp_port             uvm_analysis_port           -     @2174
+#         seq_item_port        uvm_seq_item_pull_port      -     @2166
+#       reset_agent_monitor    reset_monitor               -     @2182
+#         mon_an_port          uvm_analysis_port           -     @2202
+#       reset_agent_seqr       uvm_sequencer               -     @2050
+#         rsp_export           uvm_analysis_export         -     @2057
+#         seq_item_export      uvm_seq_item_pull_imp       -     @2151
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     scb                      scoreboard                  -     @714 
+#       an_port_control        uvm_analysis_imp_control    -     @2300
+#       an_port_memory         uvm_analysis_imp_memory     -     @2316
+#       an_port_port_0         uvm_analysis_imp_port_0     -     @2324
+#       an_port_port_1         uvm_analysis_imp_port_1     -     @2332
+#       an_port_port_2         uvm_analysis_imp_port_2     -     @2340
+#       an_port_port_3         uvm_analysis_imp_port_3     -     @2348
+#       an_port_reset          uvm_analysis_imp_reset      -     @2308
+#     virtual_sequencer        virtual_sequencer           -     @605 
+#       rsp_export             uvm_analysis_export         -     @612 
+#       seq_item_export        uvm_seq_item_pull_imp       -     @706 
+#       arbitration_queue      array                       0     -    
+#       lock_queue             array                       0     -    
+#       num_last_reqs          integral                    32    'd1  
+#       num_last_rsps          integral                    32    'd1  
+# --------------------------------------------------------------------
+# 
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 5: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 5: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 15: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 25: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 35: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 45: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h8d  mem_rd_data: 'h00000000  mem_addr: 'h1
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 55: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h5e  mem_rd_data: 'h00000000  mem_addr: 'h2
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 65: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h66  mem_rd_data: 'h00000000  mem_addr: 'h3
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 75: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b1  mem_wr_data: 'h66  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 85: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 285: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_ERROR src/test/sequence/control_sequence.svh(52) @ 285: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Failed randomization
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 285: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h0  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 285: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h0  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 345: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h0  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 345: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 545: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 545: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h66  SA: 'hca  LENGTH: 'hfe PAYLOAD['hfd]: '{51, 86, 71, 141, 48, 215, 194, 195, 112, 8, 121, 129, 254, 239, 39, 30, 116, 158, 168, 17, 55, 230, 28, 11, 57, 27, 100, 205, 177, 134, 87, 37, 40, 14, 135, 3, 137, 105, 61, 98, 171, 206, 27, 198, 21, 192, 37, 219, 67, 202, 163, 130, 163, 182, 130, 100, 67, 165, 127, 204, 212, 169, 91, 124, 89, 117, 10, 146, 106, 193, 164, 18, 197, 83, 60, 209, 240, 223, 180, 221, 41, 20, 212, 228, 95, 121, 7, 4, 79, 195, 191, 25, 152, 209, 245, 196, 163, 212, 24, 138, 255, 132, 236, 244, 1, 19, 95, 159, 64, 168, 96, 23, 84, 98, 153, 46, 5, 147, 174, 126, 9, 110, 208, 106, 189, 120, 145, 156, 121, 118, 122, 206, 232, 94, 139, 171, 222, 78, 88, 178, 169, 173, 198, 94, 159, 227, 247, 103, 87, 160, 254, 70, 47, 193, 191, 65, 149, 249, 106, 91, 51, 91, 240, 187, 208, 93, 137, 204, 19, 169, 159, 77, 227, 237, 194, 60, 217, 78, 140, 212, 233, 59, 49, 78, 64, 248, 169, 69, 59, 174, 188, 212, 218, 75, 186, 240, 4, 197, 175, 0, 45, 159, 62, 244, 34, 71, 228, 61, 120, 239, 18, 32, 175, 51, 47, 186, 143, 134, 183, 210, 121, 22, 100, 59, 59, 100, 72, 12, 213, 137, 90, 203, 45, 108, 19, 144, 86, 20, 40, 28, 229, 10, 9, 1, 95, 86, 76, 124, 210, 55, 246, 2, 6} PARITY: 'h20 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 545: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h66  SA: 'hca  LENGTH: 'hfe PAYLOAD['hfd]: '{51, 86, 71, 141, 48, 215, 194, 195, 112, 8, 121, 129, 254, 239, 39, 30, 116, 158, 168, 17, 55, 230, 28, 11, 57, 27, 100, 205, 177, 134, 87, 37, 40, 14, 135, 3, 137, 105, 61, 98, 171, 206, 27, 198, 21, 192, 37, 219, 67, 202, 163, 130, 163, 182, 130, 100, 67, 165, 127, 204, 212, 169, 91, 124, 89, 117, 10, 146, 106, 193, 164, 18, 197, 83, 60, 209, 240, 223, 180, 221, 41, 20, 212, 228, 95, 121, 7, 4, 79, 195, 191, 25, 152, 209, 245, 196, 163, 212, 24, 138, 255, 132, 236, 244, 1, 19, 95, 159, 64, 168, 96, 23, 84, 98, 153, 46, 5, 147, 174, 126, 9, 110, 208, 106, 189, 120, 145, 156, 121, 118, 122, 206, 232, 94, 139, 171, 222, 78, 88, 178, 169, 173, 198, 94, 159, 227, 247, 103, 87, 160, 254, 70, 47, 193, 191, 65, 149, 249, 106, 91, 51, 91, 240, 187, 208, 93, 137, 204, 19, 169, 159, 77, 227, 237, 194, 60, 217, 78, 140, 212, 233, 59, 49, 78, 64, 248, 169, 69, 59, 174, 188, 212, 218, 75, 186, 240, 4, 197, 175, 0, 45, 159, 62, 244, 34, 71, 228, 61, 120, 239, 18, 32, 175, 51, 47, 186, 143, 134, 183, 210, 121, 22, 100, 59, 59, 100, 72, 12, 213, 137, 90, 203, 45, 108, 19, 144, 86, 20, 40, 28, 229, 10, 9, 1, 95, 86, 76, 124, 210, 55, 246, 2, 6} PARITY: 'h20 EOF: 'h55
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 595: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 595: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 605: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 605: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 615: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 615: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 625: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 625: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 635: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hff  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 635: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ff.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 635: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hff  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 645: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h66  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 645: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 66.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 645: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h66  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 655: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hca  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 655: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ca.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 655: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hca  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 665: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hfe  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 665: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received fe.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 665: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hfe  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 675: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h33  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 675: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 33.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 675: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h33  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 685: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h56  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 685: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 56.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 685: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h56  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 695: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h47  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 695: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 47.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 695: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h47  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 705: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h8d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 705: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 8d.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 705: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h8d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 715: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h30  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 715: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 30.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 715: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h30  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 725: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 725: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d7.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 725: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 735: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 735: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c2.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 735: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 745: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 745: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c3.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 745: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 755: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h70  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 755: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 70.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 755: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h70  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 765: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 765: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 8.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 765: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 775: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h79  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 775: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 79.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 775: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h79  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 785: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h81  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 785: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 81.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 785: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h81  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 795: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hfe  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 795: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received fe.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 795: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hfe  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 805: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hef  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 805: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ef.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 805: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hef  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 815: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h27  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 815: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 27.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 815: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h27  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 825: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h1e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 825: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 1e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 825: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h1e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 835: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h74  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 835: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 74.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 835: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h74  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 845: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h9e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 845: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 9e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 845: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h9e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 855: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 855: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a8.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 855: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 865: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h11  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 865: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 11.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 865: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h11  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 875: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h37  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 875: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 37.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 875: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h37  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 885: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'he6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 885: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received e6.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 885: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'he6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 895: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h1c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 895: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 1c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 895: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h1c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 905: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 905: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 905: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 915: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h39  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 915: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 39.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 915: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h39  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 925: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h1b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 925: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 1b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 925: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h1b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 935: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h64  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 935: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 64.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 935: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h64  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 945: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hcd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 945: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received cd.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 945: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hcd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 955: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hb1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 955: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received b1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 955: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hb1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 965: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h86  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 965: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 86.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 965: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h86  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 975: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h57  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 975: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 57.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 975: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h57  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 985: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h25  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 985: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 25.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 985: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h25  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 995: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h28  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 995: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 28.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 995: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h28  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1005: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'he  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1005: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1005: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'he  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1015: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h87  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1015: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 87.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1015: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h87  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1025: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1025: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1025: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1035: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h89  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1035: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 89.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1035: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h89  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1045: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h69  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1045: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 69.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1045: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h69  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1055: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1055: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3d.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1055: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1065: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h62  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1065: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 62.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1065: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h62  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1075: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hab  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1075: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ab.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1075: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hab  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1085: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hce  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1085: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ce.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1085: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hce  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1095: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h1b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1095: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 1b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1095: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h1b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1105: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1105: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c6.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1105: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1115: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h15  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1115: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 15.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1115: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h15  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1125: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1125: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c0.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1125: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1135: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h25  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1135: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 25.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1135: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h25  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1145: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hdb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1145: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received db.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1145: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hdb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1155: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h43  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1155: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 43.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1155: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h43  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1165: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hca  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1165: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ca.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1165: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hca  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1175: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1175: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a3.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1175: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1185: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h82  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1185: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 82.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1185: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h82  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1195: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1195: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a3.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1195: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1205: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hb6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1205: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received b6.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1205: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hb6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1215: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h82  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1215: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 82.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1215: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h82  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1225: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h64  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1225: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 64.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1225: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h64  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1235: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h43  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1235: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 43.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1235: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h43  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1245: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1245: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a5.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1245: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1255: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h7f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1255: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 7f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1255: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h7f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1265: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hcc  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1265: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received cc.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1265: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hcc  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1275: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1275: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1275: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1285: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1285: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a9.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1285: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1295: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1295: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1295: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1305: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h7c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1305: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 7c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1305: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h7c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1315: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h59  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1315: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 59.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1315: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h59  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1325: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h75  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1325: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 75.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1325: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h75  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1335: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1335: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1335: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1345: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h92  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1345: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 92.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1345: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h92  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1355: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h6a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1355: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 6a.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1355: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h6a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1365: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1365: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1365: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1375: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1375: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1375: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1385: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h12  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1385: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 12.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1385: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h12  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1395: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1395: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c5.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1395: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1405: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h53  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1405: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 53.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1405: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h53  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1415: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1415: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1415: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1425: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1425: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1425: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1435: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1435: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f0.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1435: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1445: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hdf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1445: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received df.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1445: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hdf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1455: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hb4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1455: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received b4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1455: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hb4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1465: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hdd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1465: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received dd.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1465: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hdd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1475: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h29  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1475: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 29.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1475: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h29  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1485: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h14  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1485: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 14.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1485: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h14  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1495: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1495: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1495: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1505: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'he4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1505: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received e4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1505: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'he4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1515: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1515: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1515: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1525: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h79  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1525: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 79.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1525: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h79  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1535: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1535: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 7.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1535: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1545: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1545: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1545: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1555: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h4f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1555: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 4f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1555: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h4f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1565: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1565: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c3.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1565: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1575: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hbf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1575: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received bf.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1575: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hbf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1585: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h19  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1585: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 19.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1585: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h19  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1595: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h98  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1595: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 98.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1595: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h98  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1605: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1605: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1605: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1615: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1615: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f5.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1615: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1625: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1625: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1625: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1635: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1635: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a3.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1635: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1645: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1645: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1645: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1655: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h18  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1655: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 18.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1655: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h18  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1665: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h8a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1665: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 8a.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1665: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h8a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1675: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hff  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1675: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ff.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1675: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hff  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1685: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h84  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1685: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 84.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1685: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h84  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1695: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hec  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1695: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ec.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1695: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hec  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1705: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1705: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1705: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1715: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1715: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1715: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1725: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h13  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1725: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 13.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1725: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h13  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1735: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1735: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1735: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1745: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h9f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1745: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 9f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1745: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h9f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1755: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h40  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1755: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 40.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1755: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h40  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1765: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1765: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a8.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1765: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1775: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h60  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1775: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 60.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1775: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h60  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1785: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h17  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1785: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 17.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1785: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h17  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1795: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h54  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1795: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 54.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1795: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h54  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1805: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h62  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1805: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 62.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1805: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h62  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1815: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h99  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1815: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 99.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1815: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h99  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1825: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h2e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1825: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 2e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1825: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h2e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1835: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1835: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1835: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1845: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h93  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1845: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 93.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1845: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h93  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1855: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hae  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1855: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ae.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1855: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hae  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1865: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h7e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1865: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 7e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1865: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h7e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1875: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1875: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 9.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1875: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1885: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h6e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1885: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 6e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1885: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h6e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1895: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1895: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d0.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1895: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1905: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h6a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1905: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 6a.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1905: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h6a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1915: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hbd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1915: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received bd.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1915: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hbd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1925: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h78  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1925: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 78.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1925: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h78  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1935: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h91  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1935: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 91.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1935: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h91  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1945: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h9c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1945: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 9c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1945: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h9c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1955: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h79  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1955: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 79.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1955: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h79  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1965: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h76  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1965: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 76.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1965: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h76  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1975: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h7a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1975: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 7a.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1975: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h7a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1985: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hce  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1985: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ce.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1985: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hce  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1995: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'he8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 1995: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received e8.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 1995: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'he8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2005: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2005: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2005: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2015: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h8b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2015: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 8b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2015: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h8b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2025: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hab  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2025: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ab.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2025: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hab  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2035: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hde  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2035: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received de.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2035: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hde  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2045: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h4e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2045: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 4e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2045: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h4e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2055: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h58  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2055: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 58.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2055: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h58  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2065: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hb2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2065: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received b2.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2065: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hb2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2075: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2075: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a9.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2075: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2085: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'had  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2085: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ad.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2085: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'had  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2095: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2095: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c6.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2095: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2105: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2105: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2105: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2115: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h9f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2115: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 9f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2115: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h9f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2125: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'he3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2125: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received e3.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2125: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'he3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2135: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2135: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f7.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2135: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2145: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h67  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2145: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 67.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2145: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h67  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2155: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h57  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2155: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 57.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2155: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h57  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2165: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2165: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a0.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2165: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2175: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hfe  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2175: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received fe.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2175: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hfe  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2185: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h46  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2185: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 46.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2185: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h46  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2195: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h2f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2195: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 2f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2195: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h2f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2205: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2205: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2205: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2215: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hbf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2215: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received bf.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2215: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hbf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2225: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h41  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2225: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 41.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2225: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h41  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2235: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h95  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2235: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 95.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2235: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h95  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2245: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2245: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f9.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2245: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2255: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h6a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2255: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 6a.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2255: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h6a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2265: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2265: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2265: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2275: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h33  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2275: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 33.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2275: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h33  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2285: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2285: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2285: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2295: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2295: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f0.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2295: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2305: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hbb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2305: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received bb.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2305: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hbb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2315: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2315: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d0.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2315: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2325: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2325: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5d.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2325: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2335: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h89  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2335: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 89.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2335: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h89  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2345: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hcc  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2345: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received cc.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2345: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hcc  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2355: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h13  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2355: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 13.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2355: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h13  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2365: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2365: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a9.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2365: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2375: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h9f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2375: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 9f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2375: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h9f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2385: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h4d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2385: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 4d.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2385: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h4d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2395: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'he3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2395: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received e3.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2395: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'he3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2405: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hed  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2405: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ed.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2405: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hed  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2415: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2415: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c2.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2415: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2425: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2425: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2425: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2435: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2435: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d9.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2435: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2445: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h4e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2445: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 4e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2445: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h4e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2455: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h8c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2455: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 8c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2455: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h8c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2465: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2465: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2465: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2475: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'he9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2475: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received e9.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2475: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'he9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2485: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2485: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2485: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2495: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h31  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2495: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 31.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2495: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h31  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2505: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h4e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2505: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 4e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2505: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h4e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2515: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h40  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2515: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 40.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2515: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h40  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2525: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2525: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f8.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2525: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2535: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2535: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a9.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2535: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2545: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h45  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2545: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 45.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2545: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h45  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2555: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2555: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2555: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2565: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hae  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2565: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ae.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2565: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hae  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2575: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hbc  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2575: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received bc.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2575: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hbc  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2585: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2585: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2585: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2595: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hda  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2595: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received da.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2595: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hda  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2605: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h4b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2605: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 4b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2605: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h4b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2615: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hba  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2615: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ba.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2615: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hba  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2625: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2625: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f0.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2625: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2635: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2635: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2635: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2645: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2645: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c5.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2645: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2655: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'haf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2655: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received af.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2655: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'haf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2665: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2665: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2675: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h2d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2675: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 2d.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2675: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h2d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2685: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h9f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2685: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 9f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2685: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h9f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2695: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2695: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3e.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2695: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2705: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2705: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2705: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2715: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h22  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2715: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 22.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2715: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h22  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2725: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h47  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2725: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 47.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2725: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h47  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2735: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'he4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2735: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received e4.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2735: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'he4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2745: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2745: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3d.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2745: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2755: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h78  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2755: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 78.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2755: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h78  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2765: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hef  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2765: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ef.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2765: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hef  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2775: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h12  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2775: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 12.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2775: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h12  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2785: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h20  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2785: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 20.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2785: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h20  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2795: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'haf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2795: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received af.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2795: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'haf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2805: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h33  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2805: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 33.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2805: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h33  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2815: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h2f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2815: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 2f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2815: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h2f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2825: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hba  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2825: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received ba.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2825: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hba  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2835: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h8f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2835: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 8f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2835: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h8f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2845: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h86  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2845: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 86.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2845: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h86  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2855: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hb7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2855: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received b7.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2855: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hb7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2865: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2865: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d2.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2865: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2875: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h79  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2875: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 79.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2875: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h79  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2885: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h16  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2885: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 16.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2885: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h16  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2895: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h64  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2895: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 64.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2895: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h64  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2905: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2905: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2905: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2915: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h3b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2915: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 3b.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2915: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h3b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2925: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h64  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2925: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 64.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2925: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h64  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2935: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h48  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2935: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 48.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2935: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h48  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2945: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hc  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2945: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2945: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hc  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2955: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2955: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d5.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2955: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2965: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h89  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2965: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 89.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2965: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h89  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2975: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2975: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5a.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2975: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2985: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hcb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2985: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received cb.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2985: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hcb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2995: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h2d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 2995: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 2d.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 2995: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h2d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3005: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h6c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3005: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 6c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3005: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h6c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3015: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h13  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3015: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 13.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3015: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h13  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3025: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h90  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3025: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 90.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3025: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h90  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3035: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h56  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3035: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 56.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3035: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h56  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3045: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h14  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3045: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 14.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3045: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h14  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3055: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h28  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3055: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 28.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3055: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h28  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3065: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h1c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3065: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 1c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3065: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h1c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3075: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'he5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3075: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received e5.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3075: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'he5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3085: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'ha  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3085: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received a.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3085: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'ha  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3095: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3095: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 9.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3095: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3105: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3105: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3105: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3115: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h5f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3115: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 5f.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3115: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h5f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3125: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h56  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3125: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 56.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3125: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h56  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3135: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h4c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3135: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 4c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3135: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h4c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 3135: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h66  SA: 'hca  LENGTH: 'hfe PAYLOAD['hfd]: '{51, 86, 71, 141, 48, 215, 194, 195, 112, 8, 121, 129, 254, 239, 39, 30, 116, 158, 168, 17, 55, 230, 28, 11, 57, 27, 100, 205, 177, 134, 87, 37, 40, 14, 135, 3, 137, 105, 61, 98, 171, 206, 27, 198, 21, 192, 37, 219, 67, 202, 163, 130, 163, 182, 130, 100, 67, 165, 127, 204, 212, 169, 91, 124, 89, 117, 10, 146, 106, 193, 164, 18, 197, 83, 60, 209, 240, 223, 180, 221, 41, 20, 212, 228, 95, 121, 7, 4, 79, 195, 191, 25, 152, 209, 245, 196, 163, 212, 24, 138, 255, 132, 236, 244, 1, 19, 95, 159, 64, 168, 96, 23, 84, 98, 153, 46, 5, 147, 174, 126, 9, 110, 208, 106, 189, 120, 145, 156, 121, 118, 122, 206, 232, 94, 139, 171, 222, 78, 88, 178, 169, 173, 198, 94, 159, 227, 247, 103, 87, 160, 254, 70, 47, 193, 191, 65, 149, 249, 106, 91, 51, 91, 240, 187, 208, 93, 137, 204, 19, 169, 159, 77, 227, 237, 194, 60, 217, 78, 140, 212, 233, 59, 49, 78, 64, 248, 169, 69, 59, 174, 188, 212, 218, 75, 186, 240, 4, 197, 175, 0, 45, 159, 62, 244, 34, 71, 228, 61, 120, 239, 18, 32, 175, 51, 47, 186, 143, 134, 183, 210, 121, 22, 100, 59, 59, 100, 72, 12, 213, 137, 90, 203, 45, 108, 19, 144, 86, 20, 40, 28, 229, 10, 9, 1, 95, 86, 76, 124, 210, 55, 246, 2, 6} PARITY: 'h20 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 3135: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3145: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h7c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3145: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 7c.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3145: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h7c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3155: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hd2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3155: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received d2.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3155: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hd2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3165: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h37  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3165: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 37.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3165: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h37  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3175: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'hf6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3175: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received f6.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3175: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'hf6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3185: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3185: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 2.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3185: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3195: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3195: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 6.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3195: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3205: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h20  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3205: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 20.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3205: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h20  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3215: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h55  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 3215: uvm_test_top.env.scb [scb] MISS port read from port 3 : expected 0; received 55.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3215: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h55  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3225: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b0
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3225: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b0
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 3335: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 3335: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h8d  SA: 'h71  LENGTH: 'ha6 PAYLOAD['ha5]: '{166, 141, 41, 106, 169, 251, 7, 37, 107, 62, 63, 149, 108, 126, 233, 128, 194, 23, 109, 35, 101, 185, 167, 157, 173, 101, 133, 109, 45, 221, 61, 214, 161, 13, 208, 202, 248, 122, 207, 54, 167, 127, 192, 219, 117, 74, 156, 41, 98, 119, 86, 3, 238, 232, 236, 82, 169, 34, 21, 169, 135, 126, 162, 20, 80, 88, 171, 148, 199, 13, 15, 53, 178, 61, 73, 244, 10, 75, 87, 227, 84, 131, 207, 45, 54, 19, 248, 31, 199, 111, 1, 116, 99, 82, 97, 89, 132, 105, 199, 128, 158, 115, 115, 155, 247, 229, 145, 136, 216, 57, 4, 54, 246, 172, 133, 195, 110, 231, 177, 66, 97, 33, 32, 207, 213, 211, 31, 15, 236, 229, 213, 208, 76, 5, 193, 59, 233, 185, 25, 140, 62, 238, 60, 80, 2, 188, 132, 33, 226, 235, 127, 99, 221, 65, 60, 94, 65, 37, 174, 166, 82, 235, 202, 192, 122} PARITY: 'hc6 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 3335: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h8d  SA: 'h71  LENGTH: 'ha6 PAYLOAD['ha5]: '{166, 141, 41, 106, 169, 251, 7, 37, 107, 62, 63, 149, 108, 126, 233, 128, 194, 23, 109, 35, 101, 185, 167, 157, 173, 101, 133, 109, 45, 221, 61, 214, 161, 13, 208, 202, 248, 122, 207, 54, 167, 127, 192, 219, 117, 74, 156, 41, 98, 119, 86, 3, 238, 232, 236, 82, 169, 34, 21, 169, 135, 126, 162, 20, 80, 88, 171, 148, 199, 13, 15, 53, 178, 61, 73, 244, 10, 75, 87, 227, 84, 131, 207, 45, 54, 19, 248, 31, 199, 111, 1, 116, 99, 82, 97, 89, 132, 105, 199, 128, 158, 115, 115, 155, 247, 229, 145, 136, 216, 57, 4, 54, 246, 172, 133, 195, 110, 231, 177, 66, 97, 33, 32, 207, 213, 211, 31, 15, 236, 229, 213, 208, 76, 5, 193, 59, 233, 185, 25, 140, 62, 238, 60, 80, 2, 188, 132, 33, 226, 235, 127, 99, 221, 65, 60, 94, 65, 37, 174, 166, 82, 235, 202, 192, 122} PARITY: 'hc6 EOF: 'h55
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3385: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3395: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3405: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3415: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3425: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hff  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3435: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h8d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3445: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h71  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3455: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3465: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3475: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h8d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3485: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h29  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3495: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h6a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3505: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3515: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hfb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3525: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3535: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h25  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3545: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h6b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3555: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h3e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3565: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h3f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3575: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h95  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3585: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h6c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3595: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h7e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3605: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'he9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3615: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h80  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3625: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hc2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3635: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h17  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3645: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h6d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3655: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h23  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3665: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h65  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3675: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hb9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3685: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3695: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h9d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3705: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'had  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3715: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h65  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3725: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h85  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3735: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h6d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3745: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h2d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3755: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hdd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3765: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h3d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3775: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hd6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3785: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3795: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3805: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hd0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3815: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hca  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3825: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hf8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3835: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h7a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3845: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hcf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3855: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h36  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3865: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3875: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h7f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3885: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hc0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3895: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hdb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3905: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h75  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3915: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h4a  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3925: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h9c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3935: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h29  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3945: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h62  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3955: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h77  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3965: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h56  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3975: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3985: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hee  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 3995: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'he8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4005: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hec  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4015: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h52  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4025: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4035: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h22  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4045: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h15  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4055: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4065: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h87  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4075: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h7e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4085: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4095: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h14  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4105: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h50  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4115: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h58  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4125: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hab  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4135: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h94  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4145: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hc7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4155: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4165: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4175: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4185: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hb2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4195: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h3d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4205: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h49  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4215: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hf4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4225: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'ha  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4235: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h4b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4245: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h57  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4255: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'he3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4265: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h54  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4275: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h83  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4285: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hcf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4295: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h2d  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4305: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h36  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4315: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h13  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4325: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hf8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4335: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4345: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hc7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4355: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h6f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4365: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4375: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h74  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4385: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h63  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4395: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h52  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4405: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h61  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4415: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h59  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4425: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h84  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4435: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h69  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4445: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hc7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4455: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h80  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4465: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h9e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4475: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h73  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4485: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h73  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4495: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h9b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4505: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hf7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4515: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'he5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4525: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h91  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4535: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h88  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4545: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hd8  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4555: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h39  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4565: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h4  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4575: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h36  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4585: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hf6  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4595: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hac  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4605: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h85  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4615: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hc3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4625: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h6e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4635: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'he7  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4645: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hb1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4655: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h42  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4665: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h61  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4675: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h21  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4685: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h20  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4695: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hcf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4705: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hd5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4715: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hd3  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4725: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4735: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hf  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4745: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hec  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4755: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'he5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4765: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hd5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4775: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hd0  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4785: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h4c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4795: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4805: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hc1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4815: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h3b  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4825: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'he9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4835: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hb9  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4845: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h19  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4855: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h8c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4865: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h3e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4875: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hee  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4885: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h3c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4895: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h50  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4905: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4915: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hbc  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4925: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h84  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4935: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h21  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4945: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'he2  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4955: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'heb  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4965: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h7f  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4975: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h63  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4985: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hdd  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 4995: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h41  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 5005: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h3c  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 5015: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5e  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 5025: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h41  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 5035: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h25  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 5045: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hae  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 5045: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h8d  SA: 'h71  LENGTH: 'ha6 PAYLOAD['ha5]: '{166, 141, 41, 106, 169, 251, 7, 37, 107, 62, 63, 149, 108, 126, 233, 128, 194, 23, 109, 35, 101, 185, 167, 157, 173, 101, 133, 109, 45, 221, 61, 214, 161, 13, 208, 202, 248, 122, 207, 54, 167, 127, 192, 219, 117, 74, 156, 41, 98, 119, 86, 3, 238, 232, 236, 82, 169, 34, 21, 169, 135, 126, 162, 20, 80, 88, 171, 148, 199, 13, 15, 53, 178, 61, 73, 244, 10, 75, 87, 227, 84, 131, 207, 45, 54, 19, 248, 31, 199, 111, 1, 116, 99, 82, 97, 89, 132, 105, 199, 128, 158, 115, 115, 155, 247, 229, 145, 136, 216, 57, 4, 54, 246, 172, 133, 195, 110, 231, 177, 66, 97, 33, 32, 207, 213, 211, 31, 15, 236, 229, 213, 208, 76, 5, 193, 59, 233, 185, 25, 140, 62, 238, 60, 80, 2, 188, 132, 33, 226, 235, 127, 99, 221, 65, 60, 94, 65, 37, 174, 166, 82, 235, 202, 192, 122} PARITY: 'hc6 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 5045: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/environment/scoreboard.svh(306) @ 5045: uvm_test_top.env.scb [scb] ---> ENTER PHASE: --> CHECK <--
+# UVM_INFO src/test/environment/scoreboard.svh(344) @ 5045: uvm_test_top.env.scb [scb] There are 1 left packets on port 3.
+# UVM_INFO src/test/environment/scoreboard.svh(349) @ 5045: uvm_test_top.env.scb [scb] <--- EXIT PHASE: --> CHECK <--
+# UVM_INFO src/test/environment/coverage/coverage.svh(137) @ 5045: uvm_test_top.env.cov [cov] Ports coverage   = 68.75%
+# UVM_INFO src/test/environment/coverage/coverage.svh(138) @ 5045: uvm_test_top.env.cov [cov] Memory coverage  = 56.56%
+# UVM_INFO src/test/environment/coverage/coverage.svh(139) @ 5045: uvm_test_top.env.cov [cov] Control coverage = 75.00%
+# UVM_INFO src/test/environment/coverage/coverage.svh(140) @ 5045: uvm_test_top.env.cov [cov] Data coverage    = 13.46%
+# UVM_INFO src/test/environment/coverage/coverage.svh(141) @ 5045: uvm_test_top.env.cov [cov] Event coverage   = 32.70%
+# UVM_INFO src/test/environment/scoreboard.svh(353) @ 5045: uvm_test_top.env.scb [scb] ---> ENTER PHASE: --> REPORT <--
+# UVM_INFO src/test/environment/scoreboard.svh(354) @ 5045: uvm_test_top.env.scb [scb] There were 1 sent packets: CORRECT/INCORRECT STRUCTURE: 1/0.
+# UVM_INFO src/test/environment/scoreboard.svh(355) @ 5045: uvm_test_top.env.scb [scb] There were 0 dropped packets.
+# UVM_INFO src/test/environment/scoreboard.svh(357) @ 5045: uvm_test_top.env.scb [scb] There were 0 received packets on PORT 0: MISSED/MATCHED: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(358) @ 5045: uvm_test_top.env.scb [scb] There were 0 left packets on PORT 0.
+# UVM_INFO src/test/environment/scoreboard.svh(359) @ 5045: uvm_test_top.env.scb [scb] On PORT 0: Byte MISS/MATCH: 0/163.
+# UVM_INFO src/test/environment/scoreboard.svh(357) @ 5045: uvm_test_top.env.scb [scb] There were 0 received packets on PORT 1: MISSED/MATCHED: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(358) @ 5045: uvm_test_top.env.scb [scb] There were 0 left packets on PORT 1.
+# UVM_INFO src/test/environment/scoreboard.svh(359) @ 5045: uvm_test_top.env.scb [scb] On PORT 1: Byte MISS/MATCH: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(357) @ 5045: uvm_test_top.env.scb [scb] There were 1 received packets on PORT 2: MISSED/MATCHED: 0/1.
+# UVM_INFO src/test/environment/scoreboard.svh(358) @ 5045: uvm_test_top.env.scb [scb] There were 0 left packets on PORT 2.
+# UVM_INFO src/test/environment/scoreboard.svh(359) @ 5045: uvm_test_top.env.scb [scb] On PORT 2: Byte MISS/MATCH: 0/259.
+# UVM_INFO src/test/environment/scoreboard.svh(357) @ 5045: uvm_test_top.env.scb [scb] There were 1 received packets on PORT 3: MISSED/MATCHED: 0/1.
+# UVM_INFO src/test/environment/scoreboard.svh(358) @ 5045: uvm_test_top.env.scb [scb] There were 1 left packets on PORT 3.
+# UVM_INFO src/test/environment/scoreboard.svh(359) @ 5045: uvm_test_top.env.scb [scb] On PORT 3: Byte MISS/MATCH: 258/1.
+# UVM_INFO src/test/environment/scoreboard.svh(361) @ 5045: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 258/423.
+# UVM_INFO src/test/environment/scoreboard.svh(362) @ 5045: uvm_test_top.env.scb [scb] <--- EXIT PHASE: --> REPORT <--
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO : 1008
+# UVM_WARNING :    0
+# UVM_ERROR :    1
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     3
+# [RNTST]     1
+# [UVMTOP]     1
+# [control_agent_driver]     6
+# [cov]     5
+# [ctrl_seq]    10
+# [memory_agent_monitor]     7
+# [port_0_monitor]   167
+# [port_2_monitor]   264
+# [port_3_monitor]   264
+# [reset_agent_monitor]     3
+# [scb]   278
+# ** Note: $finish    : /opt/questa/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 5045 ns  Iteration: 110  Instance: /testbench
+# Saving coverage database on exit...
+# End time: 01:01:21 on Mar 08,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1

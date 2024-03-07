@@ -55,7 +55,7 @@ endclass : test
     env_config = new(.is_cluster(UNIT), .number_of_ports(`NO_OF_PORTS));
     uvm_config_db #(environment_config)::set(this, "env*", "config", env_config);
 
-    env = environment::type_id::create("env", this);
+    env = environment::type_id::create("env", this); 
    
     foreach(first_memory_config_data[i]) begin
       $cast(first_memory_config_data[i], 83 * i + 1);
@@ -65,7 +65,7 @@ endclass : test
     ctrl_seq = control_sequence::type_id::create("ctrl_seq");
     ctrl_seq.set_da_options(first_memory_config_data);
     
-    ctrl_seq.set_parameters(.nr_items(3), .max_length(5));
+    ctrl_seq.set_parameters(.nr_items(6));
     
     for(int i = 0; i < 5; i++) begin
       mem_seq[i] = memory_sequence::type_id::create("mem_seq");

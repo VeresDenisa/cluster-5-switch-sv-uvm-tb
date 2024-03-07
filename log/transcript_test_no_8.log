@@ -1,0 +1,377 @@
+# vsim -c -classdebug -voptargs="+acc" "+UVM_TESTNAME=test_no_8" "+UVM_VERBOSITY=HIGH" -wlf wave/wave_test_no_8.wlf work.testbench -do "log -r /*; coverage save -onexit ucdb/ucdb_test_no_8.ucdb; run -all; quit -f; exit" 
+# Start time: 01:01:47 on Mar 08,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.port_interface(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.base_pack(fast)
+# Loading work.config_pack(fast)
+# Loading work.item_pack(fast)
+# Loading work.port_agent_pack(fast)
+# Loading work.memory_interface(fast)
+# Loading work.memory_agent_pack(fast)
+# Loading work.control_interface(fast)
+# Loading work.control_agent_pack(fast)
+# Loading work.reset_interface(fast)
+# Loading work.reset_agent_pack(fast)
+# Loading work.seq_pack(fast)
+# Loading work.env_pack(fast)
+# Loading work.test_pack(fast)
+# Loading work.testbench_sv_unit(fast)
+# Loading work.testbench(fast)
+# Loading work.reset_interface_sv_unit(fast)
+# Loading work.reset_interface(fast)
+# Loading work.memory_interface_sv_unit(fast)
+# Loading work.memory_interface(fast)
+# Loading work.control_interface_sv_unit(fast)
+# Loading work.control_interface(fast)
+# Loading work.port_interface_sv_unit(fast)
+# Loading work.port_interface(fast)
+# Loading work.switch_top(fast)
+# Loading work.reg_top(fast)
+# Loading work.reg_rtl(fast)
+# Loading work.reg_decoder(fast)
+# Loading work.port_top(fast)
+# Loading work.fifo(fast)
+# Loading work.fsm_in_top(fast)
+# Loading work.watchdog(fast)
+# Loading work.fsm_in(fast)
+# Loading work.fsm_out_top(fast)
+# Loading work.fsm_out(fast)
+# Loading work.reg_top(fast__1)
+# Loading work.reg_decoder(fast__1)
+# Loading work.reg_top(fast__2)
+# Loading work.reg_decoder(fast__2)
+# Loading work.reg_top(fast__3)
+# Loading work.reg_decoder(fast__3)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /opt/questa/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# log -r /*
+#  coverage save -onexit ucdb/ucdb_test_no_8.ucdb
+#  run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test test_no_8...
+# Warning: In instance '\/env_pack::coverage::event_cvg ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] End Of Elaboration
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------------
+# Name                         Type                        Size  Value
+# --------------------------------------------------------------------
+# uvm_test_top                 test_no_8                   -     @496 
+#   env                        environment                 -     @507 
+#     cov                      coverage                    -     @745 
+#       an_port_control        uvm_analysis_imp_control    -     @784 
+#       an_port_memory         uvm_analysis_imp_memory     -     @800 
+#       an_port_port_0         uvm_analysis_imp_port_0     -     @752 
+#       an_port_port_1         uvm_analysis_imp_port_1     -     @760 
+#       an_port_port_2         uvm_analysis_imp_port_2     -     @768 
+#       an_port_port_3         uvm_analysis_imp_port_3     -     @776 
+#       an_port_reset          uvm_analysis_imp_reset      -     @792 
+#     ctrl_agent               control_agent               -     @615 
+#       control_agent_driver   control_driver              -     @951 
+#         rsp_port             uvm_analysis_port           -     @966 
+#         seq_item_port        uvm_seq_item_pull_port      -     @958 
+#       control_agent_monitor  control_monitor             -     @974 
+#         mon_an_port          uvm_analysis_port           -     @994 
+#       control_agent_seqr     uvm_sequencer               -     @842 
+#         rsp_export           uvm_analysis_export         -     @849 
+#         seq_item_export      uvm_seq_item_pull_imp       -     @943 
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     mem_agent                memory_agent                -     @622 
+#       memory_agent_driver    memory_driver               -     @1119
+#         rsp_port             uvm_analysis_port           -     @1134
+#         seq_item_port        uvm_seq_item_pull_port      -     @1126
+#       memory_agent_monitor   memory_monitor              -     @1142
+#         mon_an_port          uvm_analysis_port           -     @1166
+#       memory_agent_seqr      uvm_sequencer               -     @1010
+#         rsp_export           uvm_analysis_export         -     @1017
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1111
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     port_0_agent             port_agent                  -     @568 
+#       port_0_driver          port_driver                 -     @1347
+#         rsp_port             uvm_analysis_port           -     @1362
+#         seq_item_port        uvm_seq_item_pull_port      -     @1354
+#       port_0_monitor         port_monitor                -     @1372
+#         mon_an_port          uvm_analysis_port           -     @1389
+#       port_0_seqr            port_sequencer              -     @1183
+#         export_port          uvm_analysis_export         -     @1292
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1300
+#           analysis_export    uvm_analysis_imp            -     @1339
+#           get_ap             uvm_analysis_port           -     @1331
+#           get_peek_export    uvm_get_peek_imp            -     @1315
+#           put_ap             uvm_analysis_port           -     @1323
+#           put_export         uvm_put_imp                 -     @1307
+#         rsp_export           uvm_analysis_export         -     @1190
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1284
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     port_1_agent             port_agent                  -     @576 
+#       port_1_driver          port_driver                 -     @1570
+#         rsp_port             uvm_analysis_port           -     @1585
+#         seq_item_port        uvm_seq_item_pull_port      -     @1577
+#       port_1_monitor         port_monitor                -     @1595
+#         mon_an_port          uvm_analysis_port           -     @1612
+#       port_1_seqr            port_sequencer              -     @1406
+#         export_port          uvm_analysis_export         -     @1515
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1523
+#           analysis_export    uvm_analysis_imp            -     @1562
+#           get_ap             uvm_analysis_port           -     @1554
+#           get_peek_export    uvm_get_peek_imp            -     @1538
+#           put_ap             uvm_analysis_port           -     @1546
+#           put_export         uvm_put_imp                 -     @1530
+#         rsp_export           uvm_analysis_export         -     @1413
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1507
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     port_2_agent             port_agent                  -     @584 
+#       port_2_driver          port_driver                 -     @1793
+#         rsp_port             uvm_analysis_port           -     @1808
+#         seq_item_port        uvm_seq_item_pull_port      -     @1800
+#       port_2_monitor         port_monitor                -     @1818
+#         mon_an_port          uvm_analysis_port           -     @1835
+#       port_2_seqr            port_sequencer              -     @1629
+#         export_port          uvm_analysis_export         -     @1738
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1746
+#           analysis_export    uvm_analysis_imp            -     @1785
+#           get_ap             uvm_analysis_port           -     @1777
+#           get_peek_export    uvm_get_peek_imp            -     @1761
+#           put_ap             uvm_analysis_port           -     @1769
+#           put_export         uvm_put_imp                 -     @1753
+#         rsp_export           uvm_analysis_export         -     @1636
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1730
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     port_3_agent             port_agent                  -     @592 
+#       port_3_driver          port_driver                 -     @2016
+#         rsp_port             uvm_analysis_port           -     @2031
+#         seq_item_port        uvm_seq_item_pull_port      -     @2023
+#       port_3_monitor         port_monitor                -     @2041
+#         mon_an_port          uvm_analysis_port           -     @2058
+#       port_3_seqr            port_sequencer              -     @1852
+#         export_port          uvm_analysis_export         -     @1961
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1969
+#           analysis_export    uvm_analysis_imp            -     @2008
+#           get_ap             uvm_analysis_port           -     @2000
+#           get_peek_export    uvm_get_peek_imp            -     @1984
+#           put_ap             uvm_analysis_port           -     @1992
+#           put_export         uvm_put_imp                 -     @1976
+#         rsp_export           uvm_analysis_export         -     @1859
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1953
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     rst_agent                reset_agent                 -     @608 
+#       reset_agent_driver     reset_driver                -     @2183
+#         rsp_port             uvm_analysis_port           -     @2198
+#         seq_item_port        uvm_seq_item_pull_port      -     @2190
+#       reset_agent_monitor    reset_monitor               -     @2206
+#         mon_an_port          uvm_analysis_port           -     @2226
+#       reset_agent_seqr       uvm_sequencer               -     @2074
+#         rsp_export           uvm_analysis_export         -     @2081
+#         seq_item_export      uvm_seq_item_pull_imp       -     @2175
+#         arbitration_queue    array                       0     -    
+#         lock_queue           array                       0     -    
+#         num_last_reqs        integral                    32    'd1  
+#         num_last_rsps        integral                    32    'd1  
+#     scb                      scoreboard                  -     @738 
+#       an_port_control        uvm_analysis_imp_control    -     @2324
+#       an_port_memory         uvm_analysis_imp_memory     -     @2340
+#       an_port_port_0         uvm_analysis_imp_port_0     -     @2348
+#       an_port_port_1         uvm_analysis_imp_port_1     -     @2356
+#       an_port_port_2         uvm_analysis_imp_port_2     -     @2364
+#       an_port_port_3         uvm_analysis_imp_port_3     -     @2372
+#       an_port_reset          uvm_analysis_imp_reset      -     @2332
+#     virtual_sequencer        virtual_sequencer           -     @629 
+#       rsp_export             uvm_analysis_export         -     @636 
+#       seq_item_export        uvm_seq_item_pull_imp       -     @730 
+#       arbitration_queue      array                       0     -    
+#       lock_queue             array                       0     -    
+#       num_last_reqs          integral                    32    'd1  
+#       num_last_rsps          integral                    32    'd1  
+# --------------------------------------------------------------------
+# 
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 5: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 5: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 15: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 25: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 35: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 45: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h8d  mem_rd_data: 'h00000000  mem_addr: 'h1
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 55: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h5e  mem_rd_data: 'h00000000  mem_addr: 'h2
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 65: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'h66  mem_rd_data: 'h00000000  mem_addr: 'h3
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 75: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b1  mem_wr_data: 'h66  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 85: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 185: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 185: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h66  SA: 'h6e  LENGTH: 'h3 PAYLOAD['h2]: '{189, 138} PARITY: 'h37 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 185: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h66  SA: 'h6e  LENGTH: 'h3 PAYLOAD['h2]: '{189, 138} PARITY: 'h37 EOF: 'h55
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 185: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 195: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 195: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 205: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 265: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h66  SA: 'h6e  LENGTH: 'h3 PAYLOAD['h2]: '{189, 138} PARITY: 'h37 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 265: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 365: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 365: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h5e  SA: 'h18  LENGTH: 'h4 PAYLOAD['h3]: '{237, 158, 198} PARITY: 'hb5 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 365: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h5e  SA: 'h18  LENGTH: 'h4 PAYLOAD['h3]: '{237, 158, 198} PARITY: 'hb5 EOF: 'h55
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 395: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 405: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 405: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 415: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 455: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h5e  SA: 'h18  LENGTH: 'h4 PAYLOAD['h3]: '{237, 158, 198} PARITY: 'hb5 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 455: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 555: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 555: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h8d  SA: 'h68  LENGTH: 'h3 PAYLOAD['h2]: '{80, 6} PARITY: 'h56 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 555: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h8d  SA: 'h68  LENGTH: 'h3 PAYLOAD['h2]: '{80, 6} PARITY: 'h56 EOF: 'h55
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 605: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 615: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 615: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 625: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 635: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h8d  SA: 'h68  LENGTH: 'h3 PAYLOAD['h2]: '{80, 6} PARITY: 'h56 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 635: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 735: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 735: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h8d  SA: 'h13  LENGTH: 'h4 PAYLOAD['h3]: '{54, 239, 51} PARITY: 'hea EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 735: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h8d  SA: 'h13  LENGTH: 'h4 PAYLOAD['h3]: '{54, 239, 51} PARITY: 'hea EOF: 'h55
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 815: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 825: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h8d  SA: 'h13  LENGTH: 'h4 PAYLOAD['h3]: '{54, 239, 51} PARITY: 'hea EOF: 'h55
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 825: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 825: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 825: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 835: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 925: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 925: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h66  SA: 'hbb  LENGTH: 'h4 PAYLOAD['h3]: '{129, 172, 207} PARITY: 'he2 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 925: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h66  SA: 'hbb  LENGTH: 'h4 PAYLOAD['h3]: '{129, 172, 207} PARITY: 'he2 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1015: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h66  SA: 'hbb  LENGTH: 'h4 PAYLOAD['h3]: '{129, 172, 207} PARITY: 'he2 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 1015: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1025: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1035: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1035: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1045: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 1115: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 1115: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h66  SA: 'hc6  LENGTH: 'h4 PAYLOAD['h3]: '{83, 64, 121} PARITY: 'h6a EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1115: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h66  SA: 'hc6  LENGTH: 'h4 PAYLOAD['h3]: '{83, 64, 121} PARITY: 'h6a EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1205: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h66  SA: 'hc6  LENGTH: 'h4 PAYLOAD['h3]: '{83, 64, 121} PARITY: 'h6a EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 1205: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1235: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1245: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1245: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1255: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 1305: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 1305: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h66  SA: 'h41  LENGTH: 'h4 PAYLOAD['h3]: '{58, 82, 28} PARITY: 'h74 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1305: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h66  SA: 'h41  LENGTH: 'h4 PAYLOAD['h3]: '{58, 82, 28} PARITY: 'h74 EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1395: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h66  SA: 'h41  LENGTH: 'h4 PAYLOAD['h3]: '{58, 82, 28} PARITY: 'h74 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 1395: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1445: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1455: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1455: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1465: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/sequence/control_sequence.svh(46) @ 1495: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(59) @ 1495: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h5e  SA: 'hf3  LENGTH: 'h3 PAYLOAD['h2]: '{43, 133} PARITY: 'hae EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1495: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h5e  SA: 'hf3  LENGTH: 'h3 PAYLOAD['h2]: '{43, 133} PARITY: 'hae EOF: 'h55
+# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1575: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h5e  SA: 'hf3  LENGTH: 'h3 PAYLOAD['h2]: '{43, 133} PARITY: 'hae EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(62) @ 1575: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1655: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1665: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1665: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/scoreboard.svh(306) @ 1665: uvm_test_top.env.scb [scb] ---> ENTER PHASE: --> CHECK <--
+# UVM_INFO src/test/environment/scoreboard.svh(335) @ 1665: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 0.
+# UVM_INFO src/test/environment/scoreboard.svh(335) @ 1665: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 1.
+# UVM_INFO src/test/environment/scoreboard.svh(335) @ 1665: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 2.
+# UVM_INFO src/test/environment/scoreboard.svh(335) @ 1665: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 3.
+# UVM_INFO src/test/environment/scoreboard.svh(335) @ 1665: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 4.
+# UVM_INFO src/test/environment/scoreboard.svh(335) @ 1665: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 5.
+# UVM_INFO src/test/environment/scoreboard.svh(335) @ 1665: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 6.
+# UVM_INFO src/test/environment/scoreboard.svh(335) @ 1665: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 7.
+# UVM_INFO src/test/environment/scoreboard.svh(349) @ 1665: uvm_test_top.env.scb [scb] <--- EXIT PHASE: --> CHECK <--
+# UVM_INFO src/test/environment/coverage/coverage.svh(137) @ 1665: uvm_test_top.env.cov [cov] Ports coverage   = 0.00%
+# UVM_INFO src/test/environment/coverage/coverage.svh(138) @ 1665: uvm_test_top.env.cov [cov] Memory coverage  = 56.56%
+# UVM_INFO src/test/environment/coverage/coverage.svh(139) @ 1665: uvm_test_top.env.cov [cov] Control coverage = 75.00%
+# UVM_INFO src/test/environment/coverage/coverage.svh(140) @ 1665: uvm_test_top.env.cov [cov] Data coverage    = 53.85%
+# UVM_INFO src/test/environment/coverage/coverage.svh(141) @ 1665: uvm_test_top.env.cov [cov] Event coverage   = 18.79%
+# UVM_INFO src/test/environment/scoreboard.svh(353) @ 1665: uvm_test_top.env.scb [scb] ---> ENTER PHASE: --> REPORT <--
+# UVM_INFO src/test/environment/scoreboard.svh(354) @ 1665: uvm_test_top.env.scb [scb] There were 8 sent packets: CORRECT/INCORRECT STRUCTURE: 0/8.
+# UVM_INFO src/test/environment/scoreboard.svh(355) @ 1665: uvm_test_top.env.scb [scb] There were 0 dropped packets.
+# UVM_INFO src/test/environment/scoreboard.svh(357) @ 1665: uvm_test_top.env.scb [scb] There were 0 received packets on PORT 0: MISSED/MATCHED: 8/-8.
+# UVM_INFO src/test/environment/scoreboard.svh(358) @ 1665: uvm_test_top.env.scb [scb] There were 0 left packets on PORT 0.
+# UVM_INFO src/test/environment/scoreboard.svh(359) @ 1665: uvm_test_top.env.scb [scb] On PORT 0: Byte MISS/MATCH: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(357) @ 1665: uvm_test_top.env.scb [scb] There were 0 received packets on PORT 1: MISSED/MATCHED: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(358) @ 1665: uvm_test_top.env.scb [scb] There were 0 left packets on PORT 1.
+# UVM_INFO src/test/environment/scoreboard.svh(359) @ 1665: uvm_test_top.env.scb [scb] On PORT 1: Byte MISS/MATCH: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(357) @ 1665: uvm_test_top.env.scb [scb] There were 0 received packets on PORT 2: MISSED/MATCHED: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(358) @ 1665: uvm_test_top.env.scb [scb] There were 0 left packets on PORT 2.
+# UVM_INFO src/test/environment/scoreboard.svh(359) @ 1665: uvm_test_top.env.scb [scb] On PORT 2: Byte MISS/MATCH: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(357) @ 1665: uvm_test_top.env.scb [scb] There were 0 received packets on PORT 3: MISSED/MATCHED: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(358) @ 1665: uvm_test_top.env.scb [scb] There were 0 left packets on PORT 3.
+# UVM_INFO src/test/environment/scoreboard.svh(359) @ 1665: uvm_test_top.env.scb [scb] On PORT 3: Byte MISS/MATCH: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(361) @ 1665: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(362) @ 1665: uvm_test_top.env.scb [scb] <--- EXIT PHASE: --> REPORT <--
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  118
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     3
+# [RNTST]     1
+# [UVMTOP]     1
+# [control_agent_driver]    16
+# [cov]     5
+# [ctrl_seq]    24
+# [memory_agent_monitor]     7
+# [reset_agent_driver]    16
+# [reset_agent_monitor]    18
+# [scb]    27
+# ** Note: $finish    : /opt/questa/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1665 ns  Iteration: 105  Instance: /testbench
+# Saving coverage database on exit...
+# End time: 01:01:51 on Mar 08,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 1

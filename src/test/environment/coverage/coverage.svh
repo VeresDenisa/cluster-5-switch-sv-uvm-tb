@@ -13,7 +13,7 @@ class coverage extends uvm_component;
   port_item    port_itm[4];  
   memory_item  memory_itm;  
   reset_item   reset_itm;  
-  control_item control_itm;
+  control_item control_itm, control_itm_temp;
   
   data_packet  data_pck;
   int position;
@@ -51,6 +51,7 @@ class coverage extends uvm_component;
     data_pck = new("data_pck");
     data_cvg = new(data_pck);
     position = 0;
+    control_itm_temp = new("control_itm_temp");
     
     event_cvg = new(port_itm[0], port_itm[1], port_itm[2], port_itm[3], control_itm, memory_itm);
     
@@ -96,7 +97,7 @@ function void coverage::write_control(control_item t);
   control_cvg.sample();
   event_cvg.sample();
   
-  if(t.sw_enable_in == 1'b1) begin : build_data_packet
+  if(control_itm_temp.sw_enable_in == 1'b1) begin : build_data_packet
     case(position)
       0: data_pck.SOF = t.data_in;
       1: data_pck.da = t.data_in;
@@ -107,7 +108,7 @@ function void coverage::write_control(control_item t);
       default: data_pck.payload.push_back(t.data_in);
     endcase
     position++;
-    if(position >= 6 + data_pck.length) begin : build_data_packet_done
+    if(t.data_in === 8'h55) begin : build_data_packet_done
       data_cvg.sample();
       data_pck.payload.delete();
     end : build_data_packet_done
@@ -116,6 +117,8 @@ function void coverage::write_control(control_item t);
     position = 0;
     data_pck.payload.delete();
   end : reset_data_packet
+
+  control_itm_temp.copy(t);
 endfunction : write_control
     
 function void coverage::write_memory(memory_item t);
@@ -125,6 +128,7 @@ function void coverage::write_memory(memory_item t);
 endfunction : write_memory
     
 function void coverage::write_reset(reset_item t);
+  control_itm_temp.sw_enable_in = 1'b0;
 endfunction : write_reset
 
 

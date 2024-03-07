@@ -2,7 +2,6 @@
 *.mpf
 *.mti
 *.vcd
-*.wlf
 
 work/
 transcript
