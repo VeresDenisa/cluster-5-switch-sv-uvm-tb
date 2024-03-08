@@ -351,12 +351,13 @@ function void scoreboard::build_phase(uvm_phase phase);
     
   function void scoreboard::report_phase(uvm_phase phase);
     `uvm_info(get_name(), $sformatf("---> ENTER PHASE: --> REPORT <--"), UVM_MEDIUM);
-    `uvm_info(get_name(), $sformatf("There were %0d sent packets: CORRECT/INCORRECT STRUCTURE: %0d/%0d.", nr_of_packets_sent, nr_of_packets_sent-nr_of_packets_sent_incorrect, nr_of_packets_sent_incorrect), UVM_LOW);
+    `uvm_info(get_name(), $sformatf("There were %0d sent packets: INCORRECT/CORRECT STRUCTURE: %0d/%0d.", nr_of_packets_sent, nr_of_packets_sent_incorrect, nr_of_packets_sent-nr_of_packets_sent_incorrect), UVM_LOW);
     `uvm_info(get_name(), $sformatf("There were %0d dropped packets.", nr_of_packets_received_dropped), UVM_LOW);
     for(int i = 0; i < 4; i++) begin : check_every_port
-      `uvm_info(get_name(), $sformatf("There were %0d received packets on PORT %0d: MISSED/MATCHED: %0d/%0d.", nr_of_packets_received_per_port[i], i, nr_of_packets_received_per_port_missed[i], nr_of_packets_received_per_port[i]-nr_of_packets_received_per_port_missed[i]), UVM_LOW);
-      `uvm_info(get_name(), $sformatf("There were %0d left packets on PORT %0d.", nr_of_packets_left_on_port[i], i), UVM_LOW);
-      `uvm_info(get_name(), $sformatf("On PORT %0d: Byte MISS/MATCH: %0d/%0d.", i, byte_miss[i], byte_match[i]), UVM_LOW);
+      `uvm_info(get_name(), $sformatf("ON PORT %0d:", i), UVM_LOW);
+      `uvm_info(get_name(), $sformatf("There were %0d received packets: MISSED/MATCHED: %0d/%0d.", nr_of_packets_received_per_port[i], nr_of_packets_received_per_port_missed[i], nr_of_packets_received_per_port[i]-nr_of_packets_received_per_port_missed[i]), UVM_LOW);
+      `uvm_info(get_name(), $sformatf("There were %0d left packets.", nr_of_packets_left_on_port[i]), UVM_LOW);
+      `uvm_info(get_name(), $sformatf("Byte MISS/MATCH: %0d/%0d.", byte_miss[i], byte_match[i]), UVM_LOW);
     end : check_every_port
     `uvm_info(get_name(), $sformatf("Byte MISS/MATCH: %0d/%0d.", byte_miss[0]+byte_miss[1]+byte_miss[2]+byte_miss[3], byte_match[0]+byte_match[1]+byte_match[2]+byte_match[3]), UVM_LOW);
     `uvm_info(get_name(), $sformatf("<--- EXIT PHASE: --> REPORT <--"), UVM_MEDIUM);
