@@ -16,6 +16,7 @@ class data_packet extends uvm_sequence_item;
   int max_length = 255, min_length = 0;
   random_predefined_enum random_DA;
   bit [7:0] memory_data[4];
+  int continuous = 1'b0, last = 1'b0, first = 1'b0;
   
   
   constraint SA_diff_EOF           { sa != 8'h55; }
@@ -32,7 +33,7 @@ class data_packet extends uvm_sequence_item;
     super.new(name);
   endfunction : new
 
-  extern function void set_parameters(int min_length = 1, int max_length = 254, bit [7:0] memory_data[4] = {1, 86, 170, 254}, random_predefined_enum random_DA = PREDEFINED);
+  extern function void set_parameters(int min_length = 1, int max_length = 254, bit [7:0] memory_data[4] = {1, 86, 170, 254}, random_predefined_enum random_DA = PREDEFINED, int continuous = 1'b0, last = 1'b0, first = 1'b0);
   extern function void set_status_low(int position);
   extern function void set_all(bit[7:0] da, bit[7:0] sa, bit[7:0] length, bit[7:0] pay);
   
@@ -104,11 +105,14 @@ function void data_packet::set_status_low(int position);
   sw_enable_in[position] = 1'b0;
 endfunction : set_status_low
     
-function void data_packet::set_parameters(int min_length = 1, int max_length = 254, bit [7:0] memory_data[4] = {1, 86, 170, 254}, random_predefined_enum random_DA = PREDEFINED);
+function void data_packet::set_parameters(int min_length = 1, int max_length = 254, bit [7:0] memory_data[4] = {1, 86, 170, 254}, random_predefined_enum random_DA = PREDEFINED, int continuous = 1'b0, last = 1'b0, first = 1'b0);
   this.max_length  = max_length;
-  this.min_length = min_length;
+  this.min_length  = min_length;
   this.memory_data = memory_data;
   this.random_DA   = random_DA;
+  this.continuous  = continuous;
+  this.last = last;
+  this.first = first;
 endfunction : set_parameters
 
 function void data_packet::post_randomize();

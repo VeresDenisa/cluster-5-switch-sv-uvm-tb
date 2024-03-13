@@ -9,12 +9,13 @@ class control_sequence extends uvm_sequence #(data_packet);
   int no_delay = 0, no_random = 0;
   int duration, position, enable_status_low = 0;
   random_predefined_enum random_DA;
+  int continuous = 1'b0;
   
   function new (string name = "control_sequence");
     super.new(name);
   endfunction : new
 
-  extern function void set_parameters(int nr_items = 1, int min_length = 0, int max_length = 255, random_predefined_enum random_DA = PREDEFINED, int no_delay = 1'b0, int no_random = 1'b0);
+  extern function void set_parameters(int nr_items = 1, int min_length = 0, int max_length = 255, random_predefined_enum random_DA = PREDEFINED, int no_delay = 1'b0, int no_random = 1'b0, int continuous = 1'b0);
   extern function void set_status_low(int duration = 1, int position = 1, int enable_status_low = 0);
   extern function void set_da_options(bit [7:0]memory_data[4]);
     
@@ -23,13 +24,14 @@ endclass : control_sequence
   
 
     
-function void control_sequence::set_parameters(int nr_items = 1, int min_length = 0, int max_length = 255, random_predefined_enum random_DA = PREDEFINED, int no_delay = 1'b0, int no_random = 1'b0);
+function void control_sequence::set_parameters(int nr_items = 1, int min_length = 0, int max_length = 255, random_predefined_enum random_DA = PREDEFINED, int no_delay = 1'b0, int no_random = 1'b0, int continuous = 1'b0);
   this.nr_items   = nr_items;
   this.min_length = min_length;
   this.max_length = max_length;
   this.random_DA  = random_DA;
   this.no_delay   = no_delay;
   this.no_random  = no_random;
+  this.continuous = continuous;
 endfunction : set_parameters
     
 function void control_sequence::set_status_low(int duration = 1, int position = 1, int enable_status_low = 0);
@@ -46,7 +48,13 @@ task control_sequence::body();
   `uvm_info(get_name(), $sformatf("Started sequence"), UVM_MEDIUM);
   for(int i = 1; i <= nr_items; i++) begin : loop_packets
     packet = data_packet::type_id::create("packet");
-    packet.set_parameters(.min_length(min_length), .max_length(max_length), .memory_data(memory_data), .random_DA(random_DA));
+    if(nr_items >= 2) begin
+      if(i == 1) packet.set_parameters(.min_length(min_length), .max_length(max_length), .memory_data(memory_data), .random_DA(random_DA), .continuous(continuous), .first(1'b1));
+      else begin 
+        if(i == nr_items) packet.set_parameters(.min_length(min_length), .max_length(max_length), .memory_data(memory_data), .random_DA(random_DA), .continuous(continuous), .last(1'b1));
+        else packet.set_parameters(.min_length(min_length), .max_length(max_length), .memory_data(memory_data), .random_DA(random_DA), .continuous(continuous));
+      end
+    end else packet.set_parameters(.min_length(min_length), .max_length(max_length), .memory_data(memory_data), .random_DA(random_DA));
     if(no_random == 0) begin
     	if(!packet.randomize())
       		`uvm_error(this.get_name(), "Failed randomization");

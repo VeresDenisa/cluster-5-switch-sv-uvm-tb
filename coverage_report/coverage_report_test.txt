@@ -65,13 +65,13 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_0_FF[0]                                  56          1    Covered              
-        bin value_0_FF[1]                                  52          1    Covered              
-        bin value_0_FF[2]                                  63          1    Covered              
-        bin value_0_FF[3]                                  63          1    Covered              
-        bin value_0_FF[4]                                  43          1    Covered              
-        bin value_0_FF[5]                                  51          1    Covered              
-        bin value_0_FF[6]                                  72          1    Covered              
+        bin value_0_FF[0]                                  28          1    Covered              
+        bin value_0_FF[1]                                   7          1    Covered              
+        bin value_0_FF[2]                                   5          1    Covered              
+        bin value_0_FF[3]                                  11          1    Covered              
+        bin value_0_FF[4]                                   7          1    Covered              
+        bin value_0_FF[5]                                   6          1    Covered              
+        bin value_0_FF[6]                                   8          1    Covered              
     Coverpoint ready_cvp                              100.00%        100    Covered              
         covered/total bins:                                 2          2                      
         missing/total bins:                                 0          2                      
@@ -83,7 +83,7 @@ Covergroup                                             Metric       Goal    Stat
         option.auto_bin_max=64
         option.detect_overlap=0
         bin value_binary[0]                                 6          1    Covered              
-        bin value_binary[1]                               394          1    Covered              
+        bin value_binary[1]                                66          1    Covered              
     Coverpoint read_cvp                               100.00%        100    Covered              
         covered/total bins:                                 2          2                      
         missing/total bins:                                 0          2                      
@@ -95,7 +95,7 @@ Covergroup                                             Metric       Goal    Stat
         option.auto_bin_max=64
         option.detect_overlap=0
         bin value_binary[0]                                 6          1    Covered              
-        bin value_binary[1]                               394          1    Covered              
+        bin value_binary[1]                                66          1    Covered              
     Cross receive_cross                               100.00%        100    Covered              
         covered/total bins:                                 4          4                      
         missing/total bins:                                 0          4                      
@@ -108,13 +108,151 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[0],value_binary[0]>               2          1    Covered              
         bin <value_binary[1],value_binary[0]>               4          1    Covered              
         bin <value_binary[0],value_binary[1]>               4          1    Covered              
-        bin <value_binary[1],value_binary[1]>             390          1    Covered              
+        bin <value_binary[1],value_binary[1]>              62          1    Covered              
  Covergroup instance \/env_pack::coverage::port_cvg#2  
+                                                       75.00%        100    Uncovered            
+    covered/total bins:                                    12         15                      
+    missing/total bins:                                     3         15                      
+    % Hit:                                             80.00%        100                      
+    option.name=\/env_pack::coverage::port_cvg#2 
+    option.weight=1
+    option.goal=100
+    option.comment=
+    option.at_least=1
+    option.auto_bin_max=64
+    option.cross_num_print_missing=0
+    option.detect_overlap=0
+    option.per_instance=0
+    option.get_inst_coverage=1
+    Coverpoint port_cvp                               100.00%        100    Covered              
+        covered/total bins:                                 7          7                      
+        missing/total bins:                                 0          7                      
+        % Hit:                                        100.00%        100                      
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin value_0_FF[0]                                  30          1    Covered              
+        bin value_0_FF[1]                                  31          1    Covered              
+        bin value_0_FF[2]                                  23          1    Covered              
+        bin value_0_FF[3]                                  20          1    Covered              
+        bin value_0_FF[4]                                  24          1    Covered              
+        bin value_0_FF[5]                                  27          1    Covered              
+        bin value_0_FF[6]                                  33          1    Covered              
+    Coverpoint ready_cvp                               50.00%        100    Uncovered            
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin value_binary[0]                                 0          1    ZERO                 
+        bin value_binary[1]                               188          1    Covered              
+    Coverpoint read_cvp                               100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin value_binary[0]                                 2          1    Covered              
+        bin value_binary[1]                               186          1    Covered              
+    Cross receive_cross                                50.00%        100    Uncovered            
+        covered/total bins:                                 2          4                      
+        missing/total bins:                                 2          4                      
+        % Hit:                                         50.00%        100                      
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.cross_num_print_missing=0
+        bin <value_binary[1],value_binary[0]>               2          1    Covered              
+        bin <value_binary[1],value_binary[1]>             186          1    Covered              
+        bin <value_binary[0],value_binary[0]>               0          1    ZERO                 
+        bin <value_binary[0],value_binary[1]>               0          1    ZERO                 
+ Covergroup instance \/env_pack::coverage::port_cvg#3  
+                                                      100.00%        100    Covered              
+    covered/total bins:                                    15         15                      
+    missing/total bins:                                     0         15                      
+    % Hit:                                            100.00%        100                      
+    option.name=\/env_pack::coverage::port_cvg#3 
+    option.weight=1
+    option.goal=100
+    option.comment=
+    option.at_least=1
+    option.auto_bin_max=64
+    option.cross_num_print_missing=0
+    option.detect_overlap=0
+    option.per_instance=0
+    option.get_inst_coverage=1
+    Coverpoint port_cvp                               100.00%        100    Covered              
+        covered/total bins:                                 7          7                      
+        missing/total bins:                                 0          7                      
+        % Hit:                                        100.00%        100                      
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin value_0_FF[0]                                   9          1    Covered              
+        bin value_0_FF[1]                                   2          1    Covered              
+        bin value_0_FF[2]                                   3          1    Covered              
+        bin value_0_FF[3]                                   6          1    Covered              
+        bin value_0_FF[4]                                   3          1    Covered              
+        bin value_0_FF[5]                                   3          1    Covered              
+        bin value_0_FF[6]                                   5          1    Covered              
+    Coverpoint ready_cvp                              100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin value_binary[0]                                 3          1    Covered              
+        bin value_binary[1]                                28          1    Covered              
+    Coverpoint read_cvp                               100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.auto_bin_max=64
+        option.detect_overlap=0
+        bin value_binary[0]                                 3          1    Covered              
+        bin value_binary[1]                                28          1    Covered              
+    Cross receive_cross                               100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.cross_num_print_missing=0
+        bin <value_binary[0],value_binary[0]>               1          1    Covered              
+        bin <value_binary[1],value_binary[0]>               2          1    Covered              
+        bin <value_binary[0],value_binary[1]>               2          1    Covered              
+        bin <value_binary[1],value_binary[1]>              26          1    Covered              
+ Covergroup instance \/env_pack::coverage::port_cvg#4  
                                                         0.00%        100    ZERO                 
     covered/total bins:                                     0         15                      
     missing/total bins:                                    15         15                      
     % Hit:                                              0.00%        100                      
-    option.name=\/env_pack::coverage::port_cvg#2 
+    option.name=\/env_pack::coverage::port_cvg#4 
     option.weight=1
     option.goal=100
     option.comment=
@@ -178,144 +316,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[1],value_binary[0]>               0          1    ZERO                 
         bin <value_binary[0],value_binary[1]>               0          1    ZERO                 
         bin <value_binary[1],value_binary[1]>               0          1    ZERO                 
- Covergroup instance \/env_pack::coverage::port_cvg#3  
-                                                      100.00%        100    Covered              
-    covered/total bins:                                    15         15                      
-    missing/total bins:                                     0         15                      
-    % Hit:                                            100.00%        100                      
-    option.name=\/env_pack::coverage::port_cvg#3 
-    option.weight=1
-    option.goal=100
-    option.comment=
-    option.at_least=1
-    option.auto_bin_max=64
-    option.cross_num_print_missing=0
-    option.detect_overlap=0
-    option.per_instance=0
-    option.get_inst_coverage=1
-    Coverpoint port_cvp                               100.00%        100    Covered              
-        covered/total bins:                                 7          7                      
-        missing/total bins:                                 0          7                      
-        % Hit:                                        100.00%        100                      
-        option.weight=1
-        option.goal=100
-        option.comment=
-        option.at_least=1
-        option.auto_bin_max=64
-        option.detect_overlap=0
-        bin value_0_FF[0]                                  33          1    Covered              
-        bin value_0_FF[1]                                  32          1    Covered              
-        bin value_0_FF[2]                                  24          1    Covered              
-        bin value_0_FF[3]                                  27          1    Covered              
-        bin value_0_FF[4]                                  28          1    Covered              
-        bin value_0_FF[5]                                  36          1    Covered              
-        bin value_0_FF[6]                                  34          1    Covered              
-    Coverpoint ready_cvp                              100.00%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                        100.00%        100                      
-        option.weight=1
-        option.goal=100
-        option.comment=
-        option.at_least=1
-        option.auto_bin_max=64
-        option.detect_overlap=0
-        bin value_binary[0]                                 3          1    Covered              
-        bin value_binary[1]                               211          1    Covered              
-    Coverpoint read_cvp                               100.00%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                        100.00%        100                      
-        option.weight=1
-        option.goal=100
-        option.comment=
-        option.at_least=1
-        option.auto_bin_max=64
-        option.detect_overlap=0
-        bin value_binary[0]                                 3          1    Covered              
-        bin value_binary[1]                               211          1    Covered              
-    Cross receive_cross                               100.00%        100    Covered              
-        covered/total bins:                                 4          4                      
-        missing/total bins:                                 0          4                      
-        % Hit:                                        100.00%        100                      
-        option.weight=1
-        option.goal=100
-        option.comment=
-        option.at_least=1
-        option.cross_num_print_missing=0
-        bin <value_binary[0],value_binary[0]>               1          1    Covered              
-        bin <value_binary[1],value_binary[0]>               2          1    Covered              
-        bin <value_binary[0],value_binary[1]>               2          1    Covered              
-        bin <value_binary[1],value_binary[1]>             209          1    Covered              
- Covergroup instance \/env_pack::coverage::port_cvg#4  
-                                                       75.00%        100    Uncovered            
-    covered/total bins:                                    12         15                      
-    missing/total bins:                                     3         15                      
-    % Hit:                                             80.00%        100                      
-    option.name=\/env_pack::coverage::port_cvg#4 
-    option.weight=1
-    option.goal=100
-    option.comment=
-    option.at_least=1
-    option.auto_bin_max=64
-    option.cross_num_print_missing=0
-    option.detect_overlap=0
-    option.per_instance=0
-    option.get_inst_coverage=1
-    Coverpoint port_cvp                               100.00%        100    Covered              
-        covered/total bins:                                 7          7                      
-        missing/total bins:                                 0          7                      
-        % Hit:                                        100.00%        100                      
-        option.weight=1
-        option.goal=100
-        option.comment=
-        option.at_least=1
-        option.auto_bin_max=64
-        option.detect_overlap=0
-        bin value_0_FF[0]                                  32          1    Covered              
-        bin value_0_FF[1]                                  35          1    Covered              
-        bin value_0_FF[2]                                  34          1    Covered              
-        bin value_0_FF[3]                                  29          1    Covered              
-        bin value_0_FF[4]                                  28          1    Covered              
-        bin value_0_FF[5]                                  35          1    Covered              
-        bin value_0_FF[6]                                  30          1    Covered              
-    Coverpoint ready_cvp                               50.00%        100    Uncovered            
-        covered/total bins:                                 1          2                      
-        missing/total bins:                                 1          2                      
-        % Hit:                                         50.00%        100                      
-        option.weight=1
-        option.goal=100
-        option.comment=
-        option.at_least=1
-        option.auto_bin_max=64
-        option.detect_overlap=0
-        bin value_binary[0]                                 0          1    ZERO                 
-        bin value_binary[1]                               223          1    Covered              
-    Coverpoint read_cvp                               100.00%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                        100.00%        100                      
-        option.weight=1
-        option.goal=100
-        option.comment=
-        option.at_least=1
-        option.auto_bin_max=64
-        option.detect_overlap=0
-        bin value_binary[0]                                 2          1    Covered              
-        bin value_binary[1]                               221          1    Covered              
-    Cross receive_cross                                50.00%        100    Uncovered            
-        covered/total bins:                                 2          4                      
-        missing/total bins:                                 2          4                      
-        % Hit:                                         50.00%        100                      
-        option.weight=1
-        option.goal=100
-        option.comment=
-        option.at_least=1
-        option.cross_num_print_missing=0
-        bin <value_binary[1],value_binary[0]>               2          1    Covered              
-        bin <value_binary[1],value_binary[1]>             221          1    Covered              
-        bin <value_binary[0],value_binary[0]>               0          1    ZERO                 
-        bin <value_binary[0],value_binary[1]>               0          1    ZERO                 
  TYPE /env_pack/control_covergroup                     75.00%        100    Uncovered            
     covered/total bins:                                    12         15                      
     missing/total bins:                                     3         15                      
@@ -379,13 +379,13 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_0_FF[0]                                 110          1    Covered              
-        bin value_0_FF[1]                                 120          1    Covered              
-        bin value_0_FF[2]                                 122          1    Covered              
-        bin value_0_FF[3]                                 122          1    Covered              
-        bin value_0_FF[4]                                  99          1    Covered              
-        bin value_0_FF[5]                                 123          1    Covered              
-        bin value_0_FF[6]                                 136          1    Covered              
+        bin value_0_FF[0]                                  56          1    Covered              
+        bin value_0_FF[1]                                  42          1    Covered              
+        bin value_0_FF[2]                                  31          1    Covered              
+        bin value_0_FF[3]                                  37          1    Covered              
+        bin value_0_FF[4]                                  36          1    Covered              
+        bin value_0_FF[5]                                  36          1    Covered              
+        bin value_0_FF[6]                                  47          1    Covered              
     Coverpoint sw_enable_in_cvp                       100.00%        100    Covered              
         covered/total bins:                                 2          2                      
         missing/total bins:                                 0          2                      
@@ -397,7 +397,7 @@ Covergroup                                             Metric       Goal    Stat
         option.auto_bin_max=64
         option.detect_overlap=0
         bin value_binary[0]                                 6          1    Covered              
-        bin value_binary[1]                               826          1    Covered              
+        bin value_binary[1]                               279          1    Covered              
     Coverpoint read_out_cvp                            50.00%        100    Uncovered            
         covered/total bins:                                 1          2                      
         missing/total bins:                                 1          2                      
@@ -409,7 +409,7 @@ Covergroup                                             Metric       Goal    Stat
         option.auto_bin_max=64
         option.detect_overlap=0
         bin value_binary[0]                                 0          1    ZERO                 
-        bin value_binary[1]                               832          1    Covered              
+        bin value_binary[1]                               285          1    Covered              
     Cross valid_cross                                  50.00%        100    Uncovered            
         covered/total bins:                                 2          4                      
         missing/total bins:                                 2          4                      
@@ -420,28 +420,28 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.cross_num_print_missing=0
         bin <value_binary[0],value_binary[1]>               6          1    Covered              
-        bin <value_binary[1],value_binary[1]>             826          1    Covered              
+        bin <value_binary[1],value_binary[1]>             279          1    Covered              
         bin <value_binary[0],value_binary[0]>               0          1    ZERO                 
         bin <value_binary[1],value_binary[0]>               0          1    ZERO                 
- TYPE /env_pack/memory_covergroup                      59.81%        100    Uncovered            
-    covered/total bins:                                    28       1550                      
-    missing/total bins:                                  1522       1550                      
-    % Hit:                                              1.80%        100                      
+ TYPE /env_pack/memory_covergroup                      64.28%        100    Uncovered            
+    covered/total bins:                                    36       1546                      
+    missing/total bins:                                  1510       1546                      
+    % Hit:                                              2.32%        100                      
     type_option.weight=1
     type_option.goal=100
     type_option.comment=
     type_option.strobe=0
     type_option.merge_instances=auto(0)
-    Coverpoint memory_covergroup::mem_wr_data_cvp       1.95%        100    Uncovered            
-        covered/total bins:                                 5        256                      
-        missing/total bins:                               251        256                      
-        % Hit:                                          1.95%        100                      
+    Coverpoint memory_covergroup::mem_wr_data_cvp       1.96%        100    Uncovered            
+        covered/total bins:                                 5        254                      
+        missing/total bins:                               249        254                      
+        % Hit:                                          1.96%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
     Coverpoint memory_covergroup::mem_rd_data_cvp       0.78%        100    Uncovered            
-        covered/total bins:                                 2        256                      
-        missing/total bins:                               254        256                      
+        covered/total bins:                                 2        254                      
+        missing/total bins:                               252        254                      
         % Hit:                                          0.78%        100                      
         type_option.weight=1
         type_option.goal=100
@@ -475,8 +475,8 @@ Covergroup                                             Metric       Goal    Stat
         type_option.goal=100
         type_option.comment=
     Cross memory_covergroup::data_cross                 0.78%        100    Uncovered            
-        covered/total bins:                                 8       1024                      
-        missing/total bins:                              1016       1024                      
+        covered/total bins:                                 8       1016                      
+        missing/total bins:                              1008       1016                      
         % Hit:                                          0.78%        100                      
         type_option.weight=1
         type_option.goal=100
@@ -488,11 +488,18 @@ Covergroup                                             Metric       Goal    Stat
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
+    Cross memory_covergroup::write_read_cross         100.00%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                        100.00%        100                      
+        type_option.weight=1
+        type_option.goal=100
+        type_option.comment=
  Covergroup instance \/env_pack::coverage::memory_cvg  
-                                                       59.81%        100    Uncovered            
-    covered/total bins:                                    28       1550                      
-    missing/total bins:                                  1522       1550                      
-    % Hit:                                              1.80%        100                      
+                                                       64.28%        100    Uncovered            
+    covered/total bins:                                    36       1546                      
+    missing/total bins:                                  1510       1546                      
+    % Hit:                                              2.32%        100                      
     option.name=\/env_pack::coverage::memory_cvg 
     option.weight=1
     option.goal=100
@@ -503,10 +510,10 @@ Covergroup                                             Metric       Goal    Stat
     option.detect_overlap=0
     option.per_instance=0
     option.get_inst_coverage=0
-    Coverpoint mem_wr_data_cvp                          1.95%        100    Uncovered            
-        covered/total bins:                                 5        256                      
-        missing/total bins:                               251        256                      
-        % Hit:                                          1.95%        100                      
+    Coverpoint mem_wr_data_cvp                          1.96%        100    Uncovered            
+        covered/total bins:                                 5        254                      
+        missing/total bins:                               249        254                      
+        % Hit:                                          1.96%        100                      
         option.weight=1
         option.goal=100
         option.comment=
@@ -598,7 +605,6 @@ Covergroup                                             Metric       Goal    Stat
         bin value[82]                                       0          1    ZERO                 
         bin value[83]                                       0          1    ZERO                 
         bin value[84]                                       1          1    Covered              
-        bin value[85]                                       0          1    ZERO                 
         bin value[86]                                       0          1    ZERO                 
         bin value[87]                                       0          1    ZERO                 
         bin value[88]                                       0          1    ZERO                 
@@ -768,10 +774,9 @@ Covergroup                                             Metric       Goal    Stat
         bin value[252]                                      0          1    ZERO                 
         bin value[253]                                      0          1    ZERO                 
         bin value[254]                                      0          1    ZERO                 
-        bin value[255]                                      0          1    ZERO                 
     Coverpoint mem_rd_data_cvp                          0.78%        100    Uncovered            
-        covered/total bins:                                 2        256                      
-        missing/total bins:                               254        256                      
+        covered/total bins:                                 2        254                      
+        missing/total bins:                               252        254                      
         % Hit:                                          0.78%        100                      
         option.weight=1
         option.goal=100
@@ -864,7 +869,6 @@ Covergroup                                             Metric       Goal    Stat
         bin value[82]                                       0          1    ZERO                 
         bin value[83]                                       0          1    ZERO                 
         bin value[84]                                       0          1    ZERO                 
-        bin value[85]                                       0          1    ZERO                 
         bin value[86]                                       0          1    ZERO                 
         bin value[87]                                       0          1    ZERO                 
         bin value[88]                                       0          1    ZERO                 
@@ -1034,7 +1038,6 @@ Covergroup                                             Metric       Goal    Stat
         bin value[252]                                      0          1    ZERO                 
         bin value[253]                                      0          1    ZERO                 
         bin value[254]                                      0          1    ZERO                 
-        bin value[255]                                      0          1    ZERO                 
     Coverpoint mem_addr_cvp                           100.00%        100    Covered              
         covered/total bins:                                 4          4                      
         missing/total bins:                                 0          4                      
@@ -1086,8 +1089,8 @@ Covergroup                                             Metric       Goal    Stat
         bin value_binary[0]                                 5          1    Covered              
         bin value_binary[1]                                 8          1    Covered              
     Cross data_cross                                    0.78%        100    Uncovered            
-        covered/total bins:                                 8       1024                      
-        missing/total bins:                              1016       1024                      
+        covered/total bins:                                 8       1016                      
+        missing/total bins:                              1008       1016                      
         % Hit:                                          0.78%        100                      
         option.weight=1
         option.goal=100
@@ -1186,7 +1189,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value[82],value[0]>                            0          1    ZERO                 
         bin <value[83],value[0]>                            0          1    ZERO                 
         bin <value[84],value[0]>                            0          1    ZERO                 
-        bin <value[85],value[0]>                            0          1    ZERO                 
         bin <value[86],value[0]>                            0          1    ZERO                 
         bin <value[87],value[0]>                            0          1    ZERO                 
         bin <value[88],value[0]>                            0          1    ZERO                 
@@ -1355,7 +1357,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value[252],value[0]>                           0          1    ZERO                 
         bin <value[253],value[0]>                           0          1    ZERO                 
         bin <value[254],value[0]>                           0          1    ZERO                 
-        bin <value[255],value[0]>                           0          1    ZERO                 
         bin <value[2],value[1]>                             0          1    ZERO                 
         bin <value[3],value[1]>                             0          1    ZERO                 
         bin <value[4],value[1]>                             0          1    ZERO                 
@@ -1439,7 +1440,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value[82],value[1]>                            0          1    ZERO                 
         bin <value[83],value[1]>                            0          1    ZERO                 
         bin <value[84],value[1]>                            0          1    ZERO                 
-        bin <value[85],value[1]>                            0          1    ZERO                 
         bin <value[86],value[1]>                            0          1    ZERO                 
         bin <value[87],value[1]>                            0          1    ZERO                 
         bin <value[88],value[1]>                            0          1    ZERO                 
@@ -1609,7 +1609,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value[252],value[1]>                           0          1    ZERO                 
         bin <value[253],value[1]>                           0          1    ZERO                 
         bin <value[254],value[1]>                           0          1    ZERO                 
-        bin <value[255],value[1]>                           0          1    ZERO                 
         bin <value[1],value[2]>                             0          1    ZERO                 
         bin <value[2],value[2]>                             0          1    ZERO                 
         bin <value[3],value[2]>                             0          1    ZERO                 
@@ -1693,7 +1692,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value[81],value[2]>                            0          1    ZERO                 
         bin <value[82],value[2]>                            0          1    ZERO                 
         bin <value[83],value[2]>                            0          1    ZERO                 
-        bin <value[85],value[2]>                            0          1    ZERO                 
         bin <value[86],value[2]>                            0          1    ZERO                 
         bin <value[87],value[2]>                            0          1    ZERO                 
         bin <value[88],value[2]>                            0          1    ZERO                 
@@ -1863,7 +1861,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value[252],value[2]>                           0          1    ZERO                 
         bin <value[253],value[2]>                           0          1    ZERO                 
         bin <value[254],value[2]>                           0          1    ZERO                 
-        bin <value[255],value[2]>                           0          1    ZERO                 
         bin <value[1],value[3]>                             0          1    ZERO                 
         bin <value[2],value[3]>                             0          1    ZERO                 
         bin <value[3],value[3]>                             0          1    ZERO                 
@@ -1948,7 +1945,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value[82],value[3]>                            0          1    ZERO                 
         bin <value[83],value[3]>                            0          1    ZERO                 
         bin <value[84],value[3]>                            0          1    ZERO                 
-        bin <value[85],value[3]>                            0          1    ZERO                 
         bin <value[86],value[3]>                            0          1    ZERO                 
         bin <value[87],value[3]>                            0          1    ZERO                 
         bin <value[88],value[3]>                            0          1    ZERO                 
@@ -2117,7 +2113,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value[252],value[3]>                           0          1    ZERO                 
         bin <value[253],value[3]>                           0          1    ZERO                 
         bin <value[254],value[3]>                           0          1    ZERO                 
-        bin <value[255],value[3]>                           0          1    ZERO                 
     Cross save_cross                                   75.00%        100    Uncovered            
         covered/total bins:                                 3          4                      
         missing/total bins:                                 1          4                      
@@ -2131,41 +2126,58 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[1],value_binary[0]>               4          1    Covered              
         bin <value_binary[1],value_binary[1]>               4          1    Covered              
         bin <value_binary[0],value_binary[1]>               0          1    ZERO                 
- TYPE /env_pack/data_covergroup                        40.52%        100    Uncovered            
-    covered/total bins:                                    10        266                      
-    missing/total bins:                                   256        266                      
-    % Hit:                                              3.75%        100                      
+    Cross write_read_cross                            100.00%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                        100.00%        100                      
+        option.weight=1
+        option.goal=100
+        option.comment=
+        option.at_least=1
+        option.cross_num_print_missing=0
+        bin <value[0],value_binary[0]>                      6          1    Covered              
+        bin <value[1],value_binary[0]>                      1          1    Covered              
+        bin <value[2],value_binary[0]>                      1          1    Covered              
+        bin <value[3],value_binary[0]>                      1          1    Covered              
+        bin <value[0],value_binary[1]>                      1          1    Covered              
+        bin <value[1],value_binary[1]>                      1          1    Covered              
+        bin <value[2],value_binary[1]>                      1          1    Covered              
+        bin <value[3],value_binary[1]>                      1          1    Covered              
+ TYPE /env_pack/data_covergroup                        40.39%        100    Uncovered            
+    covered/total bins:                                     9        265                      
+    missing/total bins:                                   256        265                      
+    % Hit:                                              3.39%        100                      
     type_option.weight=1
     type_option.goal=100
     type_option.comment=
     type_option.strobe=0
     type_option.merge_instances=auto(0)
-    Coverpoint data_covergroup::da_cvp                 40.00%        100    Uncovered            
-        covered/total bins:                                 2          5                      
-        missing/total bins:                                 3          5                      
-        % Hit:                                         40.00%        100                      
+    Coverpoint data_covergroup::da_cvp                 60.00%        100    Uncovered            
+        covered/total bins:                                 3          5                      
+        missing/total bins:                                 2          5                      
+        % Hit:                                         60.00%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
-    Coverpoint data_covergroup::sa_cvp                 80.00%        100    Uncovered            
-        covered/total bins:                                 4          5                      
-        missing/total bins:                                 1          5                      
-        % Hit:                                         80.00%        100                      
+    Coverpoint data_covergroup::sa_cvp                 60.00%        100    Uncovered            
+        covered/total bins:                                 3          5                      
+        missing/total bins:                                 2          5                      
+        % Hit:                                         60.00%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
-    Coverpoint data_covergroup::length_cvp              1.56%        100    Uncovered            
-        covered/total bins:                                 4        256                      
-        missing/total bins:                               252        256                      
-        % Hit:                                          1.56%        100                      
+    Coverpoint data_covergroup::length_cvp              1.17%        100    Uncovered            
+        covered/total bins:                                 3        255                      
+        missing/total bins:                               252        255                      
+        % Hit:                                          1.17%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
  Covergroup instance \/env_pack::coverage::data_cvg  
-                                                       40.52%        100    Uncovered            
-    covered/total bins:                                    10        266                      
-    missing/total bins:                                   256        266                      
-    % Hit:                                              3.75%        100                      
+                                                       40.39%        100    Uncovered            
+    covered/total bins:                                     9        265                      
+    missing/total bins:                                   256        265                      
+    % Hit:                                              3.39%        100                      
     option.name=\/env_pack::coverage::data_cvg 
     option.weight=1
     option.goal=100
@@ -2176,40 +2188,40 @@ Covergroup                                             Metric       Goal    Stat
     option.detect_overlap=0
     option.per_instance=0
     option.get_inst_coverage=0
-    Coverpoint da_cvp                                  40.00%        100    Uncovered            
-        covered/total bins:                                 2          5                      
-        missing/total bins:                                 3          5                      
-        % Hit:                                         40.00%        100                      
+    Coverpoint da_cvp                                  60.00%        100    Uncovered            
+        covered/total bins:                                 3          5                      
+        missing/total bins:                                 2          5                      
+        % Hit:                                         60.00%        100                      
         option.weight=1
         option.goal=100
         option.comment=
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_0_FF[0]                                   4          1    Covered              
-        bin value_0_FF[1]                                   0          1    ZERO                 
+        bin value_0_FF[0]                                   3          1    Covered              
+        bin value_0_FF[1]                                   1          1    Covered              
         bin value_0_FF[2]                                   0          1    ZERO                 
         bin value_0_FF[3]                                   1          1    Covered              
         bin value_0_FF[4]                                   0          1    ZERO                 
-    Coverpoint sa_cvp                                  80.00%        100    Uncovered            
-        covered/total bins:                                 4          5                      
-        missing/total bins:                                 1          5                      
-        % Hit:                                         80.00%        100                      
+    Coverpoint sa_cvp                                  60.00%        100    Uncovered            
+        covered/total bins:                                 3          5                      
+        missing/total bins:                                 2          5                      
+        % Hit:                                         60.00%        100                      
         option.weight=1
         option.goal=100
         option.comment=
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_0_FF[0]                                   1          1    Covered              
+        bin value_0_FF[0]                                   0          1    ZERO                 
         bin value_0_FF[1]                                   1          1    Covered              
-        bin value_0_FF[2]                                   1          1    Covered              
-        bin value_0_FF[3]                                   2          1    Covered              
-        bin value_0_FF[4]                                   0          1    ZERO                 
-    Coverpoint length_cvp                               1.56%        100    Uncovered            
-        covered/total bins:                                 4        256                      
-        missing/total bins:                               252        256                      
-        % Hit:                                          1.56%        100                      
+        bin value_0_FF[2]                                   2          1    Covered              
+        bin value_0_FF[3]                                   0          1    ZERO                 
+        bin value_0_FF[4]                                   2          1    Covered              
+    Coverpoint length_cvp                               1.17%        100    Uncovered            
+        covered/total bins:                                 3        255                      
+        missing/total bins:                               252        255                      
+        % Hit:                                          1.17%        100                      
         option.weight=1
         option.goal=100
         option.comment=
@@ -2221,7 +2233,7 @@ Covergroup                                             Metric       Goal    Stat
         bin value_binary[2]                                 0          1    ZERO                 
         bin value_binary[3]                                 0          1    ZERO                 
         bin value_binary[4]                                 0          1    ZERO                 
-        bin value_binary[5]                                 0          1    ZERO                 
+        bin value_binary[5]                                 1          1    Covered              
         bin value_binary[6]                                 0          1    ZERO                 
         bin value_binary[7]                                 0          1    ZERO                 
         bin value_binary[8]                                 0          1    ZERO                 
@@ -2232,12 +2244,12 @@ Covergroup                                             Metric       Goal    Stat
         bin value_binary[13]                                0          1    ZERO                 
         bin value_binary[14]                                0          1    ZERO                 
         bin value_binary[15]                                0          1    ZERO                 
-        bin value_binary[16]                                2          1    Covered              
+        bin value_binary[16]                                0          1    ZERO                 
         bin value_binary[17]                                0          1    ZERO                 
         bin value_binary[18]                                0          1    ZERO                 
         bin value_binary[19]                                0          1    ZERO                 
         bin value_binary[20]                                0          1    ZERO                 
-        bin value_binary[21]                                0          1    ZERO                 
+        bin value_binary[21]                                3          1    Covered              
         bin value_binary[22]                                0          1    ZERO                 
         bin value_binary[23]                                0          1    ZERO                 
         bin value_binary[24]                                0          1    ZERO                 
@@ -2351,7 +2363,7 @@ Covergroup                                             Metric       Goal    Stat
         bin value_binary[132]                               0          1    ZERO                 
         bin value_binary[133]                               0          1    ZERO                 
         bin value_binary[134]                               0          1    ZERO                 
-        bin value_binary[135]                               1          1    Covered              
+        bin value_binary[135]                               0          1    ZERO                 
         bin value_binary[136]                               0          1    ZERO                 
         bin value_binary[137]                               0          1    ZERO                 
         bin value_binary[138]                               0          1    ZERO                 
@@ -2376,7 +2388,7 @@ Covergroup                                             Metric       Goal    Stat
         bin value_binary[157]                               0          1    ZERO                 
         bin value_binary[158]                               0          1    ZERO                 
         bin value_binary[159]                               0          1    ZERO                 
-        bin value_binary[160]                               0          1    ZERO                 
+        bin value_binary[160]                               1          1    Covered              
         bin value_binary[161]                               0          1    ZERO                 
         bin value_binary[162]                               0          1    ZERO                 
         bin value_binary[163]                               0          1    ZERO                 
@@ -2419,8 +2431,8 @@ Covergroup                                             Metric       Goal    Stat
         bin value_binary[200]                               0          1    ZERO                 
         bin value_binary[201]                               0          1    ZERO                 
         bin value_binary[202]                               0          1    ZERO                 
-        bin value_binary[203]                               1          1    Covered              
-        bin value_binary[204]                               1          1    Covered              
+        bin value_binary[203]                               0          1    ZERO                 
+        bin value_binary[204]                               0          1    ZERO                 
         bin value_binary[205]                               0          1    ZERO                 
         bin value_binary[206]                               0          1    ZERO                 
         bin value_binary[207]                               0          1    ZERO                 
@@ -2471,11 +2483,10 @@ Covergroup                                             Metric       Goal    Stat
         bin value_binary[252]                               0          1    ZERO                 
         bin value_binary[253]                               0          1    ZERO                 
         bin value_binary[254]                               0          1    ZERO                 
-        bin value_binary[255]                               0          1    ZERO                 
- TYPE /env_pack/event_covergroup                       40.39%        100    Uncovered            
-    covered/total bins:                                    72        382                      
-    missing/total bins:                                   310        382                      
-    % Hit:                                             18.84%        100                      
+ TYPE /env_pack/event_covergroup                       41.71%        100    Uncovered            
+    covered/total bins:                                    75        382                      
+    missing/total bins:                                   307        382                      
+    % Hit:                                             19.63%        100                      
     type_option.weight=1
     type_option.goal=100
     type_option.comment=
@@ -2489,9 +2500,9 @@ Covergroup                                             Metric       Goal    Stat
         type_option.goal=100
         type_option.comment=
     Coverpoint event_covergroup::ready_2_cvp            0.00%        100    ZERO                 
-        covered/total bins:                                 1          2                      
-        missing/total bins:                                 1          2                      
-        % Hit:                                         50.00%        100                      
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
@@ -2503,9 +2514,9 @@ Covergroup                                             Metric       Goal    Stat
         type_option.goal=100
         type_option.comment=
     Coverpoint event_covergroup::ready_4_cvp            0.00%        100    ZERO                 
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                        100.00%        100                      
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
@@ -2517,9 +2528,9 @@ Covergroup                                             Metric       Goal    Stat
         type_option.goal=100
         type_option.comment=
     Coverpoint event_covergroup::read_2_cvp             0.00%        100    ZERO                 
-        covered/total bins:                                 1          2                      
-        missing/total bins:                                 1          2                      
-        % Hit:                                         50.00%        100                      
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
@@ -2531,9 +2542,9 @@ Covergroup                                             Metric       Goal    Stat
         type_option.goal=100
         type_option.comment=
     Coverpoint event_covergroup::read_4_cvp             0.00%        100    ZERO                 
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                        100.00%        100                      
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
@@ -2565,10 +2576,10 @@ Covergroup                                             Metric       Goal    Stat
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
-    Cross event_covergroup::ports_cross                 3.90%        100    Uncovered            
-        covered/total bins:                                10        256                      
-        missing/total bins:                               246        256                      
-        % Hit:                                          3.90%        100                      
+    Cross event_covergroup::ports_cross                 4.68%        100    Uncovered            
+        covered/total bins:                                12        256                      
+        missing/total bins:                               244        256                      
+        % Hit:                                          4.68%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
@@ -2579,10 +2590,10 @@ Covergroup                                             Metric       Goal    Stat
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
-    Cross event_covergroup::port_2_memory_cross        18.75%        100    Uncovered            
-        covered/total bins:                                 3         16                      
-        missing/total bins:                                13         16                      
-        % Hit:                                         18.75%        100                      
+    Cross event_covergroup::port_2_memory_cross        31.25%        100    Uncovered            
+        covered/total bins:                                 5         16                      
+        missing/total bins:                                11         16                      
+        % Hit:                                         31.25%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
@@ -2593,10 +2604,10 @@ Covergroup                                             Metric       Goal    Stat
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
-    Cross event_covergroup::port_4_memory_cross        31.25%        100    Uncovered            
-        covered/total bins:                                 5         16                      
-        missing/total bins:                                11         16                      
-        % Hit:                                         31.25%        100                      
+    Cross event_covergroup::port_4_memory_cross        18.75%        100    Uncovered            
+        covered/total bins:                                 3         16                      
+        missing/total bins:                                13         16                      
+        % Hit:                                         18.75%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
@@ -2607,10 +2618,10 @@ Covergroup                                             Metric       Goal    Stat
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
-    Cross event_covergroup::port_2_control_cross       25.00%        100    Uncovered            
-        covered/total bins:                                 2          8                      
-        missing/total bins:                                 6          8                      
-        % Hit:                                         25.00%        100                      
+    Cross event_covergroup::port_2_control_cross       62.50%        100    Uncovered            
+        covered/total bins:                                 5          8                      
+        missing/total bins:                                 3          8                      
+        % Hit:                                         62.50%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
@@ -2621,18 +2632,18 @@ Covergroup                                             Metric       Goal    Stat
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
-    Cross event_covergroup::port_4_control_cross       50.00%        100    Uncovered            
-        covered/total bins:                                 4          8                      
-        missing/total bins:                                 4          8                      
-        % Hit:                                         50.00%        100                      
+    Cross event_covergroup::port_4_control_cross       25.00%        100    Uncovered            
+        covered/total bins:                                 2          8                      
+        missing/total bins:                                 6          8                      
+        % Hit:                                         25.00%        100                      
         type_option.weight=1
         type_option.goal=100
         type_option.comment=
  Covergroup instance \/env_pack::coverage::event_cvg  
-                                                       40.39%        100    Uncovered            
-    covered/total bins:                                    72        382                      
-    missing/total bins:                                   310        382                      
-    % Hit:                                             18.84%        100                      
+                                                       41.71%        100    Uncovered            
+    covered/total bins:                                    75        382                      
+    missing/total bins:                                   307        382                      
+    % Hit:                                             19.63%        100                      
     option.name=\/env_pack::coverage::event_cvg 
     option.weight=1
     option.goal=100
@@ -2653,20 +2664,20 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               451          1    Covered              
-        bin value_binary[1]                               394          1    Covered              
-    Coverpoint ready_2_cvp [1]                         50.00%        100    Uncovered            
-        covered/total bins:                                 1          2                      
-        missing/total bins:                                 1          2                      
-        % Hit:                                         50.00%        100                      
+        bin value_binary[0]                               232          1    Covered              
+        bin value_binary[1]                                66          1    Covered              
+    Coverpoint ready_2_cvp [1]                        100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
         option.weight=0
         option.goal=100
         option.comment=
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               845          1    Covered              
-        bin value_binary[1]                                 0          1    ZERO                 
+        bin value_binary[0]                               110          1    Covered              
+        bin value_binary[1]                               188          1    Covered              
     Coverpoint ready_3_cvp [1]                        100.00%        100    Covered              
         covered/total bins:                                 2          2                      
         missing/total bins:                                 0          2                      
@@ -2677,20 +2688,20 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               634          1    Covered              
-        bin value_binary[1]                               211          1    Covered              
-    Coverpoint ready_4_cvp [1]                        100.00%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                        100.00%        100                      
+        bin value_binary[0]                               270          1    Covered              
+        bin value_binary[1]                                28          1    Covered              
+    Coverpoint ready_4_cvp [1]                         50.00%        100    Uncovered            
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
         option.weight=0
         option.goal=100
         option.comment=
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               622          1    Covered              
-        bin value_binary[1]                               223          1    Covered              
+        bin value_binary[0]                               298          1    Covered              
+        bin value_binary[1]                                 0          1    ZERO                 
     Coverpoint read_1_cvp [1]                         100.00%        100    Covered              
         covered/total bins:                                 2          2                      
         missing/total bins:                                 0          2                      
@@ -2701,20 +2712,20 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               451          1    Covered              
-        bin value_binary[1]                               394          1    Covered              
-    Coverpoint read_2_cvp [1]                          50.00%        100    Uncovered            
-        covered/total bins:                                 1          2                      
-        missing/total bins:                                 1          2                      
-        % Hit:                                         50.00%        100                      
+        bin value_binary[0]                               232          1    Covered              
+        bin value_binary[1]                                66          1    Covered              
+    Coverpoint read_2_cvp [1]                         100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
         option.weight=0
         option.goal=100
         option.comment=
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               845          1    Covered              
-        bin value_binary[1]                                 0          1    ZERO                 
+        bin value_binary[0]                               112          1    Covered              
+        bin value_binary[1]                               186          1    Covered              
     Coverpoint read_3_cvp [1]                         100.00%        100    Covered              
         covered/total bins:                                 2          2                      
         missing/total bins:                                 0          2                      
@@ -2725,20 +2736,20 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               634          1    Covered              
-        bin value_binary[1]                               211          1    Covered              
-    Coverpoint read_4_cvp [1]                         100.00%        100    Covered              
-        covered/total bins:                                 2          2                      
-        missing/total bins:                                 0          2                      
-        % Hit:                                        100.00%        100                      
+        bin value_binary[0]                               270          1    Covered              
+        bin value_binary[1]                                28          1    Covered              
+    Coverpoint read_4_cvp [1]                          50.00%        100    Uncovered            
+        covered/total bins:                                 1          2                      
+        missing/total bins:                                 1          2                      
+        % Hit:                                         50.00%        100                      
         option.weight=0
         option.goal=100
         option.comment=
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               624          1    Covered              
-        bin value_binary[1]                               221          1    Covered              
+        bin value_binary[0]                               298          1    Covered              
+        bin value_binary[1]                                 0          1    ZERO                 
     Coverpoint sw_enable_in_cvp [1]                   100.00%        100    Covered              
         covered/total bins:                                 2          2                      
         missing/total bins:                                 0          2                      
@@ -2750,7 +2761,7 @@ Covergroup                                             Metric       Goal    Stat
         option.auto_bin_max=64
         option.detect_overlap=0
         bin value_binary[0]                                19          1    Covered              
-        bin value_binary[1]                               826          1    Covered              
+        bin value_binary[1]                               279          1    Covered              
     Coverpoint mem_sel_en_cvp [1]                     100.00%        100    Covered              
         covered/total bins:                                 2          2                      
         missing/total bins:                                 0          2                      
@@ -2761,7 +2772,7 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               837          1    Covered              
+        bin value_binary[0]                               290          1    Covered              
         bin value_binary[1]                                 8          1    Covered              
     Coverpoint mem_wr_rd_s_cvp [1]                    100.00%        100    Covered              
         covered/total bins:                                 2          2                      
@@ -2773,7 +2784,7 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.auto_bin_max=64
         option.detect_overlap=0
-        bin value_binary[0]                               841          1    Covered              
+        bin value_binary[0]                               294          1    Covered              
         bin value_binary[1]                                 4          1    Covered              
     Cross control_memory_cross                         50.00%        100    Uncovered            
         covered/total bins:                                 4          8                      
@@ -2791,7 +2802,7 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[1],value_binary[1],value_binary[0]> 
                                                             4          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1]> 
-                                                          826          1    Covered              
+                                                          279          1    Covered              
         bin <value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[0],value_binary[1]> 
@@ -2800,10 +2811,10 @@ Covergroup                                             Metric       Goal    Stat
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[1],value_binary[1]> 
                                                             0          1    ZERO                 
-    Cross ports_cross                                   3.90%        100    Uncovered            
-        covered/total bins:                                10        256                      
-        missing/total bins:                               246        256                      
-        % Hit:                                          3.90%        100                      
+    Cross ports_cross                                   4.68%        100    Uncovered            
+        covered/total bins:                                12        256                      
+        missing/total bins:                               244        256                      
+        % Hit:                                          4.68%        100                      
         option.weight=1
         option.goal=100
         option.comment=
@@ -2814,21 +2825,25 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0]> 
                                                             2          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0]> 
-                                                          389          1    Covered              
+                                                           60          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0]> 
                                                             1          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[1],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0]> 
                                                             1          1    Covered              
-        bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
+        bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
                                                             2          1    Covered              
+        bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
+                                                          186          1    Covered              
+        bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
+                                                            1          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
-                                                          208          1    Covered              
+                                                           24          1    Covered              
+        bin <value_binary[1],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
+                                                            1          1    Covered              
+        bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[1],value_binary[0]> 
+                                                            1          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[1],value_binary[0],value_binary[1],value_binary[0]> 
                                                             1          1    Covered              
-        bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
-                                                            2          1    Covered              
-        bin <value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
-                                                          221          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0]> 
@@ -2884,10 +2899,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[1],value_binary[1],value_binary[1],value_binary[1],value_binary[1],value_binary[0],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
-                                                            0          1    ZERO                 
-        bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
-                                                            0          1    ZERO                 
-        bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
@@ -2953,8 +2964,6 @@ Covergroup                                             Metric       Goal    Stat
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
-        bin <value_binary[1],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
-                                                            0          1    ZERO                 
         bin <value_binary[0],value_binary[1],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[1],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
@@ -2976,8 +2985,6 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[1],value_binary[1],value_binary[1],value_binary[1],value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[1],value_binary[0]> 
-                                                            0          1    ZERO                 
-        bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
@@ -3071,6 +3078,8 @@ Covergroup                                             Metric       Goal    Stat
                                                             0          1    ZERO                 
         bin <value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
                                                             0          1    ZERO                 
+        bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
+                                                            0          1    ZERO                 
         bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
@@ -3082,6 +3091,8 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[0],value_binary[1],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[1],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
+                                                            0          1    ZERO                 
+        bin <value_binary[0],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[0],value_binary[0],value_binary[1],value_binary[0],value_binary[0],value_binary[0],value_binary[1]> 
                                                             0          1    ZERO                 
@@ -3331,13 +3342,13 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.cross_num_print_missing=0
         bin <value_binary[0],value_binary[0],value_binary[0],value_binary[0]> 
-                                                          439          1    Covered              
+                                                          220          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0]> 
                                                             4          1    Covered              
         bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
                                                             4          1    Covered              
         bin <value_binary[1],value_binary[1],value_binary[0],value_binary[0]> 
-                                                          390          1    Covered              
+                                                           62          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
                                                             4          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[1]> 
@@ -3362,26 +3373,26 @@ Covergroup                                             Metric       Goal    Stat
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[1],value_binary[1],value_binary[1]> 
                                                             0          1    ZERO                 
-    Cross port_2_memory_cross                          18.75%        100    Uncovered            
-        covered/total bins:                                 3         16                      
-        missing/total bins:                                13         16                      
-        % Hit:                                         18.75%        100                      
+    Cross port_2_memory_cross                          31.25%        100    Uncovered            
+        covered/total bins:                                 5         16                      
+        missing/total bins:                                11         16                      
+        % Hit:                                         31.25%        100                      
         option.weight=1
         option.goal=100
         option.comment=
         option.at_least=1
         option.cross_num_print_missing=0
         bin <value_binary[0],value_binary[0],value_binary[0],value_binary[0]> 
-                                                          837          1    Covered              
+                                                          102          1    Covered              
+        bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
+                                                            2          1    Covered              
+        bin <value_binary[1],value_binary[1],value_binary[0],value_binary[0]> 
+                                                          186          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
                                                             4          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[1]> 
                                                             4          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0]> 
-                                                            0          1    ZERO                 
-        bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
-                                                            0          1    ZERO                 
-        bin <value_binary[1],value_binary[1],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
@@ -3413,13 +3424,13 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.cross_num_print_missing=0
         bin <value_binary[0],value_binary[0],value_binary[0],value_binary[0]> 
-                                                          624          1    Covered              
+                                                          260          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0]> 
                                                             2          1    Covered              
         bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
                                                             2          1    Covered              
         bin <value_binary[1],value_binary[1],value_binary[0],value_binary[0]> 
-                                                          209          1    Covered              
+                                                           26          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
                                                             4          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[1]> 
@@ -3444,26 +3455,26 @@ Covergroup                                             Metric       Goal    Stat
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[1],value_binary[1],value_binary[1]> 
                                                             0          1    ZERO                 
-    Cross port_4_memory_cross                          31.25%        100    Uncovered            
-        covered/total bins:                                 5         16                      
-        missing/total bins:                                11         16                      
-        % Hit:                                         31.25%        100                      
+    Cross port_4_memory_cross                          18.75%        100    Uncovered            
+        covered/total bins:                                 3         16                      
+        missing/total bins:                                13         16                      
+        % Hit:                                         18.75%        100                      
         option.weight=1
         option.goal=100
         option.comment=
         option.at_least=1
         option.cross_num_print_missing=0
         bin <value_binary[0],value_binary[0],value_binary[0],value_binary[0]> 
-                                                          614          1    Covered              
-        bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
-                                                            2          1    Covered              
-        bin <value_binary[1],value_binary[1],value_binary[0],value_binary[0]> 
-                                                          221          1    Covered              
+                                                          290          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[0]> 
                                                             4          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1],value_binary[1]> 
                                                             4          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0],value_binary[0]> 
+                                                            0          1    ZERO                 
+        bin <value_binary[0],value_binary[1],value_binary[0],value_binary[0]> 
+                                                            0          1    ZERO                 
+        bin <value_binary[1],value_binary[1],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
@@ -3495,45 +3506,45 @@ Covergroup                                             Metric       Goal    Stat
         option.at_least=1
         option.cross_num_print_missing=0
         bin <value_binary[0],value_binary[0],value_binary[0]> 
-                                                           15          1    Covered              
+                                                           16          1    Covered              
         bin <value_binary[1],value_binary[1],value_binary[0]> 
-                                                            4          1    Covered              
+                                                            3          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1]> 
-                                                          432          1    Covered              
+                                                          212          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[1]> 
                                                             4          1    Covered              
         bin <value_binary[0],value_binary[1],value_binary[1]> 
                                                             4          1    Covered              
         bin <value_binary[1],value_binary[1],value_binary[1]> 
-                                                          386          1    Covered              
+                                                           59          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
-    Cross port_2_control_cross                         25.00%        100    Uncovered            
-        covered/total bins:                                 2          8                      
-        missing/total bins:                                 6          8                      
-        % Hit:                                         25.00%        100                      
+    Cross port_2_control_cross                         62.50%        100    Uncovered            
+        covered/total bins:                                 5          8                      
+        missing/total bins:                                 3          8                      
+        % Hit:                                         62.50%        100                      
         option.weight=1
         option.goal=100
         option.comment=
         option.at_least=1
         option.cross_num_print_missing=0
         bin <value_binary[0],value_binary[0],value_binary[0]> 
-                                                           19          1    Covered              
+                                                           18          1    Covered              
+        bin <value_binary[1],value_binary[1],value_binary[0]> 
+                                                            1          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1]> 
-                                                          826          1    Covered              
+                                                           92          1    Covered              
+        bin <value_binary[0],value_binary[1],value_binary[1]> 
+                                                            2          1    Covered              
+        bin <value_binary[1],value_binary[1],value_binary[1]> 
+                                                          185          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
-        bin <value_binary[1],value_binary[1],value_binary[0]> 
-                                                            0          1    ZERO                 
         bin <value_binary[1],value_binary[0],value_binary[1]> 
-                                                            0          1    ZERO                 
-        bin <value_binary[0],value_binary[1],value_binary[1]> 
-                                                            0          1    ZERO                 
-        bin <value_binary[1],value_binary[1],value_binary[1]> 
                                                             0          1    ZERO                 
     Cross port_3_control_cross                         75.00%        100    Uncovered            
         covered/total bins:                                 6          8                      
@@ -3549,21 +3560,21 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[1],value_binary[1],value_binary[0]> 
                                                             1          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1]> 
-                                                          614          1    Covered              
+                                                          250          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[1]> 
                                                             2          1    Covered              
         bin <value_binary[0],value_binary[1],value_binary[1]> 
                                                             2          1    Covered              
         bin <value_binary[1],value_binary[1],value_binary[1]> 
-                                                          208          1    Covered              
+                                                           25          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[0],value_binary[1],value_binary[0]> 
                                                             0          1    ZERO                 
-    Cross port_4_control_cross                         50.00%        100    Uncovered            
-        covered/total bins:                                 4          8                      
-        missing/total bins:                                 4          8                      
-        % Hit:                                         50.00%        100                      
+    Cross port_4_control_cross                         25.00%        100    Uncovered            
+        covered/total bins:                                 2          8                      
+        missing/total bins:                                 6          8                      
+        % Hit:                                         25.00%        100                      
         option.weight=1
         option.goal=100
         option.comment=
@@ -3572,11 +3583,7 @@ Covergroup                                             Metric       Goal    Stat
         bin <value_binary[0],value_binary[0],value_binary[0]> 
                                                            19          1    Covered              
         bin <value_binary[0],value_binary[0],value_binary[1]> 
-                                                          603          1    Covered              
-        bin <value_binary[0],value_binary[1],value_binary[1]> 
-                                                            2          1    Covered              
-        bin <value_binary[1],value_binary[1],value_binary[1]> 
-                                                          221          1    Covered              
+                                                          279          1    Covered              
         bin <value_binary[1],value_binary[0],value_binary[0]> 
                                                             0          1    ZERO                 
         bin <value_binary[0],value_binary[1],value_binary[0]> 
@@ -3585,7 +3592,11 @@ Covergroup                                             Metric       Goal    Stat
                                                             0          1    ZERO                 
         bin <value_binary[1],value_binary[0],value_binary[1]> 
                                                             0          1    ZERO                 
+        bin <value_binary[0],value_binary[1],value_binary[1]> 
+                                                            0          1    ZERO                 
+        bin <value_binary[1],value_binary[1],value_binary[1]> 
+                                                            0          1    ZERO                 
 
  [1] - Does not contribute coverage as weight is 0
 
-TOTAL COVERGROUP COVERAGE: 56.89%  COVERGROUP TYPES: 5
+TOTAL COVERGROUP COVERAGE: 58.02%  COVERGROUP TYPES: 5

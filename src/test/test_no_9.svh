@@ -1,4 +1,4 @@
-`define NO_OF_TESTS 9
+`define NO_OF_TESTS 5
 `define NO_OF_PORTS 4
 
 class test_no_9 extends uvm_test;

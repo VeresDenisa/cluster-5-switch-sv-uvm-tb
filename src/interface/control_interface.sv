@@ -17,8 +17,11 @@ interface control_interface(input bit clock);
   endclocking
   
   task send(data_packet packet);
-    @(driver);
-    driver.sw_enable_in <= packet.sw_enable_in[0];
+    
+    if((packet.continuous && packet.first) || !packet.continuous) begin
+      @(driver);
+      driver.sw_enable_in <= packet.sw_enable_in[0];      
+    end
 
     @(driver);
     driver.sw_enable_in <= packet.sw_enable_in[1];
@@ -46,9 +49,25 @@ interface control_interface(input bit clock);
     driver.data_in      <= packet.parity;
     driver.sw_enable_in <= packet.sw_enable_in[packet.length + 5];
 
-    @(driver);
-    driver.data_in      <= packet.EOF;
-    driver.sw_enable_in <= packet.sw_enable_in[packet.length + 6];
+    if(!packet.continuous) begin : if_packets_are_not_sent_continuous
+      @(driver);
+      driver.data_in      <= packet.EOF;
+      driver.sw_enable_in <= packet.sw_enable_in[packet.length + 6];
+    end : if_packets_are_not_sent_continuous
+    else begin : if_packets_are_sent_continuous
+      if(!packet.last) begin : a_middle_or_beggining_packet
+        @(driver);
+        driver.data_in      <= packet.EOF;
+        driver.sw_enable_in <= 1'b1;
+      end : a_middle_or_beggining_packet
+      else begin : the_last_packet
+        @(driver);
+        driver.data_in      <= packet.EOF;
+        driver.sw_enable_in <= packet.sw_enable_in[packet.length + 5];
+      end : the_last_packet
+    end : if_packets_are_sent_continuous
+
+    repeat(5) @(driver);
   endtask : send
   
   function automatic void receive(ref control_item item);
