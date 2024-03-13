@@ -67,7 +67,7 @@ interface control_interface(input bit clock);
       end : the_last_packet
     end : if_packets_are_sent_continuous
 
-    repeat(5) @(driver);
+    //repeat(5) @(driver);
   endtask : send
   
   function automatic void receive(ref control_item item);

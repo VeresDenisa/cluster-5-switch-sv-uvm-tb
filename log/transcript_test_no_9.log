@@ -1,5 +1,5 @@
 # vsim -c -classdebug -voptargs="+acc" "+UVM_TESTNAME=test_no_9" "+UVM_VERBOSITY=DEBUG" -wlf wave/wave_test_no_9.wlf work.testbench -do "log -r /*; coverage save -onexit ucdb/ucdb_test_no_9.ucdb; run -all; quit -f; exit" 
-# Start time: 13:23:57 on Mar 13,2024
+# Start time: 21:54:03 on Mar 13,2024
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
@@ -9,8 +9,8 @@
 # //
 # //  QuestaSim and its associated documentation contain trade
 # //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
+# //  Mentor Graphics Corporation and are privilegedadd wave wave_test1:/testbench/DUT/*
+ disclosure under the Freedom of Information Act,
 # //  5 U.S.C. Section 552. Furthermore, this information
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
@@ -450,7 +450,7 @@
 # UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'main'
 # UVM_INFO src/test/environment/agent_control/control_driver.svh(46) @ 85: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] ---> ENTER PHASE: --> MAIN <--
 # UVM_INFO src/test/sequence/control_sequence.svh(48) @ 85: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(65) @ 85: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 85: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 85: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 105: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 105: uvm_test_top.env.scb [scb] Received item : data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1 
@@ -497,7 +497,7 @@
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 195: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 195: uvm_test_top.env.scb [scb] Received item : data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 195: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/sequence/control_sequence.svh(65) @ 195: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd2: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 195: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd2: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 195: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 205: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(237) @ 205: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h1  READ: 'b1  READY: 'b1 
@@ -568,7 +568,7 @@
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 305: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 305: uvm_test_top.env.scb [scb] Received item : data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 305: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/sequence/control_sequence.svh(65) @ 305: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd3: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 305: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd3: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 305: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 315: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(237) @ 315: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b1  READY: 'b1 
@@ -614,168 +614,165 @@
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 375: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 375: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 375: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 385: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 385: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h0  READ: 'b0  READY: 'b1 
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 385: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hff  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 385: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'hff  READ: 'b0  READY: 'b1 
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 385: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 385: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 385: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 395: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hff  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 395: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'hff  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 395: uvm_test_top.env.scb [scb] MATCH port read from port 0 : ff.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 395: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 395: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 395: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 5.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 395: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 395: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 395: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 405: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 405: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 405: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 405: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h1  READ: 'b1  READY: 'b1 
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 405: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 405: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 405: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 415: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 415: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h1  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(205) @ 415: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected 5; received 1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 415: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 415: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 415: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 5.
 # UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 415: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 415: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 415: uvm_test_top.env.scb [scb] Received item : data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 415: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/sequence/control_sequence.svh(65) @ 415: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd4: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 415: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd4: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 415: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 425: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 425: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 425: uvm_test_top.env.scb [scb] MATCH port read from port 0 : 5.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 425: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 425: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 425: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 35.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 425: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 425: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(154) @ 425: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
 # UVM_INFO src/test/environment/scoreboard.svh(133) @ 425: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55 
 # UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 435: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(237) @ 435: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(205) @ 435: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected 1; received 35.
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 435: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 35.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 435: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 435: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 445: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(237) @ 445: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(205) @ 445: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected 1; received 35.
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 445: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 35.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 445: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 445: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(148) @ 445: uvm_test_top.env.scb [scb] Transaction started (SOF received).
 # UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 455: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(237) @ 455: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(205) @ 455: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected 1; received 35.
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 455: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 35.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 455: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h5  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 455: uvm_test_top.env.scb [scb] Received item : data_in: 'h5  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(162) @ 455: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
 # UVM_INFO src/test/environment/scoreboard.svh(167) @ 455: uvm_test_top.env.scb [scb] Memory data and received DA match.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 465: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 465: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(205) @ 465: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected 1; received 35.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 465: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 465: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h0  READ: 'b1  READY: 'b0 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 465: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 0.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 465: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h1  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 465: uvm_test_top.env.scb [scb] Received item : data_in: 'h1  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 465: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 475: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b0
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 475: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h0  READ: 'b1  READY: 'b0 
-# UVM_INFO src/test/environment/scoreboard.svh(205) @ 475: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected 1; received 0.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 475: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h55  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 475: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h55  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/scoreboard.svh(227) @ 475: uvm_test_top.env.scb [scb] Port 0 packet constructed : SOF: 'h5 DA: 'h5  SA: 'h35  LENGTH: 'h35 PAYLOAD['h4]: '{53, 53, 0, 85} PARITY: 'h0 EOF: 'h0 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 475: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 55.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 475: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h5  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 475: uvm_test_top.env.scb [scb] Received item : data_in: 'h5  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 475: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 485: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h55  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 485: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h55  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(227) @ 485: uvm_test_top.env.scb [scb] Port 0 packet constructed : SOF: 'hff DA: 'h1  SA: 'h5  LENGTH: 'h35 PAYLOAD['h5]: '{53, 53, 53, 0, 85} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(205) @ 485: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected 1; received 55.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 485: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hff  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 485: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'hff  READ: 'b0  READY: 'b1 
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 485: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 485: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 485: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 495: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 495: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h0  READ: 'b0  READY: 'b1 
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 495: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 495: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 495: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 5.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 495: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 495: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 495: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 505: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hff  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 505: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'hff  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(205) @ 505: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected 1; received ff.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 505: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 505: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h1  READ: 'b1  READY: 'b1 
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 505: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 505: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 505: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
 # UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 515: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(237) @ 515: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 515: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 5.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 515: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 515: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 515: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 525: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 525: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h1  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 525: uvm_test_top.env.scb [scb] MATCH port read from port 0 : 1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 525: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 525: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 525: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 35.
 # UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 525: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 525: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 525: uvm_test_top.env.scb [scb] Received item : data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 525: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/sequence/control_sequence.svh(65) @ 525: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd5: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
+# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 525: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd5: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 525: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 535: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 535: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 535: uvm_test_top.env.scb [scb] MATCH port read from port 0 : 5.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 535: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 535: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 535: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 35.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 535: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 535: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(154) @ 535: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
 # UVM_INFO src/test/environment/scoreboard.svh(133) @ 535: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55 
 # UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 545: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(237) @ 545: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 545: uvm_test_top.env.scb [scb] MATCH port read from port 0 : 35.
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 545: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 35.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 545: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 545: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 555: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(237) @ 555: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 555: uvm_test_top.env.scb [scb] MATCH port read from port 0 : 35.
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 555: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 35.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 555: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 555: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(148) @ 555: uvm_test_top.env.scb [scb] Transaction started (SOF received).
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 565: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 565: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 565: uvm_test_top.env.scb [scb] MATCH port read from port 0 : 35.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 565: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 565: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h0  READ: 'b1  READY: 'b0 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 565: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 0.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 565: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h5  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 565: uvm_test_top.env.scb [scb] Received item : data_in: 'h5  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(162) @ 565: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
 # UVM_INFO src/test/environment/scoreboard.svh(167) @ 565: uvm_test_top.env.scb [scb] Memory data and received DA match.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 575: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 575: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 575: uvm_test_top.env.scb [scb] MATCH port read from port 0 : 35.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 575: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h55  READ: 'b1  READY: 'b0
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 575: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h55  READ: 'b1  READY: 'b0 
+# UVM_INFO src/test/environment/scoreboard.svh(227) @ 575: uvm_test_top.env.scb [scb] Port 0 packet constructed : SOF: 'h5 DA: 'h5  SA: 'h35  LENGTH: 'h35 PAYLOAD['h4]: '{53, 53, 0, 85} PARITY: 'h0 EOF: 'h0 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 575: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 55.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 575: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h1  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 575: uvm_test_top.env.scb [scb] Received item : data_in: 'h1  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 575: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 585: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b1  READY: 'b0
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 585: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h0  READ: 'b1  READY: 'b0 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 585: uvm_test_top.env.scb [scb] MATCH port read from port 0 : 0.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 585: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hff  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 585: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'hff  READ: 'b0  READY: 'b1 
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 585: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h5  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 585: uvm_test_top.env.scb [scb] Received item : data_in: 'h5  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 585: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 595: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h55  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 595: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h55  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(227) @ 595: uvm_test_top.env.scb [scb] Port 0 packet constructed : SOF: 'hff DA: 'h1  SA: 'h5  LENGTH: 'h35 PAYLOAD['h5]: '{53, 53, 53, 0, 85} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 595: uvm_test_top.env.scb [scb] MATCH port read from port 0 : 55.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 595: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b0  READY: 'b0
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 595: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b0  READY: 'b0 
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 595: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 595: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 595: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 605: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 605: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h0  READ: 'b0  READY: 'b1 
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 605: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 605: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h1  READ: 'b1  READY: 'b1 
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 605: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 605: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 605: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 615: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'hff  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 615: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'hff  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(201) @ 615: uvm_test_top.env.scb [scb] MATCH port read from port 0 : ff.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 615: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h0  READ: 'b0  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 615: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h0  READ: 'b0  READY: 'b1 
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 615: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 615: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 615: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
 # UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 625: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h5  READ: 'b1  READY: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(237) @ 625: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h5  READ: 'b1  READY: 'b1 
+# UVM_INFO src/test/environment/scoreboard.svh(205) @ 625: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected ff; received 5.
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 625: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 625: uvm_test_top.env.scb [scb] Received item : data_in: 'h35  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 625: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 635: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h1  READ: 'b1  READY: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(237) @ 635: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h1  READ: 'b1  READY: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(205) @ 635: uvm_test_top.env.scb [scb] MISS port read from port 0 : expected 5; received 1.
+# UVM_INFO src/test/environment/agent_port/port_monitor.svh(43) @ 635: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] Monitored PORT: PORT: 'h35  READ: 'b1  READY: 'b1
+# UVM_INFO src/test/environment/scoreboard.svh(237) @ 635: uvm_test_top.env.scb [scb] Received item from PORT 0 : PORT: 'h35  READ: 'b1  READY: 'b1 
 # UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 635: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
 # UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 635: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1
 # UVM_INFO src/test/environment/scoreboard.svh(144) @ 635: uvm_test_top.env.scb [scb] Received item : data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/scoreboard.svh(178) @ 635: uvm_test_top.env.scb [scb] Add item to input packet in middle of transaction.
-# UVM_INFO src/test/sequence/control_sequence.svh(68) @ 635: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
+# UVM_INFO src/test/sequence/control_sequence.svh(70) @ 635: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
 # UVM_INFO src/test/test_no_9.svh(67) @ 635: uvm_test_top [uvm_test_top] <--- EXIT PHASE: --> MAIN <--
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1199) @ 635: reporter [PH/TRC/EXE/ALLDROP] Phase 'uvm.uvm_sched.main' (id=256) PHASE EXIT ALL_DROPPED
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 635: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.main' (id=256) PHASE READY TO END
@@ -838,25 +835,25 @@
 # UVM_INFO src/test/environment/scoreboard.svh(339) @ 635: uvm_test_top.env.scb [scb] Packet no. 1 - finished checking.
 # UVM_INFO src/test/environment/scoreboard.svh(310) @ 635: uvm_test_top.env.scb [scb] Packet no. 2 - start checking.
 # UVM_INFO src/test/environment/scoreboard.svh(318) @ 635: uvm_test_top.env.scb [scb] control: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
-# UVM_INFO src/test/environment/scoreboard.svh(319) @ 635: uvm_test_top.env.scb [scb] port 0: SOF: 'hff DA: 'h1  SA: 'h5  LENGTH: 'h35 PAYLOAD['h5]: '{53, 53, 53, 0, 85} PARITY: 'h0 EOF: 'h0
+# UVM_INFO src/test/environment/scoreboard.svh(319) @ 635: uvm_test_top.env.scb [scb] port 0: SOF: 'h5 DA: 'h5  SA: 'h35  LENGTH: 'h35 PAYLOAD['h4]: '{53, 53, 0, 85} PARITY: 'h0 EOF: 'h0
 # UVM_INFO src/test/item/data_packet.svh(77) @ 635: reporter@@control_packet_temp_child [control_packet_temp_child] Packet 1 to compare : SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55 
-# UVM_INFO src/test/item/data_packet.svh(78) @ 635: reporter@@control_packet_temp_child [control_packet_temp_child] Packet 2 to compare : SOF: 'hff DA: 'h1  SA: 'h5  LENGTH: 'h35 PAYLOAD['h5]: '{53, 53, 53, 0, 85} PARITY: 'h0 EOF: 'h0 
+# UVM_INFO src/test/item/data_packet.svh(78) @ 635: reporter@@control_packet_temp_child [control_packet_temp_child] Packet 2 to compare : SOF: 'h5 DA: 'h5  SA: 'h35  LENGTH: 'h35 PAYLOAD['h4]: '{53, 53, 0, 85} PARITY: 'h0 EOF: 'h0 
 # UVM_INFO src/test/environment/scoreboard.svh(325) @ 635: uvm_test_top.env.scb [scb] MISS packet nr 2 read from port 0.
 # UVM_INFO src/test/item/data_packet.svh(93) @ 635: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55 
 # UVM_INFO src/test/environment/scoreboard.svh(332) @ 635: uvm_test_top.env.scb [scb] Correct structure for packet nr 2.
 # UVM_INFO src/test/environment/scoreboard.svh(339) @ 635: uvm_test_top.env.scb [scb] Packet no. 2 - finished checking.
 # UVM_INFO src/test/environment/scoreboard.svh(310) @ 635: uvm_test_top.env.scb [scb] Packet no. 3 - start checking.
 # UVM_INFO src/test/environment/scoreboard.svh(318) @ 635: uvm_test_top.env.scb [scb] control: SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55
-# UVM_INFO src/test/environment/scoreboard.svh(319) @ 635: uvm_test_top.env.scb [scb] port 0: SOF: 'hff DA: 'h1  SA: 'h5  LENGTH: 'h35 PAYLOAD['h5]: '{53, 53, 53, 0, 85} PARITY: 'h0 EOF: 'h0
+# UVM_INFO src/test/environment/scoreboard.svh(319) @ 635: uvm_test_top.env.scb [scb] port 0: SOF: 'h5 DA: 'h5  SA: 'h35  LENGTH: 'h35 PAYLOAD['h4]: '{53, 53, 0, 85} PARITY: 'h0 EOF: 'h0
 # UVM_INFO src/test/item/data_packet.svh(77) @ 635: reporter@@control_packet_temp_child [control_packet_temp_child] Packet 1 to compare : SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55 
-# UVM_INFO src/test/item/data_packet.svh(78) @ 635: reporter@@control_packet_temp_child [control_packet_temp_child] Packet 2 to compare : SOF: 'hff DA: 'h1  SA: 'h5  LENGTH: 'h35 PAYLOAD['h5]: '{53, 53, 53, 0, 85} PARITY: 'h0 EOF: 'h0 
+# UVM_INFO src/test/item/data_packet.svh(78) @ 635: reporter@@control_packet_temp_child [control_packet_temp_child] Packet 2 to compare : SOF: 'h5 DA: 'h5  SA: 'h35  LENGTH: 'h35 PAYLOAD['h4]: '{53, 53, 0, 85} PARITY: 'h0 EOF: 'h0 
 # UVM_INFO src/test/environment/scoreboard.svh(325) @ 635: uvm_test_top.env.scb [scb] MISS packet nr 3 read from port 0.
 # UVM_INFO src/test/item/data_packet.svh(93) @ 635: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'hff DA: 'h5  SA: 'h1  LENGTH: 'h5 PAYLOAD['h4]: '{53, 53, 53, 53} PARITY: 'h0 EOF: 'h55 
 # UVM_INFO src/test/environment/scoreboard.svh(332) @ 635: uvm_test_top.env.scb [scb] Correct structure for packet nr 3.
 # UVM_INFO src/test/environment/scoreboard.svh(339) @ 635: uvm_test_top.env.scb [scb] Packet no. 3 - finished checking.
 # UVM_INFO src/test/environment/scoreboard.svh(349) @ 635: uvm_test_top.env.scb [scb] <--- EXIT PHASE: --> CHECK <--
 # UVM_INFO src/test/environment/coverage/coverage.svh(136) @ 635: uvm_test_top.env.cov [cov] ---> EXIT PHASE: --> REPORT <--
-# UVM_INFO src/test/environment/coverage/coverage.svh(137) @ 635: uvm_test_top.env.cov [cov] Ports coverage   = 18.97%
+# UVM_INFO src/test/environment/coverage/coverage.svh(137) @ 635: uvm_test_top.env.cov [cov] Ports coverage   = 20.54%
 # UVM_INFO src/test/environment/coverage/coverage.svh(138) @ 635: uvm_test_top.env.cov [cov] Memory coverage  = 57.26%
 # UVM_INFO src/test/environment/coverage/coverage.svh(139) @ 635: uvm_test_top.env.cov [cov] Control coverage = 57.14%
 # UVM_INFO src/test/environment/coverage/coverage.svh(140) @ 635: uvm_test_top.env.cov [cov] Data coverage    = 13.46%
@@ -868,7 +865,7 @@
 # UVM_INFO src/test/environment/scoreboard.svh(357) @ 635: uvm_test_top.env.scb [scb] ON PORT 0:
 # UVM_INFO src/test/environment/scoreboard.svh(358) @ 635: uvm_test_top.env.scb [scb] There were 4 received packets: MISSED/MATCHED: 2/2.
 # UVM_INFO src/test/environment/scoreboard.svh(359) @ 635: uvm_test_top.env.scb [scb] There were 0 left packets.
-# UVM_INFO src/test/environment/scoreboard.svh(360) @ 635: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 9/31.
+# UVM_INFO src/test/environment/scoreboard.svh(360) @ 635: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 17/20.
 # UVM_INFO src/test/environment/scoreboard.svh(357) @ 635: uvm_test_top.env.scb [scb] ON PORT 1:
 # UVM_INFO src/test/environment/scoreboard.svh(358) @ 635: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 0/0.
 # UVM_INFO src/test/environment/scoreboard.svh(359) @ 635: uvm_test_top.env.scb [scb] There were 0 left packets.
@@ -881,13 +878,13 @@
 # UVM_INFO src/test/environment/scoreboard.svh(358) @ 635: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 0/0.
 # UVM_INFO src/test/environment/scoreboard.svh(359) @ 635: uvm_test_top.env.scb [scb] There were 0 left packets.
 # UVM_INFO src/test/environment/scoreboard.svh(360) @ 635: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 0/0.
-# UVM_INFO src/test/environment/scoreboard.svh(362) @ 635: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 9/31.
+# UVM_INFO src/test/environment/scoreboard.svh(362) @ 635: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 17/20.
 # UVM_INFO src/test/environment/scoreboard.svh(363) @ 635: uvm_test_top.env.scb [scb] <--- EXIT PHASE: --> REPORT <--
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :  650
+# UVM_INFO :  647
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -923,10 +920,10 @@
 # [reset_agent_driver]     5
 # [reset_agent_monitor]     6
 # [rst_agent]     4
-# [scb]   279
+# [scb]   276
 # [uvm_test_top]     6
 # ** Note: $finish    : /opt/questa/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 635 ns  Iteration: 110  Instance: /testbench
 # Saving coverage database on exit...
-# End time: 13:24:00 on Mar 13,2024, Elapsed time: 0:00:03
+# End time: 21:54:07 on Mar 13,2024, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 1
