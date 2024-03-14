@@ -46,7 +46,7 @@ endclass : test_no_4
     
     foreach(mem_seq[i]) begin
       mem_seq[i] =  memory_sequence::type_id::create($sformatf("mem_seq[%0d]", i),  this);
-      mem_seq[i].set_parameters(.addr(i), .nr_items(1), .no_random(1), .delayed(1'b1), .sel(1'b1), .wr_rd(1'b1));
+      mem_seq[i].set_parameters(.addr(i), .nr_items(1), .no_random(1), .memory_trans(WRITE_TRANS));
     end
     
     v_seq = virtual_sequence::type_id::create("v_seq");
@@ -63,6 +63,8 @@ endclass : test_no_4
   task test_no_4::main_phase(uvm_phase phase);
     `uvm_info(get_name(), $sformatf("---> ENTER PHASE: --> MAIN <--"), UVM_DEBUG);
     
+    phase.phase_done.set_drain_time(this, 100);
+
     phase.raise_objection(this);
     fork
       ctrl_seq.start(env.ctrl_agent.seqr);

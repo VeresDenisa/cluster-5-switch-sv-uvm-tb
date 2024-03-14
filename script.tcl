@@ -7,7 +7,7 @@
 
 
 # set the testcases names and verbosity to check
-set testlist {test test_no_1 test_no_2 test_no_4 test_no_5 test_no_6 test_no_7 test_no_8 test_no_9 test_no_11 test_no_12}
+set testlist {test test_no_1 test_no_2 test_no_3 test_no_4 test_no_5 test_no_6 test_no_7 test_no_8 test_no_9 test_no_10 test_no_11 test_no_12 test_no_13}
 set verblist {NONE LOW MEDIUM HIGH FULL DEBUG}
 
 if { $argc < 2 } { 

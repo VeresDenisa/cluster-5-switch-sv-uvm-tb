@@ -286,6 +286,7 @@ function void scoreboard::build_phase(uvm_phase phase);
       `uvm_info(get_name(), $sformatf("Reset acivated : %s ", t.convert2string()), UVM_FULL);
       port_known = 1'b0;
       transaction_started = 1'b0;
+      port_indexes.delete();
       control_packet_temp.reset_all();
       for(int i = 0; i < 4; i++) begin
         mem_data[i] = 8'h00;
@@ -296,6 +297,7 @@ function void scoreboard::build_phase(uvm_phase phase);
         port_item_prev[i].ready = 1'b0;
         port_item_temp[i].ready = 1'b0;
         port_packet_temp[i].reset_all();
+        mem_data[i] = 8'h00;
       end
     end: reset_all_signals    
   endfunction : write_reset

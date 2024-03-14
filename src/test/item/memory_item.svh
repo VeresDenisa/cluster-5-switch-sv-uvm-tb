@@ -11,6 +11,7 @@ class memory_item extends uvm_sequence_item;
        bit         mem_ack;       // OUTPUT
   rand memory_write_read_idle_enum mem_sel_enum;
        
+  constraint addresses { mem_addr dist { 8'h00 := 25, 8'h01 := 25, 8'h02 := 25, 8'h03 := 25 }; }
   constraint mostly_inactive_mem_sel_enum { mem_sel_enum dist { 2'b00 := 90, 2'b10 := 5, 2'b11 := 5 }; }
   constraint pseudo_random_data           { mem_wr_data dist {'h00:/10,'h55:/10,'hAA:/10,'hFF:/10,['h01:'h54]:/10,['h56:'hA9]:/10,['hA9:'hFE]:/10}; }
   

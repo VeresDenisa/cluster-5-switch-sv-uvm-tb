@@ -34,9 +34,17 @@ endclass : test_no_6
     env = environment::type_id::create("env", this);
    
     foreach(first_memory_config_data[i]) begin
-      $cast(first_memory_config_data[i], $urandom_range(0,255));
-      uvm_config_db #(logic[7:0])::set(this, "*", $sformatf("mem_data[%0d]", i), first_memory_config_data[i]);
+      $cast(first_memory_config_data[i], $urandom_range(0,254)); 
+      while(first_memory_config_data[i] === 'h55) $cast(first_memory_config_data[i], $urandom_range(0,254)); 
     end
+
+    for(int i = 0; i < `NO_OF_PORTS - 1; i++) begin
+      while(first_memory_config_data[i] === first_memory_config_data[i+1]) $cast(first_memory_config_data[i], $urandom_range(0,254)); 
+    end   
+    
+    foreach(first_memory_config_data[i]) begin
+      uvm_config_db #(logic[7:0])::set(this, "*", $sformatf("mem_data[%0d]", i), first_memory_config_data[i]);
+    end 
     
     foreach(ctrl_seq[i]) begin
       ctrl_seq[i] = control_sequence::type_id::create("ctrl_seq");
@@ -61,6 +69,8 @@ endclass : test_no_6
   task test_no_6::main_phase(uvm_phase phase);
     `uvm_info(get_name(), $sformatf("---> ENTER PHASE: --> MAIN <--"), UVM_DEBUG);
     
+    phase.phase_done.set_drain_time(this, 100);
+
     phase.raise_objection(this);
     fork
       v_seq.start(env.v_seqr);

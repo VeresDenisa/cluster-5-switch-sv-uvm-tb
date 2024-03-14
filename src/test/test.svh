@@ -31,7 +31,7 @@ class test extends uvm_test;
   environment env;  
   
   control_sequence ctrl_seq;
-  memory_sequence mem_seq[5];
+  memory_sequence mem_seq;
   virtual_sequence v_seq;
 
   environment_config env_config;
@@ -58,20 +58,25 @@ endclass : test
     env = environment::type_id::create("env", this); 
    
     foreach(first_memory_config_data[i]) begin
-      $cast(first_memory_config_data[i], 83 * i + 1);
-      uvm_config_db #(logic[7:0])::set(this, "*", $sformatf("mem_data[%0d]", i), first_memory_config_data[i]);
+      $cast(first_memory_config_data[i], $urandom_range(0,254)); 
+      while(first_memory_config_data[i] === 'h55) $cast(first_memory_config_data[i], $urandom_range(0,254)); 
     end
+
+    for(int i = 0; i < `NO_OF_PORTS - 1; i++) begin
+      while(first_memory_config_data[i] === first_memory_config_data[i+1]) $cast(first_memory_config_data[i], $urandom_range(0,254)); 
+    end   
+    
+    foreach(first_memory_config_data[i]) begin
+      uvm_config_db #(logic[7:0])::set(this, "*", $sformatf("mem_data[%0d]", i), first_memory_config_data[i]);
+    end 
     
     ctrl_seq = control_sequence::type_id::create("ctrl_seq");
     ctrl_seq.set_da_options(first_memory_config_data);
     
     ctrl_seq.set_parameters(.nr_items(6));
     
-    for(int i = 0; i < 5; i++) begin
-      mem_seq[i] = memory_sequence::type_id::create("mem_seq");
-      if(i == 4) mem_seq[i].set_parameters(.nr_items(1), .addr(2'b00), .sel(1'b0), .wr_rd(1'b0));
-      else mem_seq[i].set_parameters(.nr_items(1), .addr(i), .sel(1'b1), .wr_rd(1'b0));
-    end    
+    mem_seq = memory_sequence::type_id::create("mem_seq"); 
+    mem_seq.set_parameters(.nr_items(4), .rotate(1'b1), .memory_trans(READ_TRANS));
 
     v_seq = virtual_sequence::type_id::create("v_seq");
     
@@ -87,13 +92,15 @@ endclass : test
   task test::main_phase(uvm_phase phase);
     `uvm_info(get_name(), $sformatf("---> ENTER PHASE: --> MAIN <--"), UVM_DEBUG);
     
-    //phase.phase_done.set_drain_time(this, 10);
+    phase.phase_done.set_drain_time(this, 10);
 
     phase.raise_objection(this);
     fork
       v_seq.start(env.v_seqr);
-      #100 ctrl_seq.start(env.ctrl_agent.seqr);
-      for(int i = 0; i < 5; i++) mem_seq[i].start(env.mem_agent.seqr);
+      begin
+        mem_seq.start(env.mem_agent.seqr);
+        #10 ctrl_seq.start(env.ctrl_agent.seqr);
+      end
     join
     phase.drop_objection(this);  
 

@@ -63,6 +63,8 @@ endclass : test_no_1
   task test_no_1::main_phase(uvm_phase phase);
     `uvm_info(get_name(), $sformatf("---> ENTER PHASE: --> MAIN <--"), UVM_DEBUG);
     
+    phase.phase_done.set_drain_time(this, 100);
+
     phase.raise_objection(this);
     fork
       ctrl_seq.start(env.ctrl_agent.seqr);

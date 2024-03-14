@@ -16,8 +16,8 @@ interface port_interface(input bit clock);
   endclocking
   
   task send(port_item item);
-    @(driver);
     driver.read <= item.read;
+    @(driver);
   endtask : send
   
   function automatic void receive(ref port_item item);
