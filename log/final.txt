@@ -1,0 +1,15 @@
+Number of test cases: 13
+
+Test       - PASS
+Test_no_1  - PASS (ILLEGAL CASE - BEHAVED AS EXPECTED)
+Test_no_2  -      (if sw_enable_in LOW on SOF or DA transmission continues)
+Test_no_3  -      (delay between read/y HIGH and actual read)
+Test_no_4  - PASS (ILLEGAL CASE - BEHAVED AS EXPECTED)
+Test_no_5  - PASS
+Test_no_6  - PASS
+Test_no_7  - PASS
+Test_no_8  -      (BEHAVED AS EXPECTED)
+Test_no_9  - PASS
+Test_no_11        (FIFO full - original packet loses bytes and EOF if read is not activated)
+Test_no_12 - PASS
+Test_no_13 - PASS

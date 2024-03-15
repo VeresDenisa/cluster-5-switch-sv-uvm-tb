@@ -11,6 +11,7 @@ class test_no_8 extends uvm_test;
   control_sequence ctrl_seq[`NO_OF_TESTS];
   reset_sequence  rst_seq;
   virtual_sequence v_seq;
+  memory_sequence mem_seq[4];
 
   environment_config env_config;
   
@@ -49,6 +50,11 @@ endclass : test_no_8
     end 
     
     rst_seq = reset_sequence::type_id::create("rst_seq");
+
+    foreach(mem_seq[i]) begin
+      mem_seq[i] = memory_sequence::type_id::create("mem_seq");
+      mem_seq[i].set_parameters(.data(first_memory_config_data[i]), .addr(i), .nr_items(1), .no_random(1'b1), .memory_trans(WRITE_TRANS));
+    end
     
     foreach(ctrl_seq[i]) begin
       ctrl_seq[i] = control_sequence::type_id::create("ctrl_seq");
@@ -75,10 +81,12 @@ endclass : test_no_8
     phase.raise_objection(this);
     fork
       foreach(ctrl_seq[i]) begin
-        #100 ctrl_seq[i].start(env.ctrl_agent.seqr);
+        #((i==0)?100:200) ctrl_seq[i].start(env.ctrl_agent.seqr);
       end
       foreach(ctrl_seq[i]) begin
-        #((i==0)?100:200) rst_seq.start(env.rst_agent.seqr);
+        #((i==0)?100:300) rst_seq.start(env.rst_agent.seqr);
+        foreach(mem_seq[i])
+          #10 mem_seq[i].start(env.mem_agent.seqr);
       end
       v_seq.start(env.v_seqr);
     join

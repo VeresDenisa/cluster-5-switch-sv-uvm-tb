@@ -35,6 +35,7 @@ task memory_sequence::body();
   if(no_random !== 0) begin
     assert(item.randomize());
     item.set_enable();
+    item.set_address(addr);
   end else begin
       if(memory_trans === WRITE_TRANS) data = $urandom_range(0,254);
       else data = 0;

@@ -66,6 +66,9 @@ class scoreboard extends uvm_scoreboard;
   int nr_of_packets_received_dropped;
   int nr_of_packets_left_on_port[4];
   int byte_miss[4], byte_match[4];
+
+  int nr_memory_write_correct, nr_memory_write_incorrect;
+  int nr_memory_read_correct, nr_memory_read_incorrect;
 endclass : scoreboard
 
 
@@ -90,6 +93,11 @@ function void scoreboard::build_phase(uvm_phase phase);
     nr_of_packets_received_dropped = 0;
     nr_of_packets_sent_incorrect = 0;
     nr_of_packets_sent = 0;
+    
+    nr_memory_write_correct = 0;
+    nr_memory_write_incorrect = 0;
+    nr_memory_read_correct = 0;
+    nr_memory_read_incorrect = 0;
 
     control_item_prev = new("control_item_prev");
     control_item_prev_prev = new("control_item_prev_prev");
@@ -151,11 +159,13 @@ function void scoreboard::build_phase(uvm_phase phase);
           make_control_packet(t);
         end : begining_of_transaction
         8'h55 : begin : end_of_transaction
-          `uvm_info(get_name(), $sformatf("Transaction finished (EOF received)."), UVM_DEBUG);
-          port_queue[port_current].push_back(t.data_in);
-          make_control_packet(t);
-          transaction_started = 1'b0;
-          port_known = 1'b0;
+          if(transaction_started === 1'b1) begin
+            `uvm_info(get_name(), $sformatf("Transaction finished (EOF received)."), UVM_DEBUG);
+            port_queue[port_current].push_back(t.data_in);
+            make_control_packet(t);
+            transaction_started = 1'b0;
+            port_known = 1'b0;
+          end
         end : end_of_transaction
         default : begin : middle_of_transaction
           if(transaction_started === 1'b1 && port_known === 1'b0) begin : choose_port
@@ -172,6 +182,8 @@ function void scoreboard::build_phase(uvm_phase phase);
             end : DA_is_mem
             else begin : DA_is_not_mem
               `uvm_info(get_name(), $sformatf("Memory data and received DA don't match."), UVM_DEBUG);
+              transaction_started = 1'b0;
+              control_packet_temp.reset_all();
             end : DA_is_not_mem
           end : choose_port
           else if(transaction_started === 1'b1) begin : middle_of_packet
@@ -184,11 +196,13 @@ function void scoreboard::build_phase(uvm_phase phase);
     end : receiving_transaction
     else if(control_item_prev_prev.sw_enable_in === 1'b1) begin : status_deactivated
       `uvm_info(get_name(), $sformatf("Control packet constructed : %s ", control_packet_temp.convert2string()), UVM_DEBUG);
-      nr_of_packets_received_dropped++;
-      control_packet_temp_child.copy(control_packet_temp);
-      control_packet_queue.push_back(control_packet_temp_child);
-      control_packet_temp.reset_all();
-      control_packet_position = 0;
+      if(transaction_started === 1'b1) begin
+        nr_of_packets_received_dropped++;
+        control_packet_temp_child.copy(control_packet_temp);
+        control_packet_queue.push_back(control_packet_temp_child);
+        control_packet_temp.reset_all();
+        control_packet_position = 0;
+      end
     end : status_deactivated
     control_item_prev.copy(t);
   endfunction : write_control    
@@ -213,6 +227,7 @@ function void scoreboard::build_phase(uvm_phase phase);
 
   function void scoreboard::make_port_packet(port_item t, int port_index);
     data_packet port_packet_temp_child = new("port_packet_temp_child");
+    if(port_packet_position[port_index] === 0 && t.port !== 8'hFF) return;
     case(port_packet_position[port_index])
       0 : port_packet_temp[port_index].SOF = t.port;
       1 : port_packet_temp[port_index].da = t.port;
@@ -259,18 +274,22 @@ function void scoreboard::build_phase(uvm_phase phase);
       `uvm_info(get_name(), $sformatf("Memory access activated."), UVM_DEBUG);
       if(memory_item_prev.mem_addr >= 4) begin : incorrect_memory_address
         `uvm_info(get_name(), $sformatf("Incorrect memory port number %0h.", memory_item_prev.mem_addr), UVM_DEBUG);
+        nr_memory_write_incorrect++;
       end : incorrect_memory_address
       else 
         if(memory_item_prev.mem_wr_rd_s === 1'b1) begin : memory_write
           `uvm_info(get_name(), $sformatf("Correct port %0h address changed from %0h to %0h.", memory_item_prev.mem_addr, mem_data[memory_item_prev.mem_addr], t.mem_wr_data), UVM_DEBUG);
           mem_data[memory_item_prev.mem_addr] = t.mem_wr_data;
+          nr_memory_write_correct++;
         end : memory_write
         else begin : memory_read
           if(mem_data[memory_item_prev.mem_addr] === t.mem_rd_data>>(8*memory_item_prev.mem_addr)) begin : correct_memory_read
             `uvm_info(get_name(), $sformatf("Correct memory read from port %0h : %0h.", memory_item_prev.mem_addr, t.mem_rd_data>>(8*memory_item_prev.mem_addr)), UVM_DEBUG);
+            nr_memory_read_correct++;
           end : correct_memory_read
           else begin : incorrect_memory_read
             `uvm_info(get_name(), $sformatf("Incorrect memory read from port %0h : %0h.", memory_item_prev.mem_addr, t.mem_rd_data>>(8*memory_item_prev.mem_addr)), UVM_LOW);
+            nr_memory_read_incorrect++;
           end : incorrect_memory_read
         end : memory_read
     end : memory_activated
@@ -285,9 +304,13 @@ function void scoreboard::build_phase(uvm_phase phase);
     if(t.reset == 1'b0) begin : reset_all_signals
       `uvm_info(get_name(), $sformatf("Reset acivated : %s ", t.convert2string()), UVM_FULL);
       port_known = 1'b0;
+      port_current = 0;
       transaction_started = 1'b0;
       port_indexes.delete();
       control_packet_temp.reset_all();
+      control_item_prev.sw_enable_in = 1'b0;
+      control_item_prev_prev.sw_enable_in = 1'b0;
+      control_packet_position = 0;
       for(int i = 0; i < 4; i++) begin
         mem_data[i] = 8'h00;
         port_item_prev_prev[i].read = 1'b0;
@@ -298,6 +321,8 @@ function void scoreboard::build_phase(uvm_phase phase);
         port_item_temp[i].ready = 1'b0;
         port_packet_temp[i].reset_all();
         mem_data[i] = 8'h00;
+        port_packet_position[i] = 0;
+        port_queue[i].delete();
       end
     end: reset_all_signals    
   endfunction : write_reset
@@ -353,6 +378,8 @@ function void scoreboard::build_phase(uvm_phase phase);
     
   function void scoreboard::report_phase(uvm_phase phase);
     `uvm_info(get_name(), $sformatf("---> ENTER PHASE: --> REPORT <--"), UVM_MEDIUM);
+    `uvm_info(get_name(), $sformatf("There were %0d memory write accesses: INCORRECT/CORRECT: %0d/%0d.", nr_memory_write_correct+nr_memory_write_incorrect, nr_memory_write_incorrect, nr_memory_write_correct), UVM_LOW);
+    `uvm_info(get_name(), $sformatf("There were %0d memory read accesses: INCORRECT/CORRECT: %0d/%0d.", nr_memory_read_correct+nr_memory_read_incorrect, nr_memory_read_incorrect, nr_memory_read_correct), UVM_LOW);
     `uvm_info(get_name(), $sformatf("There were %0d sent packets: INCORRECT/CORRECT STRUCTURE: %0d/%0d.", nr_of_packets_sent, nr_of_packets_sent_incorrect, nr_of_packets_sent-nr_of_packets_sent_incorrect), UVM_LOW);
     `uvm_info(get_name(), $sformatf("There were %0d dropped packets.", nr_of_packets_received_dropped), UVM_LOW);
     for(int i = 0; i < 4; i++) begin : check_every_port

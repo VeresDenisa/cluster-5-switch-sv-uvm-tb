@@ -69,7 +69,7 @@ endclass : test_no_3
 
     phase.raise_objection(this);
     fork
-      #1500 v_seq.start(env.v_seqr);
+      #1610 v_seq.start(env.v_seqr);
       ctrl_seq.start(env.ctrl_agent.seqr);
     join
     phase.drop_objection(this);  

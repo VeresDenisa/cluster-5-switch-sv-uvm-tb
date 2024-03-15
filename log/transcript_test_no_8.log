@@ -1,5 +1,5 @@
-# vsim -c -classdebug -voptargs="+acc" "+UVM_TESTNAME=test_no_8" "+UVM_VERBOSITY=DEBUG" -wlf wave/wave_test_no_8.wlf work.testbench -do "log -r /*; coverage save -onexit ucdb/ucdb_test_no_8.ucdb; run -all; quit -f; exit" 
-# Start time: 00:21:38 on Mar 15,2024
+# vsim -c -classdebug -voptargs="+acc" "+UVM_TESTNAME=test_no_8" "+UVM_VERBOSITY=LOW" -wlf wave/wave_test_no_8.wlf work.testbench -do "log -r /*; coverage save -onexit ucdb/ucdb_test_no_8.ucdb; run -all; quit -f; exit" 
+# Start time: 15:34:33 on Mar 15,2024
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
@@ -83,887 +83,238 @@
 # 
 #       (Specify +UVM_NO_RELNOTES to turn off this notice)
 # 
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(192) @ 0: reporter [Questa UVM] Add Phase
 # UVM_INFO @ 0: reporter [RNTST] Running test test_no_8...
-# UVM_INFO src/test/test_no_8.svh(31) @ 0: uvm_test_top [uvm_test_top] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/test_no_8.svh(61) @ 0: uvm_test_top [uvm_test_top] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/environment.svh(58) @ 0: uvm_test_top.env [env] ---> ENTER PHASE: --> BUILD <--
 # Warning: In instance '\/env_pack::coverage::event_cvg ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
-# UVM_INFO src/test/environment/environment.svh(86) @ 0: uvm_test_top.env [env] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_base/base_agent.svh(31) @ 0: uvm_test_top.env.ctrl_agent [ctrl_agent] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_control/control_agent.svh(39) @ 0: uvm_test_top.env.ctrl_agent [ctrl_agent] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(22) @ 0: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(27) @ 0: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(23) @ 0: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(32) @ 0: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_base/base_agent.svh(31) @ 0: uvm_test_top.env.mem_agent [mem_agent] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_memory/memory_agent.svh(39) @ 0: uvm_test_top.env.mem_agent [mem_agent] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_memory/memory_driver.svh(23) @ 0: uvm_test_top.env.mem_agent.memory_agent_driver [memory_agent_driver] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_memory/memory_driver.svh(30) @ 0: uvm_test_top.env.mem_agent.memory_agent_driver [memory_agent_driver] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(23) @ 0: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(32) @ 0: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(25) @ 0: uvm_test_top.env.port_0_agent [port_0_agent] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(43) @ 0: uvm_test_top.env.port_0_agent [port_0_agent] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(22) @ 0: uvm_test_top.env.port_0_agent.port_0_driver [port_0_driver] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(27) @ 0: uvm_test_top.env.port_0_agent.port_0_driver [port_0_driver] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(23) @ 0: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(33) @ 0: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(25) @ 0: uvm_test_top.env.port_1_agent [port_1_agent] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(43) @ 0: uvm_test_top.env.port_1_agent [port_1_agent] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(22) @ 0: uvm_test_top.env.port_1_agent.port_1_driver [port_1_driver] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(27) @ 0: uvm_test_top.env.port_1_agent.port_1_driver [port_1_driver] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(23) @ 0: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(33) @ 0: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(25) @ 0: uvm_test_top.env.port_2_agent [port_2_agent] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(43) @ 0: uvm_test_top.env.port_2_agent [port_2_agent] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(22) @ 0: uvm_test_top.env.port_2_agent.port_2_driver [port_2_driver] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(27) @ 0: uvm_test_top.env.port_2_agent.port_2_driver [port_2_driver] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(23) @ 0: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(33) @ 0: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(25) @ 0: uvm_test_top.env.port_3_agent [port_3_agent] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(43) @ 0: uvm_test_top.env.port_3_agent [port_3_agent] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(22) @ 0: uvm_test_top.env.port_3_agent.port_3_driver [port_3_driver] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(27) @ 0: uvm_test_top.env.port_3_agent.port_3_driver [port_3_driver] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(23) @ 0: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(33) @ 0: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_base/base_agent.svh(31) @ 0: uvm_test_top.env.rst_agent [rst_agent] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_reset/reset_agent.svh(39) @ 0: uvm_test_top.env.rst_agent [rst_agent] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(22) @ 0: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(27) @ 0: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(23) @ 0: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] ---> ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(32) @ 0: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] <--- EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/scoreboard.svh(73) @ 0: uvm_test_top.env.scb [scb] <--- ENTER PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/scoreboard.svh(115) @ 0: uvm_test_top.env.scb [scb] ---> EXIT PHASE: --> BUILD <--
-# UVM_INFO src/test/environment/agent_base/base_agent.svh(48) @ 0: uvm_test_top.env.ctrl_agent [ctrl_agent] ---> ENTER PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_base/base_agent.svh(54) @ 0: uvm_test_top.env.ctrl_agent [ctrl_agent] <--- EXIT PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_base/base_agent.svh(48) @ 0: uvm_test_top.env.mem_agent [mem_agent] ---> ENTER PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_base/base_agent.svh(54) @ 0: uvm_test_top.env.mem_agent [mem_agent] <--- EXIT PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(47) @ 0: uvm_test_top.env.port_0_agent [port_0_agent] ---> ENTER PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(54) @ 0: uvm_test_top.env.port_0_agent [port_0_agent] <--- EXIT PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(47) @ 0: uvm_test_top.env.port_1_agent [port_1_agent] ---> ENTER PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(54) @ 0: uvm_test_top.env.port_1_agent [port_1_agent] <--- EXIT PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(47) @ 0: uvm_test_top.env.port_2_agent [port_2_agent] ---> ENTER PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(54) @ 0: uvm_test_top.env.port_2_agent [port_2_agent] <--- EXIT PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(47) @ 0: uvm_test_top.env.port_3_agent [port_3_agent] ---> ENTER PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_port/port_agent.svh(54) @ 0: uvm_test_top.env.port_3_agent [port_3_agent] <--- EXIT PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_base/base_agent.svh(48) @ 0: uvm_test_top.env.rst_agent [rst_agent] ---> ENTER PHASE: --> CONNECT <--
-# UVM_INFO src/test/environment/agent_base/base_agent.svh(54) @ 0: uvm_test_top.env.rst_agent [rst_agent] <--- EXIT PHASE: --> CONNECT <--
-# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] End Of Elaboration
-# UVM_INFO src/test/test_no_8.svh(65) @ 0: uvm_test_top [uvm_test_top] ---> ENTER PHASE: --> START OF SIMULATION <--
 # UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
 # --------------------------------------------------------------------
 # Name                         Type                        Size  Value
 # --------------------------------------------------------------------
 # uvm_test_top                 test_no_8                   -     @496 
 #   env                        environment                 -     @507 
-#     cov                      coverage                    -     @745 
-#       an_port_control        uvm_analysis_imp_control    -     @784 
-#       an_port_memory         uvm_analysis_imp_memory     -     @800 
-#       an_port_port_0         uvm_analysis_imp_port_0     -     @752 
-#       an_port_port_1         uvm_analysis_imp_port_1     -     @760 
-#       an_port_port_2         uvm_analysis_imp_port_2     -     @768 
-#       an_port_port_3         uvm_analysis_imp_port_3     -     @776 
-#       an_port_reset          uvm_analysis_imp_reset      -     @792 
-#     ctrl_agent               control_agent               -     @615 
-#       control_agent_driver   control_driver              -     @951 
-#         rsp_port             uvm_analysis_port           -     @966 
-#         seq_item_port        uvm_seq_item_pull_port      -     @958 
-#       control_agent_monitor  control_monitor             -     @974 
-#         mon_an_port          uvm_analysis_port           -     @994 
-#       control_agent_seqr     uvm_sequencer               -     @842 
-#         rsp_export           uvm_analysis_export         -     @849 
-#         seq_item_export      uvm_seq_item_pull_imp       -     @943 
+#     cov                      coverage                    -     @761 
+#       an_port_control        uvm_analysis_imp_control    -     @800 
+#       an_port_memory         uvm_analysis_imp_memory     -     @816 
+#       an_port_port_0         uvm_analysis_imp_port_0     -     @768 
+#       an_port_port_1         uvm_analysis_imp_port_1     -     @776 
+#       an_port_port_2         uvm_analysis_imp_port_2     -     @784 
+#       an_port_port_3         uvm_analysis_imp_port_3     -     @792 
+#       an_port_reset          uvm_analysis_imp_reset      -     @808 
+#     ctrl_agent               control_agent               -     @631 
+#       control_agent_driver   control_driver              -     @967 
+#         rsp_port             uvm_analysis_port           -     @982 
+#         seq_item_port        uvm_seq_item_pull_port      -     @974 
+#       control_agent_monitor  control_monitor             -     @990 
+#         mon_an_port          uvm_analysis_port           -     @1010
+#       control_agent_seqr     uvm_sequencer               -     @858 
+#         rsp_export           uvm_analysis_export         -     @865 
+#         seq_item_export      uvm_seq_item_pull_imp       -     @959 
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     mem_agent                memory_agent                -     @622 
-#       memory_agent_driver    memory_driver               -     @1119
-#         rsp_port             uvm_analysis_port           -     @1134
-#         seq_item_port        uvm_seq_item_pull_port      -     @1126
-#       memory_agent_monitor   memory_monitor              -     @1142
-#         mon_an_port          uvm_analysis_port           -     @1166
-#       memory_agent_seqr      uvm_sequencer               -     @1010
-#         rsp_export           uvm_analysis_export         -     @1017
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1111
+#     mem_agent                memory_agent                -     @638 
+#       memory_agent_driver    memory_driver               -     @1135
+#         rsp_port             uvm_analysis_port           -     @1150
+#         seq_item_port        uvm_seq_item_pull_port      -     @1142
+#       memory_agent_monitor   memory_monitor              -     @1158
+#         mon_an_port          uvm_analysis_port           -     @1182
+#       memory_agent_seqr      uvm_sequencer               -     @1026
+#         rsp_export           uvm_analysis_export         -     @1033
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1127
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     port_0_agent             port_agent                  -     @568 
-#       port_0_driver          port_driver                 -     @1347
-#         rsp_port             uvm_analysis_port           -     @1362
-#         seq_item_port        uvm_seq_item_pull_port      -     @1354
-#       port_0_monitor         port_monitor                -     @1372
-#         mon_an_port          uvm_analysis_port           -     @1389
-#       port_0_seqr            port_sequencer              -     @1183
-#         export_port          uvm_analysis_export         -     @1292
-#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1300
-#           analysis_export    uvm_analysis_imp            -     @1339
-#           get_ap             uvm_analysis_port           -     @1331
-#           get_peek_export    uvm_get_peek_imp            -     @1315
-#           put_ap             uvm_analysis_port           -     @1323
-#           put_export         uvm_put_imp                 -     @1307
-#         rsp_export           uvm_analysis_export         -     @1190
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1284
+#     port_0_agent             port_agent                  -     @584 
+#       port_0_driver          port_driver                 -     @1363
+#         rsp_port             uvm_analysis_port           -     @1378
+#         seq_item_port        uvm_seq_item_pull_port      -     @1370
+#       port_0_monitor         port_monitor                -     @1388
+#         mon_an_port          uvm_analysis_port           -     @1405
+#       port_0_seqr            port_sequencer              -     @1199
+#         export_port          uvm_analysis_export         -     @1308
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1316
+#           analysis_export    uvm_analysis_imp            -     @1355
+#           get_ap             uvm_analysis_port           -     @1347
+#           get_peek_export    uvm_get_peek_imp            -     @1331
+#           put_ap             uvm_analysis_port           -     @1339
+#           put_export         uvm_put_imp                 -     @1323
+#         rsp_export           uvm_analysis_export         -     @1206
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1300
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     port_1_agent             port_agent                  -     @576 
-#       port_1_driver          port_driver                 -     @1570
-#         rsp_port             uvm_analysis_port           -     @1585
-#         seq_item_port        uvm_seq_item_pull_port      -     @1577
-#       port_1_monitor         port_monitor                -     @1595
-#         mon_an_port          uvm_analysis_port           -     @1612
-#       port_1_seqr            port_sequencer              -     @1406
-#         export_port          uvm_analysis_export         -     @1515
-#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1523
-#           analysis_export    uvm_analysis_imp            -     @1562
-#           get_ap             uvm_analysis_port           -     @1554
-#           get_peek_export    uvm_get_peek_imp            -     @1538
-#           put_ap             uvm_analysis_port           -     @1546
-#           put_export         uvm_put_imp                 -     @1530
-#         rsp_export           uvm_analysis_export         -     @1413
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1507
+#     port_1_agent             port_agent                  -     @592 
+#       port_1_driver          port_driver                 -     @1586
+#         rsp_port             uvm_analysis_port           -     @1601
+#         seq_item_port        uvm_seq_item_pull_port      -     @1593
+#       port_1_monitor         port_monitor                -     @1611
+#         mon_an_port          uvm_analysis_port           -     @1628
+#       port_1_seqr            port_sequencer              -     @1422
+#         export_port          uvm_analysis_export         -     @1531
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1539
+#           analysis_export    uvm_analysis_imp            -     @1578
+#           get_ap             uvm_analysis_port           -     @1570
+#           get_peek_export    uvm_get_peek_imp            -     @1554
+#           put_ap             uvm_analysis_port           -     @1562
+#           put_export         uvm_put_imp                 -     @1546
+#         rsp_export           uvm_analysis_export         -     @1429
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1523
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     port_2_agent             port_agent                  -     @584 
-#       port_2_driver          port_driver                 -     @1793
-#         rsp_port             uvm_analysis_port           -     @1808
-#         seq_item_port        uvm_seq_item_pull_port      -     @1800
-#       port_2_monitor         port_monitor                -     @1818
-#         mon_an_port          uvm_analysis_port           -     @1835
-#       port_2_seqr            port_sequencer              -     @1629
-#         export_port          uvm_analysis_export         -     @1738
-#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1746
-#           analysis_export    uvm_analysis_imp            -     @1785
-#           get_ap             uvm_analysis_port           -     @1777
-#           get_peek_export    uvm_get_peek_imp            -     @1761
-#           put_ap             uvm_analysis_port           -     @1769
-#           put_export         uvm_put_imp                 -     @1753
-#         rsp_export           uvm_analysis_export         -     @1636
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1730
+#     port_2_agent             port_agent                  -     @600 
+#       port_2_driver          port_driver                 -     @1809
+#         rsp_port             uvm_analysis_port           -     @1824
+#         seq_item_port        uvm_seq_item_pull_port      -     @1816
+#       port_2_monitor         port_monitor                -     @1834
+#         mon_an_port          uvm_analysis_port           -     @1851
+#       port_2_seqr            port_sequencer              -     @1645
+#         export_port          uvm_analysis_export         -     @1754
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1762
+#           analysis_export    uvm_analysis_imp            -     @1801
+#           get_ap             uvm_analysis_port           -     @1793
+#           get_peek_export    uvm_get_peek_imp            -     @1777
+#           put_ap             uvm_analysis_port           -     @1785
+#           put_export         uvm_put_imp                 -     @1769
+#         rsp_export           uvm_analysis_export         -     @1652
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1746
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     port_3_agent             port_agent                  -     @592 
-#       port_3_driver          port_driver                 -     @2016
-#         rsp_port             uvm_analysis_port           -     @2031
-#         seq_item_port        uvm_seq_item_pull_port      -     @2023
-#       port_3_monitor         port_monitor                -     @2041
-#         mon_an_port          uvm_analysis_port           -     @2058
-#       port_3_seqr            port_sequencer              -     @1852
-#         export_port          uvm_analysis_export         -     @1961
-#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1969
-#           analysis_export    uvm_analysis_imp            -     @2008
-#           get_ap             uvm_analysis_port           -     @2000
-#           get_peek_export    uvm_get_peek_imp            -     @1984
-#           put_ap             uvm_analysis_port           -     @1992
-#           put_export         uvm_put_imp                 -     @1976
-#         rsp_export           uvm_analysis_export         -     @1859
-#         seq_item_export      uvm_seq_item_pull_imp       -     @1953
+#     port_3_agent             port_agent                  -     @608 
+#       port_3_driver          port_driver                 -     @2032
+#         rsp_port             uvm_analysis_port           -     @2047
+#         seq_item_port        uvm_seq_item_pull_port      -     @2039
+#       port_3_monitor         port_monitor                -     @2057
+#         mon_an_port          uvm_analysis_port           -     @2074
+#       port_3_seqr            port_sequencer              -     @1868
+#         export_port          uvm_analysis_export         -     @1977
+#         fifo                 uvm_tlm_analysis_fifo #(T)  -     @1985
+#           analysis_export    uvm_analysis_imp            -     @2024
+#           get_ap             uvm_analysis_port           -     @2016
+#           get_peek_export    uvm_get_peek_imp            -     @2000
+#           put_ap             uvm_analysis_port           -     @2008
+#           put_export         uvm_put_imp                 -     @1992
+#         rsp_export           uvm_analysis_export         -     @1875
+#         seq_item_export      uvm_seq_item_pull_imp       -     @1969
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     rst_agent                reset_agent                 -     @608 
-#       reset_agent_driver     reset_driver                -     @2183
-#         rsp_port             uvm_analysis_port           -     @2198
-#         seq_item_port        uvm_seq_item_pull_port      -     @2190
-#       reset_agent_monitor    reset_monitor               -     @2206
-#         mon_an_port          uvm_analysis_port           -     @2226
-#       reset_agent_seqr       uvm_sequencer               -     @2074
-#         rsp_export           uvm_analysis_export         -     @2081
-#         seq_item_export      uvm_seq_item_pull_imp       -     @2175
+#     rst_agent                reset_agent                 -     @624 
+#       reset_agent_driver     reset_driver                -     @2199
+#         rsp_port             uvm_analysis_port           -     @2214
+#         seq_item_port        uvm_seq_item_pull_port      -     @2206
+#       reset_agent_monitor    reset_monitor               -     @2222
+#         mon_an_port          uvm_analysis_port           -     @2242
+#       reset_agent_seqr       uvm_sequencer               -     @2090
+#         rsp_export           uvm_analysis_export         -     @2097
+#         seq_item_export      uvm_seq_item_pull_imp       -     @2191
 #         arbitration_queue    array                       0     -    
 #         lock_queue           array                       0     -    
 #         num_last_reqs        integral                    32    'd1  
 #         num_last_rsps        integral                    32    'd1  
-#     scb                      scoreboard                  -     @738 
-#       an_port_control        uvm_analysis_imp_control    -     @2324
-#       an_port_memory         uvm_analysis_imp_memory     -     @2340
-#       an_port_port_0         uvm_analysis_imp_port_0     -     @2348
-#       an_port_port_1         uvm_analysis_imp_port_1     -     @2356
-#       an_port_port_2         uvm_analysis_imp_port_2     -     @2364
-#       an_port_port_3         uvm_analysis_imp_port_3     -     @2372
-#       an_port_reset          uvm_analysis_imp_reset      -     @2332
-#     virtual_sequencer        virtual_sequencer           -     @629 
-#       rsp_export             uvm_analysis_export         -     @636 
-#       seq_item_export        uvm_seq_item_pull_imp       -     @730 
+#     scb                      scoreboard                  -     @754 
+#       an_port_control        uvm_analysis_imp_control    -     @2340
+#       an_port_memory         uvm_analysis_imp_memory     -     @2356
+#       an_port_port_0         uvm_analysis_imp_port_0     -     @2364
+#       an_port_port_1         uvm_analysis_imp_port_1     -     @2372
+#       an_port_port_2         uvm_analysis_imp_port_2     -     @2380
+#       an_port_port_3         uvm_analysis_imp_port_3     -     @2388
+#       an_port_reset          uvm_analysis_imp_reset      -     @2348
+#     virtual_sequencer        virtual_sequencer           -     @645 
+#       rsp_export             uvm_analysis_export         -     @652 
+#       seq_item_export        uvm_seq_item_pull_imp       -     @746 
 #       arbitration_queue      array                       0     -    
 #       lock_queue             array                       0     -    
 #       num_last_reqs          integral                    32    'd1  
 #       num_last_rsps          integral                    32    'd1  
 # --------------------------------------------------------------------
 # 
-# UVM_INFO src/test/test_no_8.svh(67) @ 0: uvm_test_top [uvm_test_top] <--- EXIT PHASE: --> START OF SIMULATION <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'run'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'run'
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(36) @ 0: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] ---> ENTER PHASE: --> RUN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'run'
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(37) @ 0: uvm_test_top.env.port_3_agent.port_3_monitor [port_3_monitor] ---> ENTER PHASE: --> RUN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'run'
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(37) @ 0: uvm_test_top.env.port_2_agent.port_2_monitor [port_2_monitor] ---> ENTER PHASE: --> RUN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'run'
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(37) @ 0: uvm_test_top.env.port_1_agent.port_1_monitor [port_1_monitor] ---> ENTER PHASE: --> RUN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'run'
-# UVM_INFO src/test/environment/agent_port/port_monitor.svh(37) @ 0: uvm_test_top.env.port_0_agent.port_0_monitor [port_0_monitor] ---> ENTER PHASE: --> RUN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'run'
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(36) @ 0: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] ---> ENTER PHASE: --> RUN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'run'
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(36) @ 0: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] ---> ENTER PHASE: --> RUN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'pre_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_reset' (id=172) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'reset'
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(31) @ 0: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] ---> ENTER PHASE: --> RESET <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'reset'
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(31) @ 0: uvm_test_top.env.port_3_agent.port_3_driver [port_3_driver] ---> ENTER PHASE: --> RESET <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(39) @ 0: uvm_test_top.env.port_3_agent.port_3_driver [port_3_driver] <--- EXIT PHASE: --> RESET <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'reset'
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(31) @ 0: uvm_test_top.env.port_2_agent.port_2_driver [port_2_driver] ---> ENTER PHASE: --> RESET <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(39) @ 0: uvm_test_top.env.port_2_agent.port_2_driver [port_2_driver] <--- EXIT PHASE: --> RESET <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'reset'
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(31) @ 0: uvm_test_top.env.port_1_agent.port_1_driver [port_1_driver] ---> ENTER PHASE: --> RESET <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(39) @ 0: uvm_test_top.env.port_1_agent.port_1_driver [port_1_driver] <--- EXIT PHASE: --> RESET <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'reset'
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(31) @ 0: uvm_test_top.env.port_0_agent.port_0_driver [port_0_driver] ---> ENTER PHASE: --> RESET <--
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(39) @ 0: uvm_test_top.env.port_0_agent.port_0_driver [port_0_driver] <--- EXIT PHASE: --> RESET <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'reset'
-# UVM_INFO src/test/environment/agent_memory/memory_driver.svh(36) @ 0: uvm_test_top.env.mem_agent.memory_agent_driver [memory_agent_driver] ---> ENTER PHASE: --> RESET <--
-# UVM_INFO src/test/environment/agent_memory/memory_driver.svh(45) @ 0: uvm_test_top.env.mem_agent.memory_agent_driver [memory_agent_driver] <--- EXIT PHASE: --> RESET <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'reset'
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(33) @ 0: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] ---> ENTER PHASE: --> RESET <--
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(40) @ 0: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] <--- EXIT PHASE: --> RESET <--
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 5: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h0  sw_enable_in: 'b0  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 5: uvm_test_top.env.scb [scb] Received item : data_in: 'h0  sw_enable_in: 'b0  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 5: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
-# UVM_INFO src/test/environment/scoreboard.svh(257) @ 5: uvm_test_top.env.scb [scb] Received item : mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(278) @ 5: uvm_test_top.env.scb [scb] Memory access deactivated.
 # UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 5: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 5: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(41) @ 15: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] <--- EXIT PHASE: --> RESET <--
 # UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 15: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 15: uvm_test_top.env.scb [scb] Received reset : reset: 0 
-# UVM_INFO src/test/environment/scoreboard.svh(286) @ 15: uvm_test_top.env.scb [scb] Reset acivated : reset: 0 
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1199) @ 15: reporter [PH/TRC/EXE/ALLDROP] Phase 'uvm.uvm_sched.reset' (id=184) PHASE EXIT ALL_DROPPED
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 15: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.reset' (id=184) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'post_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'post_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'post_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'post_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'post_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_reset'
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 15: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_reset' (id=196) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'pre_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 15: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_configure' (id=208) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'configure'
-# UVM_INFO src/test/environment/agent_memory/memory_driver.svh(52) @ 15: uvm_test_top.env.mem_agent.memory_agent_driver [memory_agent_driver] ---> ENTER PHASE: --> CONFIGURE <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 15: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'configure'
 # UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 25: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 25: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 35: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
-# UVM_INFO src/test/environment/scoreboard.svh(257) @ 35: uvm_test_top.env.scb [scb] Received item : mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(278) @ 35: uvm_test_top.env.scb [scb] Memory access deactivated.
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 45: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'hc8  mem_rd_data: 'h00000000  mem_addr: 'h1
-# UVM_INFO src/test/environment/scoreboard.svh(257) @ 45: uvm_test_top.env.scb [scb] Received item : mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'hc8  mem_rd_data: 'h00000000  mem_addr: 'h1 
-# UVM_INFO src/test/environment/scoreboard.svh(259) @ 45: uvm_test_top.env.scb [scb] Memory access activated.
-# UVM_INFO src/test/environment/scoreboard.svh(265) @ 45: uvm_test_top.env.scb [scb] Correct port 0 address changed from 0 to c8.
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 55: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'hf1  mem_rd_data: 'h00000000  mem_addr: 'h2
-# UVM_INFO src/test/environment/scoreboard.svh(257) @ 55: uvm_test_top.env.scb [scb] Received item : mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'hf1  mem_rd_data: 'h00000000  mem_addr: 'h2 
-# UVM_INFO src/test/environment/scoreboard.svh(259) @ 55: uvm_test_top.env.scb [scb] Memory access activated.
-# UVM_INFO src/test/environment/scoreboard.svh(265) @ 55: uvm_test_top.env.scb [scb] Correct port 1 address changed from 0 to f1.
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 65: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'hd3  mem_rd_data: 'h00000000  mem_addr: 'h3
-# UVM_INFO src/test/environment/scoreboard.svh(257) @ 65: uvm_test_top.env.scb [scb] Received item : mem_wr_rd_s: 'b1  mem_sel_en: 'b1  mem_ack: 'b1  mem_wr_data: 'hd3  mem_rd_data: 'h00000000  mem_addr: 'h3 
-# UVM_INFO src/test/environment/scoreboard.svh(259) @ 65: uvm_test_top.env.scb [scb] Memory access activated.
-# UVM_INFO src/test/environment/scoreboard.svh(265) @ 65: uvm_test_top.env.scb [scb] Correct port 2 address changed from 0 to d3.
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 75: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b1  mem_wr_data: 'h49  mem_rd_data: 'h00000000  mem_addr: 'h0
-# UVM_INFO src/test/environment/scoreboard.svh(257) @ 75: uvm_test_top.env.scb [scb] Received item : mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b1  mem_wr_data: 'h49  mem_rd_data: 'h00000000  mem_addr: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(259) @ 75: uvm_test_top.env.scb [scb] Memory access activated.
-# UVM_INFO src/test/environment/scoreboard.svh(265) @ 75: uvm_test_top.env.scb [scb] Correct port 3 address changed from 0 to 49.
-# UVM_INFO src/test/environment/agent_memory/memory_driver.svh(75) @ 85: uvm_test_top.env.mem_agent.memory_agent_driver [memory_agent_driver] <--- EXIT PHASE: --> CONFIGURE <--
-# UVM_INFO src/test/environment/agent_memory/memory_monitor.svh(42) @ 85: uvm_test_top.env.mem_agent.memory_agent_monitor [memory_agent_monitor] Monitored configuration: mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0
-# UVM_INFO src/test/environment/scoreboard.svh(257) @ 85: uvm_test_top.env.scb [scb] Received item : mem_wr_rd_s: 'b0  mem_sel_en: 'b0  mem_ack: 'b0  mem_wr_data: 'h0  mem_rd_data: 'h00000000  mem_addr: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(278) @ 85: uvm_test_top.env.scb [scb] Memory access deactivated.
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1199) @ 85: reporter [PH/TRC/EXE/ALLDROP] Phase 'uvm.uvm_sched.configure' (id=220) PHASE EXIT ALL_DROPPED
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 85: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.configure' (id=220) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'post_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'post_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'post_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'post_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'post_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_configure'
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 85: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_configure' (id=232) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'pre_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'pre_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'pre_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'pre_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'pre_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 85: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_main' (id=244) PHASE READY TO END
-# UVM_INFO src/test/test_no_8.svh(71) @ 85: uvm_test_top [uvm_test_top] ---> ENTER PHASE: --> MAIN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'main'
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(47) @ 85: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] ---> ENTER PHASE: --> MAIN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'main'
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(45) @ 85: uvm_test_top.env.port_3_agent.port_3_driver [port_3_driver] ---> ENTER PHASE: --> MAIN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'main'
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(45) @ 85: uvm_test_top.env.port_2_agent.port_2_driver [port_2_driver] ---> ENTER PHASE: --> MAIN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'main'
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(45) @ 85: uvm_test_top.env.port_1_agent.port_1_driver [port_1_driver] ---> ENTER PHASE: --> MAIN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'main'
-# UVM_INFO src/test/environment/agent_port/port_driver.svh(45) @ 85: uvm_test_top.env.port_0_agent.port_0_driver [port_0_driver] ---> ENTER PHASE: --> MAIN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'main'
-# UVM_INFO src/test/environment/agent_memory/memory_driver.svh(82) @ 85: uvm_test_top.env.mem_agent.memory_agent_driver [memory_agent_driver] ---> ENTER PHASE: --> MAIN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 85: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'main'
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(46) @ 85: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] ---> ENTER PHASE: --> MAIN <--
-# UVM_INFO src/test/sequence/control_sequence.svh(48) @ 185: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 185: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'hd3  SA: 'h6e  LENGTH: 'h3 PAYLOAD['h2]: '{189, 138} PARITY: 'h37 EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 185: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'hd3  SA: 'h6e  LENGTH: 'h3 PAYLOAD['h2]: '{189, 138} PARITY: 'h37 EOF: 'h55
 # UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 185: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 195: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 195: uvm_test_top.env.scb [scb] Received item : data_in: 'h0  sw_enable_in: 'b1  read_out: 'b1 
 # UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 195: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
 # UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 195: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 195: uvm_test_top.env.scb [scb] Received reset : reset: 0 
-# UVM_INFO src/test/environment/scoreboard.svh(286) @ 195: uvm_test_top.env.scb [scb] Reset acivated : reset: 0 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 205: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 205: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(148) @ 205: uvm_test_top.env.scb [scb] Transaction started (SOF received).
 # UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 205: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 205: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 215: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hd3  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 215: uvm_test_top.env.scb [scb] Received item : data_in: 'hd3  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 215: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 215: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 225: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h6e  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 225: uvm_test_top.env.scb [scb] Received item : data_in: 'h6e  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 225: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 225: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 235: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h3  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 235: uvm_test_top.env.scb [scb] Received item : data_in: 'h3  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 235: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 235: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 245: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hbd  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 245: uvm_test_top.env.scb [scb] Received item : data_in: 'hbd  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 245: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 245: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 255: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h8a  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 255: uvm_test_top.env.scb [scb] Received item : data_in: 'h8a  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 255: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 255: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 265: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h37  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 265: uvm_test_top.env.scb [scb] Received item : data_in: 'h37  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 265: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 265: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 275: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 275: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(154) @ 275: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
-# UVM_INFO src/test/environment/scoreboard.svh(133) @ 275: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 355: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'hd3  SA: 'h6e  LENGTH: 'h3 PAYLOAD['h2]: '{189, 138} PARITY: 'h37 EOF: 'h55
-# UVM_INFO src/test/sequence/control_sequence.svh(70) @ 355: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 395: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 405: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 405: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 405: uvm_test_top.env.scb [scb] Received reset : reset: 0 
-# UVM_INFO src/test/environment/scoreboard.svh(286) @ 405: uvm_test_top.env.scb [scb] Reset acivated : reset: 0 
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 415: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 415: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/sequence/control_sequence.svh(48) @ 455: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 455: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'hf1  SA: 'h18  LENGTH: 'h4 PAYLOAD['h3]: '{237, 158, 198} PARITY: 'hb5 EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 455: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'hf1  SA: 'h18  LENGTH: 'h4 PAYLOAD['h3]: '{237, 158, 198} PARITY: 'hb5 EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 465: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 465: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 475: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 475: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(148) @ 475: uvm_test_top.env.scb [scb] Transaction started (SOF received).
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 485: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hf1  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 485: uvm_test_top.env.scb [scb] Received item : data_in: 'hf1  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 485: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 485: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 495: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h18  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 495: uvm_test_top.env.scb [scb] Received item : data_in: 'h18  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 495: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 495: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 505: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 505: uvm_test_top.env.scb [scb] Received item : data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 505: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 505: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 515: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hed  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 515: uvm_test_top.env.scb [scb] Received item : data_in: 'hed  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 515: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 515: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 525: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h9e  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 525: uvm_test_top.env.scb [scb] Received item : data_in: 'h9e  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 525: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 525: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 535: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hc6  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 535: uvm_test_top.env.scb [scb] Received item : data_in: 'hc6  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 535: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 535: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 545: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hb5  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 545: uvm_test_top.env.scb [scb] Received item : data_in: 'hb5  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 545: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 545: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 555: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 555: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(154) @ 555: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
-# UVM_INFO src/test/environment/scoreboard.svh(133) @ 555: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 605: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 615: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 615: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 615: uvm_test_top.env.scb [scb] Received reset : reset: 0 
-# UVM_INFO src/test/environment/scoreboard.svh(286) @ 615: uvm_test_top.env.scb [scb] Reset acivated : reset: 0 
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 625: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 625: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 635: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'hf1  SA: 'h18  LENGTH: 'h4 PAYLOAD['h3]: '{237, 158, 198} PARITY: 'hb5 EOF: 'h55
-# UVM_INFO src/test/sequence/control_sequence.svh(70) @ 635: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(48) @ 735: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 735: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'hc8  SA: 'h68  LENGTH: 'h3 PAYLOAD['h2]: '{80, 6} PARITY: 'h56 EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 735: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'hc8  SA: 'h68  LENGTH: 'h3 PAYLOAD['h2]: '{80, 6} PARITY: 'h56 EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 745: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 745: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 755: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 755: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(148) @ 755: uvm_test_top.env.scb [scb] Transaction started (SOF received).
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 765: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hc8  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 765: uvm_test_top.env.scb [scb] Received item : data_in: 'hc8  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 765: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 765: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 775: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h68  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 775: uvm_test_top.env.scb [scb] Received item : data_in: 'h68  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 775: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 775: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 785: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h3  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 785: uvm_test_top.env.scb [scb] Received item : data_in: 'h3  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 785: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 785: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 795: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h50  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 795: uvm_test_top.env.scb [scb] Received item : data_in: 'h50  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 795: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 795: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 805: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h6  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 805: uvm_test_top.env.scb [scb] Received item : data_in: 'h6  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 805: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 805: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 815: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h56  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 815: uvm_test_top.env.scb [scb] Received item : data_in: 'h56  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 815: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 815: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 815: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 825: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 825: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(154) @ 825: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
-# UVM_INFO src/test/environment/scoreboard.svh(133) @ 825: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 825: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 825: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 825: uvm_test_top.env.scb [scb] Received reset : reset: 0 
-# UVM_INFO src/test/environment/scoreboard.svh(286) @ 825: uvm_test_top.env.scb [scb] Reset acivated : reset: 0 
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 835: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 835: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 905: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'hc8  SA: 'h68  LENGTH: 'h3 PAYLOAD['h2]: '{80, 6} PARITY: 'h56 EOF: 'h55
-# UVM_INFO src/test/sequence/control_sequence.svh(70) @ 905: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(48) @ 1005: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 1005: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'hc8  SA: 'h13  LENGTH: 'h4 PAYLOAD['h3]: '{54, 239, 51} PARITY: 'hea EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1005: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'hc8  SA: 'h13  LENGTH: 'h4 PAYLOAD['h3]: '{54, 239, 51} PARITY: 'hea EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1015: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1015: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1025: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1025: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(148) @ 1025: uvm_test_top.env.scb [scb] Transaction started (SOF received).
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1025: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1035: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hc8  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1035: uvm_test_top.env.scb [scb] Received item : data_in: 'hc8  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1035: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1035: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1035: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1035: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 1035: uvm_test_top.env.scb [scb] Received reset : reset: 0 
-# UVM_INFO src/test/environment/scoreboard.svh(286) @ 1035: uvm_test_top.env.scb [scb] Reset acivated : reset: 0 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1045: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h13  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1045: uvm_test_top.env.scb [scb] Received item : data_in: 'h13  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1045: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 1045: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1055: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1055: uvm_test_top.env.scb [scb] Received item : data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1065: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h36  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1065: uvm_test_top.env.scb [scb] Received item : data_in: 'h36  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1075: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hef  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1075: uvm_test_top.env.scb [scb] Received item : data_in: 'hef  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1085: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h33  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1085: uvm_test_top.env.scb [scb] Received item : data_in: 'h33  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1095: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hea  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1095: uvm_test_top.env.scb [scb] Received item : data_in: 'hea  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1105: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1105: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(154) @ 1105: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
-# UVM_INFO src/test/environment/scoreboard.svh(133) @ 1105: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'h0 DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1185: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'hc8  SA: 'h13  LENGTH: 'h4 PAYLOAD['h3]: '{54, 239, 51} PARITY: 'hea EOF: 'h55
-# UVM_INFO src/test/sequence/control_sequence.svh(70) @ 1185: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1235: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1245: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1245: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 1245: uvm_test_top.env.scb [scb] Received reset : reset: 0 
-# UVM_INFO src/test/environment/scoreboard.svh(286) @ 1245: uvm_test_top.env.scb [scb] Reset acivated : reset: 0 
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1255: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 1255: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/sequence/control_sequence.svh(48) @ 1285: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 1285: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h49  SA: 'hbb  LENGTH: 'h4 PAYLOAD['h3]: '{129, 172, 207} PARITY: 'he2 EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1285: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h49  SA: 'hbb  LENGTH: 'h4 PAYLOAD['h3]: '{129, 172, 207} PARITY: 'he2 EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1295: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1295: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1305: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1305: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(148) @ 1305: uvm_test_top.env.scb [scb] Transaction started (SOF received).
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1315: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h49  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1315: uvm_test_top.env.scb [scb] Received item : data_in: 'h49  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1315: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1315: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1325: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hbb  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1325: uvm_test_top.env.scb [scb] Received item : data_in: 'hbb  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1325: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1325: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1335: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1335: uvm_test_top.env.scb [scb] Received item : data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1335: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1335: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1345: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h81  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1345: uvm_test_top.env.scb [scb] Received item : data_in: 'h81  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1345: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1345: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1355: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hac  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1355: uvm_test_top.env.scb [scb] Received item : data_in: 'hac  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1355: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1355: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1365: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hcf  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1365: uvm_test_top.env.scb [scb] Received item : data_in: 'hcf  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1365: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1365: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1375: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'he2  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1375: uvm_test_top.env.scb [scb] Received item : data_in: 'he2  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1375: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1375: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1385: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1385: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(154) @ 1385: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
-# UVM_INFO src/test/environment/scoreboard.svh(133) @ 1385: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1445: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1455: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1455: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 1455: uvm_test_top.env.scb [scb] Received reset : reset: 0 
-# UVM_INFO src/test/environment/scoreboard.svh(286) @ 1455: uvm_test_top.env.scb [scb] Reset acivated : reset: 0 
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1465: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h49  SA: 'hbb  LENGTH: 'h4 PAYLOAD['h3]: '{129, 172, 207} PARITY: 'he2 EOF: 'h55
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1465: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 1465: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/sequence/control_sequence.svh(70) @ 1465: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(48) @ 1565: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 1565: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'h49  SA: 'hc6  LENGTH: 'h4 PAYLOAD['h3]: '{83, 64, 121} PARITY: 'h6a EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1565: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'h49  SA: 'hc6  LENGTH: 'h4 PAYLOAD['h3]: '{83, 64, 121} PARITY: 'h6a EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1575: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1575: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1585: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1585: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(148) @ 1585: uvm_test_top.env.scb [scb] Transaction started (SOF received).
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1595: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h49  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1595: uvm_test_top.env.scb [scb] Received item : data_in: 'h49  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1595: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1595: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1605: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hc6  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1605: uvm_test_top.env.scb [scb] Received item : data_in: 'hc6  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1605: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1605: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1615: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1615: uvm_test_top.env.scb [scb] Received item : data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1615: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1615: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1625: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h53  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1625: uvm_test_top.env.scb [scb] Received item : data_in: 'h53  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1625: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1625: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1635: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h40  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1635: uvm_test_top.env.scb [scb] Received item : data_in: 'h40  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1635: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1635: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1645: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h79  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1645: uvm_test_top.env.scb [scb] Received item : data_in: 'h79  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1645: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1645: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1655: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h6a  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1655: uvm_test_top.env.scb [scb] Received item : data_in: 'h6a  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1655: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1655: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1655: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1665: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1665: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(154) @ 1665: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
-# UVM_INFO src/test/environment/scoreboard.svh(133) @ 1665: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1665: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1665: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 1665: uvm_test_top.env.scb [scb] Received reset : reset: 0 
-# UVM_INFO src/test/environment/scoreboard.svh(286) @ 1665: uvm_test_top.env.scb [scb] Reset acivated : reset: 0 
-# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1675: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
-# UVM_INFO src/test/environment/scoreboard.svh(284) @ 1675: uvm_test_top.env.scb [scb] Received reset : reset: 1 
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 1745: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'h49  SA: 'hc6  LENGTH: 'h4 PAYLOAD['h3]: '{83, 64, 121} PARITY: 'h6a EOF: 'h55
-# UVM_INFO src/test/sequence/control_sequence.svh(70) @ 1745: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(48) @ 1845: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 1845: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'hd3  SA: 'h41  LENGTH: 'h4 PAYLOAD['h3]: '{58, 82, 28} PARITY: 'h74 EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 1845: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'hd3  SA: 'h41  LENGTH: 'h4 PAYLOAD['h3]: '{58, 82, 28} PARITY: 'h74 EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1855: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1855: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1865: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1865: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(148) @ 1865: uvm_test_top.env.scb [scb] Transaction started (SOF received).
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1875: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hd3  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1875: uvm_test_top.env.scb [scb] Received item : data_in: 'hd3  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1875: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1875: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1885: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h41  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1885: uvm_test_top.env.scb [scb] Received item : data_in: 'h41  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1885: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1885: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1895: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1895: uvm_test_top.env.scb [scb] Received item : data_in: 'h4  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1895: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1895: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1905: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h3a  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1905: uvm_test_top.env.scb [scb] Received item : data_in: 'h3a  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1905: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1905: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1915: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h52  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1915: uvm_test_top.env.scb [scb] Received item : data_in: 'h52  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1915: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1915: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1925: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h1c  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1925: uvm_test_top.env.scb [scb] Received item : data_in: 'h1c  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1925: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1925: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1935: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h74  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1935: uvm_test_top.env.scb [scb] Received item : data_in: 'h74  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 1935: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 1935: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 1945: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 1945: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(154) @ 1945: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
-# UVM_INFO src/test/environment/scoreboard.svh(133) @ 1945: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 2025: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'hd3  SA: 'h41  LENGTH: 'h4 PAYLOAD['h3]: '{58, 82, 28} PARITY: 'h74 EOF: 'h55
-# UVM_INFO src/test/sequence/control_sequence.svh(70) @ 2025: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(48) @ 2125: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Started sequence
-# UVM_INFO src/test/sequence/control_sequence.svh(67) @ 2125: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Created packet 'd1: SOF: 'hff DA: 'hf1  SA: 'hf3  LENGTH: 'h3 PAYLOAD['h2]: '{43, 133} PARITY: 'hae EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(51) @ 2125: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Start to drive item: SOF: 'hff DA: 'hf1  SA: 'hf3  LENGTH: 'h3 PAYLOAD['h2]: '{43, 133} PARITY: 'hae EOF: 'h55
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 2135: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 2135: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 2145: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 2145: uvm_test_top.env.scb [scb] Received item : data_in: 'hff  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(148) @ 2145: uvm_test_top.env.scb [scb] Transaction started (SOF received).
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 2155: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hf1  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 2155: uvm_test_top.env.scb [scb] Received item : data_in: 'hf1  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 2155: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 2155: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 2165: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hf3  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 2165: uvm_test_top.env.scb [scb] Received item : data_in: 'hf3  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 2165: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 2165: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 2175: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h3  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 2175: uvm_test_top.env.scb [scb] Received item : data_in: 'h3  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 2175: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 2175: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 2185: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h2b  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 2185: uvm_test_top.env.scb [scb] Received item : data_in: 'h2b  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 2185: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 2185: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 2195: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h85  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 2195: uvm_test_top.env.scb [scb] Received item : data_in: 'h85  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 2195: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 2195: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 2205: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'hae  sw_enable_in: 'b1  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 2205: uvm_test_top.env.scb [scb] Received item : data_in: 'hae  sw_enable_in: 'b1  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(162) @ 2205: uvm_test_top.env.scb [scb] Add item to input packet at the beginning of transaction.
-# UVM_INFO src/test/environment/scoreboard.svh(174) @ 2205: uvm_test_top.env.scb [scb] Memory data and received DA don't match.
-# UVM_INFO src/test/environment/agent_control/control_monitor.svh(42) @ 2215: uvm_test_top.env.ctrl_agent.control_agent_monitor [control_agent_monitor] data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1
-# UVM_INFO src/test/environment/scoreboard.svh(144) @ 2215: uvm_test_top.env.scb [scb] Received item : data_in: 'h55  sw_enable_in: 'b0  read_out: 'b1 
-# UVM_INFO src/test/environment/scoreboard.svh(154) @ 2215: uvm_test_top.env.scb [scb] Transaction finished (EOF received).
-# UVM_INFO src/test/environment/scoreboard.svh(133) @ 2215: uvm_test_top.env.scb [scb] Control packet constructed : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/agent_control/control_driver.svh(53) @ 2295: uvm_test_top.env.ctrl_agent.control_agent_driver [control_agent_driver] Finish to drive item: SOF: 'hff DA: 'hf1  SA: 'hf3  LENGTH: 'h3 PAYLOAD['h2]: '{43, 133} PARITY: 'hae EOF: 'h55
-# UVM_INFO src/test/sequence/control_sequence.svh(70) @ 2295: uvm_test_top.env.ctrl_agent.control_agent_seqr@@ctrl_seq [ctrl_seq] Finished sequence
-# UVM_INFO src/test/test_no_8.svh(87) @ 2295: uvm_test_top [uvm_test_top] <--- EXIT PHASE: --> MAIN <--
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1199) @ 2395: reporter [PH/TRC/EXE/ALLDROP] Phase 'uvm.uvm_sched.main' (id=256) PHASE EXIT ALL_DROPPED
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 2395: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.main' (id=256) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'post_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'post_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'post_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'post_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'post_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_main'
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 2395: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_main' (id=268) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 2395: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_shutdown' (id=280) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 2395: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.shutdown' (id=292) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.virtual_sequencer [PHASESEQ] No default phase sequence for phase 'post_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.rst_agent.reset_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_3_agent.port_3_seqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_2_agent.port_2_seqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_1_agent.port_1_seqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.port_0_agent.port_0_seqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.mem_agent.memory_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 2395: uvm_test_top.env.ctrl_agent.control_agent_seqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 2395: reporter [PH_READY_TO_END] Phase 'common.run' (id=93) PHASE READY TO END
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_phase.svh(1215) @ 2395: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_shutdown' (id=304) PHASE READY TO END
-# UVM_INFO src/test/environment/scoreboard.svh(308) @ 2395: uvm_test_top.env.scb [scb] ---> ENTER PHASE: --> CHECK <--
-# UVM_INFO src/test/environment/scoreboard.svh(310) @ 2395: uvm_test_top.env.scb [scb] There are 8 packets on control.
-# UVM_INFO src/test/environment/scoreboard.svh(312) @ 2395: uvm_test_top.env.scb [scb] Packet no. 0 - start checking.
-# UVM_INFO src/test/item/data_packet.svh(93) @ 2395: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(337) @ 2395: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 0.
-# UVM_INFO src/test/environment/scoreboard.svh(341) @ 2395: uvm_test_top.env.scb [scb] Packet no. 0 - finished checking.
-# UVM_INFO src/test/environment/scoreboard.svh(312) @ 2395: uvm_test_top.env.scb [scb] Packet no. 1 - start checking.
-# UVM_INFO src/test/item/data_packet.svh(93) @ 2395: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(337) @ 2395: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 1.
-# UVM_INFO src/test/environment/scoreboard.svh(341) @ 2395: uvm_test_top.env.scb [scb] Packet no. 1 - finished checking.
-# UVM_INFO src/test/environment/scoreboard.svh(312) @ 2395: uvm_test_top.env.scb [scb] Packet no. 2 - start checking.
-# UVM_INFO src/test/item/data_packet.svh(93) @ 2395: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(337) @ 2395: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 2.
-# UVM_INFO src/test/environment/scoreboard.svh(341) @ 2395: uvm_test_top.env.scb [scb] Packet no. 2 - finished checking.
-# UVM_INFO src/test/environment/scoreboard.svh(312) @ 2395: uvm_test_top.env.scb [scb] Packet no. 3 - start checking.
-# UVM_INFO src/test/item/data_packet.svh(93) @ 2395: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'h0 DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(337) @ 2395: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 3.
-# UVM_INFO src/test/environment/scoreboard.svh(341) @ 2395: uvm_test_top.env.scb [scb] Packet no. 3 - finished checking.
-# UVM_INFO src/test/environment/scoreboard.svh(312) @ 2395: uvm_test_top.env.scb [scb] Packet no. 4 - start checking.
-# UVM_INFO src/test/item/data_packet.svh(93) @ 2395: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(337) @ 2395: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 4.
-# UVM_INFO src/test/environment/scoreboard.svh(341) @ 2395: uvm_test_top.env.scb [scb] Packet no. 4 - finished checking.
-# UVM_INFO src/test/environment/scoreboard.svh(312) @ 2395: uvm_test_top.env.scb [scb] Packet no. 5 - start checking.
-# UVM_INFO src/test/item/data_packet.svh(93) @ 2395: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(337) @ 2395: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 5.
-# UVM_INFO src/test/environment/scoreboard.svh(341) @ 2395: uvm_test_top.env.scb [scb] Packet no. 5 - finished checking.
-# UVM_INFO src/test/environment/scoreboard.svh(312) @ 2395: uvm_test_top.env.scb [scb] Packet no. 6 - start checking.
-# UVM_INFO src/test/item/data_packet.svh(93) @ 2395: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(337) @ 2395: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 6.
-# UVM_INFO src/test/environment/scoreboard.svh(341) @ 2395: uvm_test_top.env.scb [scb] Packet no. 6 - finished checking.
-# UVM_INFO src/test/environment/scoreboard.svh(312) @ 2395: uvm_test_top.env.scb [scb] Packet no. 7 - start checking.
-# UVM_INFO src/test/item/data_packet.svh(93) @ 2395: reporter@@control_packet_temp_child [control_packet_temp_child] Packet to check : SOF: 'hff DA: 'h55  SA: 'h0  LENGTH: 'h0 PAYLOAD['h0]: '{} PARITY: 'h0 EOF: 'h0 
-# UVM_INFO src/test/environment/scoreboard.svh(337) @ 2395: uvm_test_top.env.scb [scb] Incorrect structure for packet nr 7.
-# UVM_INFO src/test/environment/scoreboard.svh(341) @ 2395: uvm_test_top.env.scb [scb] Packet no. 7 - finished checking.
-# UVM_INFO src/test/environment/scoreboard.svh(351) @ 2395: uvm_test_top.env.scb [scb] <--- EXIT PHASE: --> CHECK <--
-# UVM_INFO src/test/environment/coverage/coverage.svh(141) @ 2395: uvm_test_top.env.cov [cov] ---> EXIT PHASE: --> REPORT <--
-# UVM_INFO src/test/environment/coverage/coverage.svh(142) @ 2395: uvm_test_top.env.cov [cov] Ports coverage   = 0.00%
-# UVM_INFO src/test/environment/coverage/coverage.svh(143) @ 2395: uvm_test_top.env.cov [cov] Memory coverage  = 72.92%
-# UVM_INFO src/test/environment/coverage/coverage.svh(144) @ 2395: uvm_test_top.env.cov [cov] Control coverage = 75.00%
-# UVM_INFO src/test/environment/coverage/coverage.svh(145) @ 2395: uvm_test_top.env.cov [cov] Data coverage    = 86.67%
-# UVM_INFO src/test/environment/coverage/coverage.svh(146) @ 2395: uvm_test_top.env.cov [cov] Event coverage   = 18.79%
-# UVM_INFO src/test/environment/coverage/coverage.svh(147) @ 2395: uvm_test_top.env.cov [cov] <--- EXIT PHASE: --> REPORT <--
-# UVM_INFO src/test/environment/scoreboard.svh(355) @ 2395: uvm_test_top.env.scb [scb] ---> ENTER PHASE: --> REPORT <--
-# UVM_INFO src/test/environment/scoreboard.svh(356) @ 2395: uvm_test_top.env.scb [scb] There were 8 sent packets: INCORRECT/CORRECT STRUCTURE: 8/0.
-# UVM_INFO src/test/environment/scoreboard.svh(357) @ 2395: uvm_test_top.env.scb [scb] There were 0 dropped packets.
-# UVM_INFO src/test/environment/scoreboard.svh(359) @ 2395: uvm_test_top.env.scb [scb] ON PORT 0:
-# UVM_INFO src/test/environment/scoreboard.svh(360) @ 2395: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 8/-8.
-# UVM_INFO src/test/environment/scoreboard.svh(361) @ 2395: uvm_test_top.env.scb [scb] There were 0 left packets.
-# UVM_INFO src/test/environment/scoreboard.svh(362) @ 2395: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 0/0.
-# UVM_INFO src/test/environment/scoreboard.svh(359) @ 2395: uvm_test_top.env.scb [scb] ON PORT 1:
-# UVM_INFO src/test/environment/scoreboard.svh(360) @ 2395: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 0/0.
-# UVM_INFO src/test/environment/scoreboard.svh(361) @ 2395: uvm_test_top.env.scb [scb] There were 0 left packets.
-# UVM_INFO src/test/environment/scoreboard.svh(362) @ 2395: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 0/0.
-# UVM_INFO src/test/environment/scoreboard.svh(359) @ 2395: uvm_test_top.env.scb [scb] ON PORT 2:
-# UVM_INFO src/test/environment/scoreboard.svh(360) @ 2395: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 0/0.
-# UVM_INFO src/test/environment/scoreboard.svh(361) @ 2395: uvm_test_top.env.scb [scb] There were 0 left packets.
-# UVM_INFO src/test/environment/scoreboard.svh(362) @ 2395: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 0/0.
-# UVM_INFO src/test/environment/scoreboard.svh(359) @ 2395: uvm_test_top.env.scb [scb] ON PORT 3:
-# UVM_INFO src/test/environment/scoreboard.svh(360) @ 2395: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 0/0.
-# UVM_INFO src/test/environment/scoreboard.svh(361) @ 2395: uvm_test_top.env.scb [scb] There were 0 left packets.
-# UVM_INFO src/test/environment/scoreboard.svh(362) @ 2395: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 0/0.
-# UVM_INFO src/test/environment/scoreboard.svh(364) @ 2395: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 0/0.
-# UVM_INFO src/test/environment/scoreboard.svh(365) @ 2395: uvm_test_top.env.scb [scb] <--- EXIT PHASE: --> REPORT <--
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 575: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 585: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 585: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 595: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 965: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 975: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 975: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 985: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1355: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1365: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1365: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1375: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1745: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 1755: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1755: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 1765: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 2135: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 2145: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 2145: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 2155: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 2525: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/scoreboard.svh(219) @ 2535: uvm_test_top.env.scb [scb] MISS port read from port 2 : expected ff; received 0.
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 2535: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 2535: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 2545: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 2915: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 0
+# UVM_INFO src/test/environment/scoreboard.svh(219) @ 2925: uvm_test_top.env.scb [scb] MISS port read from port 1 : expected f1; received 0.
+# UVM_INFO src/test/environment/agent_reset/reset_driver.svh(53) @ 2925: uvm_test_top.env.rst_agent.reset_agent_driver [reset_agent_driver] Drive reset: reset: 1
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 2925: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset active!
+# UVM_INFO src/test/environment/agent_reset/reset_monitor.svh(42) @ 2935: uvm_test_top.env.rst_agent.reset_agent_monitor [reset_agent_monitor] Reset inactive!
+# UVM_INFO src/test/environment/coverage/coverage.svh(142) @ 3105: uvm_test_top.env.cov [cov] Ports coverage   = 77.01%
+# UVM_INFO src/test/environment/coverage/coverage.svh(143) @ 3105: uvm_test_top.env.cov [cov] Memory coverage  = 85.42%
+# UVM_INFO src/test/environment/coverage/coverage.svh(144) @ 3105: uvm_test_top.env.cov [cov] Control coverage = 75.00%
+# UVM_INFO src/test/environment/coverage/coverage.svh(145) @ 3105: uvm_test_top.env.cov [cov] Data coverage    = 68.89%
+# UVM_INFO src/test/environment/coverage/coverage.svh(146) @ 3105: uvm_test_top.env.cov [cov] Event coverage   = 40.43%
+# UVM_INFO src/test/environment/scoreboard.svh(381) @ 3105: uvm_test_top.env.scb [scb] There were 36 memory write accesses: INCORRECT/CORRECT: 0/36.
+# UVM_INFO src/test/environment/scoreboard.svh(382) @ 3105: uvm_test_top.env.scb [scb] There were 0 memory read accesses: INCORRECT/CORRECT: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(383) @ 3105: uvm_test_top.env.scb [scb] There were 1 sent packets: INCORRECT/CORRECT STRUCTURE: 0/1.
+# UVM_INFO src/test/environment/scoreboard.svh(384) @ 3105: uvm_test_top.env.scb [scb] There were 0 dropped packets.
+# UVM_INFO src/test/environment/scoreboard.svh(386) @ 3105: uvm_test_top.env.scb [scb] ON PORT 0:
+# UVM_INFO src/test/environment/scoreboard.svh(387) @ 3105: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(388) @ 3105: uvm_test_top.env.scb [scb] There were 0 left packets.
+# UVM_INFO src/test/environment/scoreboard.svh(389) @ 3105: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(386) @ 3105: uvm_test_top.env.scb [scb] ON PORT 1:
+# UVM_INFO src/test/environment/scoreboard.svh(387) @ 3105: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 1/-1.
+# UVM_INFO src/test/environment/scoreboard.svh(388) @ 3105: uvm_test_top.env.scb [scb] There were 0 left packets.
+# UVM_INFO src/test/environment/scoreboard.svh(389) @ 3105: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 1/1.
+# UVM_INFO src/test/environment/scoreboard.svh(386) @ 3105: uvm_test_top.env.scb [scb] ON PORT 2:
+# UVM_INFO src/test/environment/scoreboard.svh(387) @ 3105: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(388) @ 3105: uvm_test_top.env.scb [scb] There were 0 left packets.
+# UVM_INFO src/test/environment/scoreboard.svh(389) @ 3105: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 1/0.
+# UVM_INFO src/test/environment/scoreboard.svh(386) @ 3105: uvm_test_top.env.scb [scb] ON PORT 3:
+# UVM_INFO src/test/environment/scoreboard.svh(387) @ 3105: uvm_test_top.env.scb [scb] There were 0 received packets: MISSED/MATCHED: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(388) @ 3105: uvm_test_top.env.scb [scb] There were 0 left packets.
+# UVM_INFO src/test/environment/scoreboard.svh(389) @ 3105: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 0/0.
+# UVM_INFO src/test/environment/scoreboard.svh(391) @ 3105: uvm_test_top.env.scb [scb] Byte MISS/MATCH: 2/1.
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :  687
+# UVM_INFO :   65
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [PH/TRC/EXE/ALLDROP]     3
-# [PHASESEQ]   104
-# [PH_READY_TO_END]    13
-# [Questa UVM]     4
 # [RNTST]     1
 # [UVMTOP]     1
-# [control_agent_driver]    21
-# [control_agent_monitor]    81
-# [control_packet_temp_child]     8
-# [cov]     7
-# [ctrl_agent]     4
-# [ctrl_seq]    24
-# [env]     2
-# [mem_agent]     4
-# [memory_agent_driver]     7
-# [memory_agent_monitor]    10
-# [port_0_agent]     4
-# [port_0_driver]     5
-# [port_0_monitor]     3
-# [port_1_agent]     4
-# [port_1_driver]     5
-# [port_1_monitor]     3
-# [port_2_agent]     4
-# [port_2_driver]     5
-# [port_2_monitor]     3
-# [port_3_agent]     4
-# [port_3_driver]     5
-# [port_3_monitor]     3
-# [reset_agent_driver]    21
-# [reset_agent_monitor]    22
-# [rst_agent]     4
-# [scb]   292
-# [uvm_test_top]     6
+# [cov]     5
+# [reset_agent_driver]    16
+# [reset_agent_monitor]    19
+# [scb]    23
 # ** Note: $finish    : /opt/questa/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 2395 ns  Iteration: 96  Instance: /testbench
+#    Time: 3105 ns  Iteration: 96  Instance: /testbench
 # Saving coverage database on exit...
-# End time: 00:21:42 on Mar 15,2024, Elapsed time: 0:00:04
+# End time: 15:34:37 on Mar 15,2024, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 1
